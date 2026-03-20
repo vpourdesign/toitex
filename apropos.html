@@ -1,0 +1,1855 @@
+<!DOCTYPE html>
+<html lang="fr" class="lang-fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>À propos — Toitex | Expert en Toiture, Grand Montréal</title>
+  <meta name="description" content="Découvrez Toitex, équipe de couvreurs certifiés basée à Boisbriand. Toiture résidentielle et commerciale pour le Grand Montréal. RBQ 5824-2371-01.">
+  <link rel="canonical" href="https://toitex.ca/apropos.html">
+  <link rel="alternate" hreflang="fr" href="https://toitex.ca/apropos.html">
+  <link rel="alternate" hreflang="en" href="https://toitex.ca/apropos.html#en">
+
+  <meta property="og:title" content="À propos — Toitex | Expert en Toiture">
+  <meta property="og:description" content="Équipe de couvreurs certifiés, servant le Grand Montréal depuis Boisbriand. Qualité, intégrité, rapidité.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://toitex.ca/apropos.html">
+  <meta property="og:locale" content="fr_CA">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "AboutPage",
+    "mainEntity": {
+      "@type": "RoofingContractor",
+      "name": "Toitex inc.",
+      "url": "https://toitex.ca",
+      "telephone": "+14509490900",
+      "email": "info@toitex.ca",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "100 Rue Prévost",
+        "addressLocality": "Boisbriand",
+        "addressRegion": "QC",
+        "postalCode": "J7G 2S2",
+        "addressCountry": "CA"
+      },
+      "areaServed": ["Montréal","Laval","Rive-Nord","Laurentides","Lanaudière"],
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.7",
+        "reviewCount": "6"
+      }
+    }
+  }
+  </script>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- SVG noise filter -->
+  <svg style="position:absolute;width:0;height:0">
+    <filter id="grain"><feTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" stitchTiles="stitch"/><feColorMatrix type="saturate" values="0"/><feBlend in="SourceGraphic" mode="multiply" result="blend"/><feComponentTransfer><feFuncA type="linear" slope="0.08"/></feComponentTransfer></filter>
+  </svg>
+
+  <style>
+    @layer reset, base, layout, components, utilities;
+
+    @layer reset {
+      *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    }
+
+    @layer base {
+      :root {
+        --dark: #567044;
+        --dark-deep: #465c37;
+        --dark-deeper: #3a4e2d;
+        --dark-light: #6a8a55;
+        --accent: oklch(72% 0.12 75);
+        --accent-hover: oklch(65% 0.14 75);
+        --white: #ffffff;
+        --white-95: rgba(255,255,255,0.95);
+        --white-90: rgba(255,255,255,0.9);
+        --white-70: rgba(255,255,255,0.7);
+        --white-50: rgba(255,255,255,0.5);
+        --white-20: rgba(255,255,255,0.2);
+        --white-10: rgba(255,255,255,0.1);
+        --white-05: rgba(255,255,255,0.05);
+        --bg-light: #f2f0eb;
+        --bg-warm: #e8e5de;
+        --text-dark: #2a2a2a;
+        --text-muted: #6a6a6a;
+        --ease: cubic-bezier(0.16, 1, 0.3, 1);
+        --ease-out: cubic-bezier(0, 0, 0.2, 1);
+      }
+
+      html {
+        font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+        scroll-behavior: auto;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+
+      body {
+        overflow-x: hidden;
+        background: var(--dark);
+        color: var(--white);
+      }
+
+      .lang-fr .en { display: none !important; }
+      .lang-en .fr { display: none !important; }
+
+      .syne { font-family: 'Manrope', sans-serif; }
+    }
+
+    @layer layout {
+      .container {
+        max-width: 1400px;
+        margin-inline: auto;
+        padding-inline: clamp(1.5rem, 4vw, 3rem);
+      }
+
+      .grain::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        filter: url(#grain);
+        pointer-events: none;
+        z-index: 1;
+      }
+    }
+
+    @layer components {
+
+      /* ===== NAV ===== */
+      .nav {
+        position: fixed;
+        top: 0; left: 0; right: 0;
+        z-index: 100;
+        height: 72px;
+        display: flex;
+        align-items: center;
+        transition: background-color 0.4s var(--ease), backdrop-filter 0.4s var(--ease);
+      }
+
+      .nav.scrolled {
+        background: oklch(33% 0.06 135 / 0.92);
+        backdrop-filter: blur(24px) saturate(1.4);
+        box-shadow:
+          0 1px 2px oklch(25% 0.05 135 / 0.15),
+          0 4px 16px oklch(25% 0.05 135 / 0.1);
+      }
+
+      .nav-inner {
+        width: 100%;
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 0 clamp(1.5rem, 4vw, 3rem);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      .nav-logo {
+        font-family: 'Manrope', sans-serif;
+        font-size: clamp(1.3rem, 2vw, 1.6rem);
+        font-weight: 800;
+        color: var(--white);
+        text-decoration: none;
+        letter-spacing: -0.03em;
+        text-transform: uppercase;
+      }
+
+      .nav-logo span { font-weight: 400; opacity: 0.7; }
+
+      /* --- Nav menu (shadcn-style) --- */
+      .nav-menu {
+        display: flex;
+        align-items: center;
+        gap: 0.25rem;
+        list-style: none;
+      }
+
+      .nav-menu-item {
+        position: relative;
+      }
+
+      .nav-menu-trigger,
+      .nav-menu-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.35rem;
+        height: 36px;
+        padding: 0 0.85rem;
+        font-family: inherit;
+        font-size: 0.84rem;
+        font-weight: 500;
+        color: var(--white-70);
+        text-decoration: none;
+        letter-spacing: 0.01em;
+        border: none;
+        background: transparent;
+        border-radius: 6px;
+        cursor: pointer;
+        transition: color 0.25s var(--ease), background 0.25s var(--ease);
+      }
+
+      .nav-menu-trigger:hover,
+      .nav-menu-trigger:focus-visible,
+      .nav-menu-trigger[aria-expanded="true"],
+      .nav-menu-link:hover,
+      .nav-menu-link:focus-visible {
+        color: var(--white);
+        background: var(--white-10);
+      }
+
+      .nav-menu-trigger:focus-visible,
+      .nav-menu-link:focus-visible {
+        outline: 2px solid var(--accent);
+        outline-offset: 1px;
+      }
+
+      .nav-menu-trigger svg.chevron {
+        width: 12px;
+        height: 12px;
+        opacity: 0.6;
+        transition: transform 0.3s var(--ease);
+      }
+
+      .nav-menu-trigger[aria-expanded="true"] svg.chevron {
+        transform: rotate(180deg);
+      }
+
+      .nav-dropdown {
+        position: absolute;
+        top: calc(100% + 8px);
+        left: 50%;
+        transform: translateX(-50%) translateY(4px);
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+        background: var(--dark-deeper);
+        border: 1px solid var(--white-10);
+        border-radius: 10px;
+        padding: 1rem;
+        min-width: 480px;
+        box-shadow:
+          0 4px 12px oklch(20% 0.05 135 / 0.25),
+          0 16px 40px oklch(20% 0.05 135 / 0.2);
+        transition: opacity 0.2s var(--ease), transform 0.2s var(--ease), visibility 0.2s;
+      }
+
+      .nav-menu-item.open .nav-dropdown {
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+        transform: translateX(-50%) translateY(0);
+      }
+
+      .nav-dropdown-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 0.35rem;
+      }
+
+      .nav-drop-item {
+        display: block;
+        padding: 0.65rem 0.75rem;
+        border-radius: 8px;
+        text-decoration: none;
+        transition: background 0.2s var(--ease);
+      }
+
+      .nav-drop-item:hover,
+      .nav-drop-item:focus-visible {
+        background: var(--white-10);
+      }
+
+      .nav-drop-item:focus-visible {
+        outline: 2px solid var(--accent);
+        outline-offset: -2px;
+      }
+
+      .nav-drop-item-title {
+        font-size: 0.84rem;
+        font-weight: 600;
+        color: var(--white-95);
+        line-height: 1.2;
+        margin-bottom: 0.2rem;
+      }
+
+      .nav-drop-item-desc {
+        font-size: 0.72rem;
+        color: var(--white-50);
+        line-height: 1.4;
+      }
+
+      .nav-drop-featured {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        padding: 1.25rem 1rem;
+        border-radius: 8px;
+        background: linear-gradient(135deg, var(--dark-light), var(--dark));
+        text-decoration: none;
+        grid-row: span 3;
+        min-height: 180px;
+        transition: background 0.3s var(--ease);
+      }
+
+      .nav-drop-featured:hover {
+        background: linear-gradient(135deg, var(--dark), var(--dark-deep));
+      }
+
+      .nav-drop-featured-title {
+        font-family: 'Manrope', sans-serif;
+        font-size: 1.05rem;
+        font-weight: 800;
+        color: var(--white);
+        line-height: 1.15;
+        letter-spacing: -0.02em;
+        margin-bottom: 0.35rem;
+      }
+
+      .nav-drop-featured-desc {
+        font-size: 0.72rem;
+        color: var(--white-70);
+        line-height: 1.45;
+      }
+.nav-right {
+        display: flex;
+        align-items: center;
+        gap: 1.25rem;
+      }
+
+      .lang-switch {
+        display: flex;
+        background: var(--white-10);
+        border-radius: 6px;
+        padding: 2px;
+      }
+
+      .lang-switch button {
+        padding: 0.3rem 0.6rem;
+        font-family: inherit;
+        font-size: 0.72rem;
+        font-weight: 700;
+        letter-spacing: 0.05em;
+        border: none;
+        border-radius: 4px;
+        background: transparent;
+        color: var(--white-50);
+        cursor: pointer;
+        transition: background 0.3s var(--ease), color 0.3s var(--ease);
+      }
+
+      .lang-switch button.active {
+        background: var(--white-20);
+        color: var(--white);
+      }
+
+      .btn-primary {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0.6rem 1.4rem;
+        background: var(--accent);
+        color: var(--dark-deeper);
+        font-family: inherit;
+        font-size: 0.82rem;
+        font-weight: 700;
+        text-decoration: none;
+        border-radius: 6px;
+        letter-spacing: 0.01em;
+        border: none;
+        cursor: pointer;
+        transition: background 0.3s var(--ease), transform 0.3s var(--ease);
+      }
+
+      .btn-primary:hover {
+        background: var(--accent-hover);
+        transform: translateY(-1px);
+      }
+
+      .btn-primary:focus-visible {
+        outline: 2px solid var(--accent);
+        outline-offset: 3px;
+      }
+
+      .btn-primary:active { transform: translateY(0); }
+      .btn-primary svg { width: 15px; height: 15px; }
+
+      .mobile-toggle {
+        display: none;
+        background: none;
+        border: none;
+        color: var(--white);
+        cursor: pointer;
+        padding: 0.5rem;
+      }
+
+      .mobile-toggle svg { width: 24px; height: 24px; }
+
+      /* ===== ABOUT HERO ===== */
+      .about-hero {
+        position: relative;
+        background: var(--dark);
+        padding-top: 72px;
+        overflow: hidden;
+      }
+
+      .about-hero-inner {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas: "text image";
+        gap: clamp(2rem, 5vw, 5rem);
+        align-items: center;
+        padding-block: clamp(4rem, 8vw, 8rem) clamp(3rem, 6vw, 5rem);
+      }
+
+      .about-hero-text { grid-area: text; }
+      .about-hero-image { grid-area: image; }
+
+      .about-hero-label {
+        display: inline-block;
+        font-size: clamp(0.68rem, 0.9vw, 0.75rem);
+        font-weight: 700;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: var(--accent);
+        margin-bottom: clamp(1rem, 2vw, 1.5rem);
+      }
+
+      .about-hero h1 {
+        font-family: 'Manrope', sans-serif;
+        font-size: clamp(2.8rem, 6vw, 5rem);
+        font-weight: 800;
+        color: var(--white);
+        line-height: 1;
+        letter-spacing: -0.025em;
+        margin-bottom: clamp(1.25rem, 2.5vw, 2rem);
+      }
+
+      .about-hero-subtitle {
+        font-size: clamp(0.9rem, 1.2vw, 1rem);
+        font-weight: 400;
+        color: var(--white-70);
+        line-height: 1.75;
+        max-width: 50ch;
+      }
+
+      .about-hero-image-wrap {
+        position: relative;
+        border-radius: 10px;
+        overflow: hidden;
+        aspect-ratio: 4 / 5;
+      }
+
+      .about-hero-image-wrap img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .about-hero-image-wrap::after {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background:
+          linear-gradient(180deg, oklch(30% 0.06 135 / 0.15) 0%, oklch(30% 0.06 135 / 0.5) 100%),
+          linear-gradient(270deg, transparent 60%, oklch(30% 0.06 135 / 0.3) 100%);
+        mix-blend-mode: multiply;
+      }
+
+      .about-hero-badge {
+        position: absolute;
+        bottom: clamp(1.25rem, 3vw, 2rem);
+        left: clamp(1.25rem, 3vw, 2rem);
+        z-index: 2;
+        background: oklch(33% 0.06 135 / 0.85);
+        backdrop-filter: blur(16px);
+        padding: clamp(0.75rem, 1.5vw, 1rem) clamp(1rem, 2vw, 1.5rem);
+        border-radius: 8px;
+        border: 1px solid var(--white-10);
+      }
+
+      .about-hero-badge-rating {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        margin-bottom: 0.25rem;
+      }
+
+      .about-hero-badge-stars {
+        display: flex;
+        gap: 2px;
+        color: var(--accent);
+      }
+
+      .about-hero-badge-stars svg { width: 14px; height: 14px; }
+
+      .about-hero-badge-score {
+        font-family: 'Manrope', sans-serif;
+        font-size: 0.9rem;
+        font-weight: 700;
+        color: var(--white);
+      }
+
+      .about-hero-badge-label {
+        font-size: 0.7rem;
+        color: var(--white-50);
+        letter-spacing: 0.02em;
+      }
+
+      /* ===== STORY SECTION ===== */
+      .story {
+        background: var(--bg-light);
+        color: var(--text-dark);
+        padding-block: clamp(5rem, 10vw, 9rem);
+        position: relative;
+      }
+
+      .story::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        filter: url(#grain);
+        pointer-events: none;
+        z-index: 1;
+        opacity: 0.4;
+      }
+
+      .story-inner {
+        position: relative;
+        z-index: 2;
+        display: grid;
+        grid-template-columns: 0.4fr 1fr;
+        grid-template-areas: "label content";
+        gap: clamp(2rem, 5vw, 5rem);
+      }
+
+      .story-label-col { grid-area: label; }
+      .story-content-col { grid-area: content; }
+
+      .story-label {
+        font-size: clamp(0.68rem, 0.9vw, 0.75rem);
+        font-weight: 700;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: var(--dark);
+        position: sticky;
+        top: 100px;
+      }
+
+      .story-lead {
+        font-family: 'Manrope', sans-serif;
+        font-size: clamp(1.6rem, 3vw, 2.4rem);
+        font-weight: 700;
+        line-height: 1.2;
+        letter-spacing: -0.02em;
+        color: var(--dark-deeper);
+        margin-bottom: clamp(1.5rem, 3vw, 2.5rem);
+      }
+
+      .story-body {
+        columns: 2;
+        column-gap: clamp(2rem, 4vw, 3.5rem);
+      }
+
+      .story-body p {
+        font-size: clamp(0.88rem, 1.1vw, 0.95rem);
+        line-height: 1.75;
+        color: var(--text-muted);
+        margin-bottom: 1.25rem;
+        break-inside: avoid;
+      }
+
+      .story-body p:first-child::first-line {
+        font-weight: 600;
+        color: var(--text-dark);
+      }
+
+      /* ===== VALUES — numbered editorial ===== */
+      .values {
+        background: var(--dark);
+        padding-block: clamp(5rem, 10vw, 9rem);
+        position: relative;
+        overflow: hidden;
+      }
+
+      .values-header {
+        margin-bottom: clamp(3.5rem, 6vw, 5rem);
+      }
+
+      .values-label {
+        font-size: clamp(0.68rem, 0.9vw, 0.75rem);
+        font-weight: 700;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: var(--accent);
+        margin-bottom: clamp(0.75rem, 1.5vw, 1rem);
+      }
+
+      .values-title {
+        font-family: 'Manrope', sans-serif;
+        font-size: clamp(2rem, 4vw, 3.2rem);
+        font-weight: 800;
+        line-height: 1.05;
+        letter-spacing: -0.03em;
+        color: var(--white);
+        max-width: 20ch;
+      }
+
+      .value-item {
+        display: grid;
+        grid-template-columns: clamp(3rem, 6vw, 5rem) 1fr 1fr;
+        grid-template-areas: "number title desc";
+        gap: clamp(1.5rem, 3vw, 2.5rem);
+        align-items: start;
+        padding-block: clamp(2rem, 3.5vw, 3rem);
+        border-top: 1px solid var(--white-10);
+      }
+
+      .value-number {
+        grid-area: number;
+        font-family: 'Manrope', sans-serif;
+        font-size: clamp(0.75rem, 1vw, 0.85rem);
+        font-weight: 700;
+        color: var(--accent);
+        letter-spacing: 0.05em;
+        padding-top: 0.15em;
+      }
+
+      .value-title-col { grid-area: title; }
+
+      .value-title {
+        font-family: 'Manrope', sans-serif;
+        font-size: clamp(1.2rem, 2vw, 1.6rem);
+        font-weight: 700;
+        color: var(--white);
+        line-height: 1.2;
+        letter-spacing: -0.02em;
+      }
+
+      .value-desc-col { grid-area: desc; }
+
+      .value-desc {
+        font-size: clamp(0.85rem, 1.1vw, 0.92rem);
+        color: var(--white-70);
+        line-height: 1.7;
+      }
+
+      /* ===== CERTIFICATIONS ===== */
+      .certifications {
+        background: var(--dark-deep);
+        padding-block: clamp(4rem, 7vw, 6rem);
+        position: relative;
+      }
+
+      .certifications::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        filter: url(#grain);
+        pointer-events: none;
+        z-index: 1;
+        opacity: 0.3;
+      }
+
+      .cert-inner {
+        position: relative;
+        z-index: 2;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas: "left right";
+        gap: clamp(2rem, 5vw, 5rem);
+        align-items: center;
+      }
+
+      .cert-left { grid-area: left; }
+      .cert-right { grid-area: right; }
+
+      .cert-label {
+        font-size: clamp(0.68rem, 0.9vw, 0.75rem);
+        font-weight: 700;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: var(--accent);
+        margin-bottom: clamp(0.75rem, 1.5vw, 1rem);
+      }
+
+      .cert-title {
+        font-family: 'Manrope', sans-serif;
+        font-size: clamp(1.6rem, 3vw, 2.4rem);
+        font-weight: 700;
+        line-height: 1.15;
+        letter-spacing: -0.02em;
+        color: var(--white);
+        margin-bottom: clamp(1rem, 2vw, 1.5rem);
+      }
+
+      .cert-desc {
+        font-size: clamp(0.85rem, 1.1vw, 0.92rem);
+        color: var(--white-70);
+        line-height: 1.7;
+        max-width: 50ch;
+      }
+
+      .cert-items {
+        display: flex;
+        flex-direction: column;
+        gap: clamp(1rem, 2vw, 1.5rem);
+      }
+
+      .cert-card {
+        background: var(--white-05);
+        border: 1px solid var(--white-10);
+        border-radius: 10px;
+        padding: clamp(1.25rem, 2.5vw, 2rem);
+        transition: background 0.4s var(--ease), border-color 0.4s var(--ease);
+      }
+
+      .cert-card:hover {
+        background: var(--white-10);
+        border-color: var(--white-20);
+      }
+
+      .cert-card-icon {
+        width: 40px;
+        height: 40px;
+        background: oklch(72% 0.12 75 / 0.15);
+        border-radius: 8px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 0.75rem;
+        color: var(--accent);
+      }
+
+      .cert-card-icon svg { width: 20px; height: 20px; }
+
+      .cert-card h4 {
+        font-family: 'Manrope', sans-serif;
+        font-size: clamp(0.95rem, 1.3vw, 1.1rem);
+        font-weight: 700;
+        color: var(--white);
+        margin-bottom: 0.35rem;
+      }
+
+      .cert-card p {
+        font-size: clamp(0.8rem, 1vw, 0.85rem);
+        color: var(--white-50);
+        line-height: 1.6;
+      }
+
+      /* ===== SERVICE AREA ===== */
+      .service-area {
+        background: var(--bg-light);
+        color: var(--text-dark);
+        padding-block: clamp(5rem, 10vw, 9rem);
+        position: relative;
+      }
+
+      .service-area::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        filter: url(#grain);
+        pointer-events: none;
+        z-index: 1;
+        opacity: 0.4;
+      }
+
+      .area-inner {
+        position: relative;
+        z-index: 2;
+        text-align: center;
+      }
+
+      .area-label {
+        font-size: clamp(0.68rem, 0.9vw, 0.75rem);
+        font-weight: 700;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: var(--dark);
+        margin-bottom: clamp(0.75rem, 1.5vw, 1rem);
+      }
+
+      .area-title {
+        font-family: 'Manrope', sans-serif;
+        font-size: clamp(2rem, 4vw, 3.2rem);
+        font-weight: 800;
+        line-height: 1.05;
+        letter-spacing: -0.03em;
+        color: var(--dark-deeper);
+        margin-bottom: clamp(1rem, 2vw, 1.5rem);
+      }
+
+      .area-desc {
+        font-size: clamp(0.88rem, 1.1vw, 0.95rem);
+        color: var(--text-muted);
+        line-height: 1.7;
+        max-width: 55ch;
+        margin-inline: auto;
+        margin-bottom: clamp(3rem, 5vw, 4.5rem);
+      }
+
+      .area-regions {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        gap: clamp(1rem, 2vw, 1.5rem);
+      }
+
+      .area-region {
+        background: var(--white);
+        border-radius: 10px;
+        padding: clamp(1.5rem, 3vw, 2.5rem) clamp(1rem, 2vw, 1.5rem);
+        text-align: center;
+        border: 1px solid oklch(75% 0.02 135 / 0.3);
+        transition: transform 0.5s var(--ease), box-shadow 0.5s var(--ease);
+        box-shadow:
+          0 1px 2px oklch(30% 0.05 135 / 0.05),
+          0 4px 12px oklch(30% 0.05 135 / 0.06);
+      }
+
+      .area-region:hover {
+        transform: translateY(-4px);
+        box-shadow:
+          0 1px 2px oklch(30% 0.05 135 / 0.06),
+          0 8px 24px oklch(30% 0.05 135 / 0.1),
+          0 20px 48px oklch(30% 0.05 135 / 0.06);
+      }
+
+      .area-region-icon {
+        width: 48px;
+        height: 48px;
+        margin-inline: auto;
+        margin-bottom: clamp(0.75rem, 1.5vw, 1rem);
+        background: oklch(72% 0.12 75 / 0.12);
+        border-radius: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--dark);
+      }
+
+      .area-region-icon svg { width: 22px; height: 22px; }
+
+      .area-region h4 {
+        font-family: 'Manrope', sans-serif;
+        font-size: clamp(0.95rem, 1.3vw, 1.1rem);
+        font-weight: 700;
+        color: var(--dark-deeper);
+      }
+
+      /* ===== TEAM ===== */
+      .team {
+        background: var(--dark);
+        padding-block: clamp(5rem, 10vw, 9rem);
+        position: relative;
+      }
+
+      .team-inner {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas: "info members";
+        gap: clamp(3rem, 6vw, 6rem);
+        align-items: start;
+      }
+
+      .team-info { grid-area: info; }
+      .team-members { grid-area: members; }
+
+      .team-label {
+        font-size: clamp(0.68rem, 0.9vw, 0.75rem);
+        font-weight: 700;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: var(--accent);
+        margin-bottom: clamp(0.75rem, 1.5vw, 1rem);
+      }
+
+      .team-title {
+        font-family: 'Manrope', sans-serif;
+        font-size: clamp(2rem, 4vw, 3.2rem);
+        font-weight: 800;
+        line-height: 1.05;
+        letter-spacing: -0.03em;
+        color: var(--white);
+        margin-bottom: clamp(1.25rem, 2.5vw, 2rem);
+      }
+
+      .team-desc {
+        font-size: clamp(0.88rem, 1.1vw, 0.95rem);
+        color: var(--white-70);
+        line-height: 1.75;
+        max-width: 48ch;
+        margin-bottom: clamp(2rem, 3vw, 2.5rem);
+      }
+
+      .team-quote {
+        border-left: 3px solid var(--accent);
+        padding-left: clamp(1rem, 2vw, 1.5rem);
+        margin-top: clamp(1rem, 2vw, 1.5rem);
+      }
+
+      .team-quote p {
+        font-size: clamp(0.88rem, 1.1vw, 0.95rem);
+        color: var(--white-70);
+        line-height: 1.7;
+        font-style: italic;
+      }
+
+      .team-quote cite {
+        display: block;
+        margin-top: 0.5rem;
+        font-size: 0.8rem;
+        font-style: normal;
+        font-weight: 600;
+        color: var(--accent);
+        letter-spacing: 0.02em;
+      }
+
+      .team-member {
+        background: var(--white-05);
+        border: 1px solid var(--white-10);
+        border-radius: 12px;
+        padding: clamp(2rem, 3.5vw, 3rem);
+        margin-bottom: clamp(1rem, 2vw, 1.5rem);
+        transition: background 0.4s var(--ease), border-color 0.4s var(--ease);
+      }
+
+      .team-member:hover {
+        background: var(--white-10);
+        border-color: var(--white-20);
+      }
+
+      .team-member-header {
+        display: flex;
+        align-items: center;
+        gap: clamp(1rem, 2vw, 1.5rem);
+        margin-bottom: clamp(1rem, 1.5vw, 1.25rem);
+      }
+
+      .team-member-avatar {
+        width: clamp(52px, 5vw, 64px);
+        height: clamp(52px, 5vw, 64px);
+        border-radius: 50%;
+        background: oklch(72% 0.12 75 / 0.15);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+      }
+
+      .team-member-avatar span {
+        font-family: 'Manrope', sans-serif;
+        font-size: clamp(1.1rem, 1.6vw, 1.3rem);
+        font-weight: 800;
+        color: var(--accent);
+      }
+
+      .team-member-name {
+        font-family: 'Manrope', sans-serif;
+        font-size: clamp(1.1rem, 1.6vw, 1.3rem);
+        font-weight: 700;
+        color: var(--white);
+        margin-bottom: 0.15rem;
+      }
+
+      .team-member-role {
+        font-size: clamp(0.78rem, 1vw, 0.85rem);
+        color: var(--accent);
+        font-weight: 600;
+        letter-spacing: 0.02em;
+      }
+
+      .team-member-bio {
+        font-size: clamp(0.85rem, 1.1vw, 0.92rem);
+        color: var(--white-70);
+        line-height: 1.7;
+      }
+
+      /* ===== CTA ===== */
+      .cta {
+        background: var(--dark-deeper);
+        padding-block: clamp(5rem, 9vw, 8rem);
+        position: relative;
+        overflow: hidden;
+      }
+
+      .cta::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background:
+          radial-gradient(ellipse 80% 60% at 20% 50%, oklch(45% 0.12 135 / 0.25), transparent),
+          radial-gradient(ellipse 60% 80% at 80% 50%, oklch(72% 0.12 75 / 0.08), transparent);
+        pointer-events: none;
+      }
+
+      .cta-layout {
+        position: relative;
+        z-index: 2;
+        display: grid;
+        grid-template-columns: 1.2fr 0.8fr;
+        grid-template-areas: "text actions";
+        gap: clamp(2rem, 5vw, 4rem);
+        align-items: center;
+      }
+
+      .cta-text { grid-area: text; }
+      .cta-actions-col { grid-area: actions; }
+
+      .cta-title {
+        font-family: 'Manrope', sans-serif;
+        font-size: clamp(2rem, 4.5vw, 3.5rem);
+        font-weight: 800;
+        line-height: 1.05;
+        letter-spacing: -0.03em;
+        color: var(--white);
+        margin-bottom: clamp(0.75rem, 1.5vw, 1rem);
+      }
+
+      .cta-subtitle {
+        font-size: clamp(0.88rem, 1.1vw, 0.95rem);
+        color: var(--white-70);
+        line-height: 1.7;
+        max-width: 45ch;
+      }
+
+      .cta-actions {
+        display: flex;
+        flex-direction: column;
+        gap: clamp(0.75rem, 1.5vw, 1rem);
+      }
+
+      .cta-btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.6rem;
+        padding: clamp(0.9rem, 1.5vw, 1.1rem) clamp(1.5rem, 3vw, 2.5rem);
+        font-family: inherit;
+        font-size: clamp(0.88rem, 1.1vw, 0.95rem);
+        font-weight: 700;
+        text-decoration: none;
+        border-radius: 8px;
+        border: none;
+        cursor: pointer;
+        letter-spacing: 0.01em;
+        transition: background 0.3s var(--ease), transform 0.3s var(--ease), color 0.3s var(--ease);
+      }
+
+      .cta-btn:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+      .cta-btn:active { transform: translateY(0); }
+
+      .cta-btn-fill {
+        background: var(--accent);
+        color: var(--dark-deeper);
+      }
+
+      .cta-btn-fill:hover {
+        background: var(--accent-hover);
+        transform: translateY(-2px);
+      }
+
+      .cta-btn-outline {
+        background: transparent;
+        color: var(--white);
+        border: 1px solid var(--white-20);
+      }
+
+      .cta-btn-outline:hover {
+        background: var(--white-10);
+        border-color: var(--white-50);
+        transform: translateY(-2px);
+      }
+
+      .cta-btn svg { width: 18px; height: 18px; }
+
+      /* ===== FOOTER ===== */
+      .footer {
+        background: var(--dark-deeper);
+        padding-block: clamp(3.5rem, 6vw, 5.5rem) clamp(1.5rem, 3vw, 2rem);
+        border-top: 1px solid var(--white-10);
+      }
+
+      .footer-top {
+        display: grid;
+        grid-template-columns: 1.8fr 1fr 1fr 1fr;
+        grid-template-areas: "brand services regions contact";
+        gap: clamp(2rem, 4vw, 3rem);
+        padding-bottom: clamp(2.5rem, 4vw, 3.5rem);
+        border-bottom: 1px solid var(--white-10);
+      }
+
+      .footer-brand { grid-area: brand; }
+
+      .footer-brand .nav-logo {
+        display: inline-block;
+        margin-bottom: 1rem;
+        font-size: 1.3rem;
+      }
+
+      .footer-brand p {
+        font-size: 0.85rem;
+        color: var(--white-50);
+        line-height: 1.65;
+        max-width: 280px;
+      }
+
+      .footer-col h4 {
+        font-size: 0.72rem;
+        font-weight: 700;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: var(--white-70);
+        margin-bottom: 1rem;
+      }
+
+      .footer-col ul { list-style: none; }
+      .footer-col li { margin-bottom: 0.35rem; }
+
+      .footer-col a {
+        font-size: 0.82rem;
+        color: var(--white-50);
+        text-decoration: none;
+        transition: color 0.3s var(--ease);
+      }
+
+      .footer-col a:hover { color: var(--accent); }
+      .footer-col a:focus-visible { outline: 1px solid var(--accent); outline-offset: 2px; }
+
+      .footer-col:nth-child(2) { grid-area: services; }
+      .footer-col:nth-child(3) { grid-area: regions; }
+      .footer-col:nth-child(4) { grid-area: contact; }
+
+      .footer-bottom {
+        padding-top: clamp(1.5rem, 3vw, 2rem);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 1rem;
+      }
+
+      .footer-copy {
+        font-size: 0.75rem;
+        color: var(--white-50);
+      }
+
+      .footer-social {
+        display: flex;
+        gap: 1rem;
+      }
+
+      .footer-social a {
+        color: var(--white-50);
+        transition: color 0.3s var(--ease), transform 0.3s var(--ease);
+      }
+
+      .footer-social a:hover { color: var(--accent); transform: translateY(-2px); }
+      .footer-social a:focus-visible { outline: 1px solid var(--accent); outline-offset: 2px; }
+      .footer-social svg { width: 18px; height: 18px; }
+
+      /* ===== SCROLL REVEAL ===== */
+      .reveal {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+
+      .reveal.is-visible {
+        opacity: 1;
+        transform: translateY(0);
+        transition: opacity 0.7s var(--ease), transform 0.7s var(--ease);
+      }
+    }
+
+    @layer utilities {
+      @media (max-width: 1024px) {
+        .about-hero-inner {
+          grid-template-columns: 1fr;
+          grid-template-areas: "text" "image";
+          gap: 2.5rem;
+        }
+        .story-inner {
+          grid-template-columns: 1fr;
+          grid-template-areas: "label" "content";
+          gap: 1.5rem;
+        }
+        .story-label { position: static; }
+        .cert-inner {
+          grid-template-columns: 1fr;
+          grid-template-areas: "left" "right";
+          gap: 2.5rem;
+        }
+        .area-regions { grid-template-columns: repeat(3, 1fr); }
+        .team-inner {
+          grid-template-columns: 1fr;
+          grid-template-areas: "info" "members";
+          gap: 2.5rem;
+        }
+        .cta-layout {
+          grid-template-columns: 1fr;
+          grid-template-areas: "text" "actions";
+          gap: 2rem;
+        }
+        .footer-top { grid-template-columns: 1fr 1fr; grid-template-areas: "brand brand" "services regions" "contact contact"; }
+      }
+
+      @media (max-width: 768px) {
+        .nav-menu { display: none; }
+        .mobile-toggle { display: block; }
+        .nav-menu.mobile-open {
+          display: flex; flex-direction: column; position: absolute; top: 72px; left: 0; right: 0;
+          background: oklch(33% 0.06 135 / 0.97); backdrop-filter: blur(24px);
+          padding: 1.5rem clamp(1.5rem, 4vw, 3rem); gap: 0.25rem;
+          border-top: 1px solid var(--white-10); max-height: calc(100vh - 72px); overflow-y: auto;
+        }
+        .nav-menu.mobile-open .nav-dropdown {
+          position: static; transform: none; opacity: 1; visibility: visible; pointer-events: auto;
+          min-width: 0; border: none; box-shadow: none; background: var(--white-05);
+          border-radius: 8px; padding: 0.5rem; margin-top: 0.25rem; display: none;
+        }
+        .nav-menu.mobile-open .nav-menu-item.open .nav-dropdown { display: block; }
+        .nav-menu.mobile-open .nav-dropdown-grid { grid-template-columns: 1fr !important; min-width: 0 !important; }
+        .nav-menu.mobile-open .nav-drop-featured { grid-row: auto; min-height: auto; padding: 0.75rem; }
+
+        .about-hero-image-wrap { aspect-ratio: 3 / 4; }
+
+        .story-body { columns: 1; }
+
+        .value-item {
+          grid-template-columns: clamp(2.5rem, 5vw, 3.5rem) 1fr;
+          grid-template-areas: "number title" ". desc";
+        }
+
+        .area-regions { grid-template-columns: 1fr 1fr; }
+
+        .cta-layout { text-align: center; }
+        .cta-subtitle { margin-inline: auto; }
+
+        .footer-top {
+          grid-template-columns: 1fr;
+          grid-template-areas: "brand" "services" "regions" "contact";
+        }
+      }
+
+      @media (max-width: 480px) {
+        .area-regions { grid-template-columns: 1fr; }
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ===== NAV ===== -->
+  <nav class="nav" id="nav" role="navigation">
+    <div class="nav-inner">
+      <a href="/" class="nav-logo">TOIT<span>EX</span></a>
+
+      <button class="mobile-toggle" id="mobileToggle" aria-label="Menu">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h18M3 6h18M3 18h18"/></svg>
+      </button>
+
+      <ul class="nav-menu" id="navMenu">
+        <li class="nav-menu-item" data-dropdown>
+          <button class="nav-menu-trigger" aria-expanded="false" aria-haspopup="true">
+            <span class="fr">Services</span><span class="en">Services</span>
+            <svg class="chevron" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 4l4 4 4-4"/></svg>
+          </button>
+          <div class="nav-dropdown">
+            <div class="nav-dropdown-grid" style="grid-template-columns:.85fr 1fr 1fr">
+              <a href="/nos-services.html" class="nav-drop-featured">
+                <div class="nav-drop-featured-title">TOIT<span style="font-weight:400;opacity:0.6">EX</span></div>
+                <p class="nav-drop-featured-desc">
+                  <span class="fr">Services complets de toiture pour le résidentiel et le commercial dans le Grand Montréal.</span>
+                  <span class="en">Complete roofing services for residential and commercial in Greater Montréal.</span>
+                </p>
+              </a>
+              <a href="/toits-plats.html" class="nav-drop-item">
+                <div class="nav-drop-item-title"><span class="fr">Toits plats</span><span class="en">Flat Roofs</span></div>
+                <div class="nav-drop-item-desc"><span class="fr">Membrane élastomère — 25 à 40 ans de durabilité</span><span class="en">Elastomeric membrane — 25-40 year durability</span></div>
+              </a>
+              <a href="/reparation-toiture.html" class="nav-drop-item">
+                <div class="nav-drop-item-title"><span class="fr">Réparation</span><span class="en">Repair</span></div>
+                <div class="nav-drop-item-desc"><span class="fr">Infiltrations, membranes et bardeaux endommagés</span><span class="en">Leaks, damaged membranes and shingles</span></div>
+              </a>
+              <a href="/bardeaux-asphalte.html" class="nav-drop-item">
+                <div class="nav-drop-item-title"><span class="fr">Bardeaux d'asphalte</span><span class="en">Asphalt Shingles</span></div>
+                <div class="nav-drop-item-desc"><span class="fr">Le classique pour les toits en pente résidentiels</span><span class="en">The classic for residential sloped roofs</span></div>
+              </a>
+              <a href="/isolation-toiture.html" class="nav-drop-item">
+                <div class="nav-drop-item-title">Isolation</div>
+                <div class="nav-drop-item-desc"><span class="fr">Efficacité énergétique et prévention des glaces</span><span class="en">Energy efficiency and ice prevention</span></div>
+              </a>
+              <a href="/urgence-toiture.html" class="nav-drop-item">
+                <div class="nav-drop-item-title"><span class="fr">Urgence 24/7</span><span class="en">24/7 Emergency</span></div>
+                <div class="nav-drop-item-desc"><span class="fr">Intervention rapide — tempêtes, infiltrations</span><span class="en">Fast response — storms, leaks</span></div>
+              </a>
+              <a href="/deneigement-toiture.html" class="nav-drop-item">
+                <div class="nav-drop-item-title"><span class="fr">Déneigement</span><span class="en">Snow Removal</span></div>
+                <div class="nav-drop-item-desc"><span class="fr">Protection contre les surcharges structurelles</span><span class="en">Protection against structural overload</span></div>
+              </a>
+              <a href="/type-de-toiture.html" class="nav-drop-item">
+                <div class="nav-drop-item-title"><span class="fr">Types de toiture</span><span class="en">Roofing Types</span></div>
+                <div class="nav-drop-item-desc"><span class="fr">Guide complet — élastomère, TPO, bardeaux, tôle</span><span class="en">Complete guide — elastomeric, TPO, shingles, metal</span></div>
+              </a>
+            </div>
+          </div>
+        </li>
+        <li class="nav-menu-item" data-dropdown>
+          <button class="nav-menu-trigger" aria-expanded="false" aria-haspopup="true">
+            <span class="fr">Régions</span><span class="en">Regions</span>
+            <svg class="chevron" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 4l4 4 4-4"/></svg>
+          </button>
+          <div class="nav-dropdown" style="min-width:360px">
+            <div class="nav-dropdown-grid">
+              <a href="/couvreur-montreal.html" class="nav-drop-item">
+                <div class="nav-drop-item-title">Montréal</div>
+                <div class="nav-drop-item-desc"><span class="fr">Centre, Est, Nord, Ouest, Sud</span><span class="en">Centre, East, North, West, South</span></div>
+              </a>
+              <a href="/couvreur-laval.html" class="nav-drop-item">
+                <div class="nav-drop-item-title">Laval</div>
+                <div class="nav-drop-item-desc"><span class="fr">Tous les quartiers</span><span class="en">All neighbourhoods</span></div>
+              </a>
+              <a href="/couvreur-rive-nord.html" class="nav-drop-item">
+                <div class="nav-drop-item-title"><span class="fr">Rive-Nord</span><span class="en">North Shore</span></div>
+                <div class="nav-drop-item-desc">Boisbriand, Blainville, Terrebonne…</div>
+              </a>
+              <a href="#zones" class="nav-drop-item">
+                <div class="nav-drop-item-title"><span class="fr">Laurentides</span><span class="en">Laurentians</span></div>
+                <div class="nav-drop-item-desc">Saint-Jérôme, Sainte-Thérèse…</div>
+              </a>
+            </div>
+          </div>
+        </li>
+        <li class="nav-menu-item"><a href="/apropos.html" class="nav-menu-link"><span class="fr">À propos</span><span class="en">About</span></a></li>
+        <li class="nav-menu-item"><a href="/financement.html" class="nav-menu-link"><span class="fr">Financement</span><span class="en">Financing</span></a></li>
+        <li class="nav-menu-item"><a href="/nous-joindre.html" class="nav-menu-link">Contact</a></li>
+      </ul>
+
+      <div class="nav-right">
+        <div class="lang-switch">
+          <button id="langFr" class="active" onclick="setLang('fr')">FR</button>
+          <button id="langEn" onclick="setLang('en')">EN</button>
+        </div>
+        <a href="tel:4509490900" class="btn-primary">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+          <span class="fr">Soumission gratuite</span>
+          <span class="en">Free Quote</span>
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ===== ABOUT HERO ===== -->
+  <section class="about-hero">
+    <div class="container about-hero-inner">
+      <div class="about-hero-text reveal">
+        <span class="about-hero-label">
+          <span class="fr">À propos de nous</span>
+          <span class="en">About us</span>
+        </span>
+        <h1 class="syne">
+          <span class="fr">Bâtir l'avenir, un toit à la fois</span>
+          <span class="en">Building the future, one roof at a time</span>
+        </h1>
+        <p class="about-hero-subtitle">
+          <span class="fr">Depuis Boisbriand, notre équipe de couvreurs certifiés accompagne les propriétaires et gestionnaires du Grand Montréal avec un service rigoureux, transparent et axé sur la durabilité. Chaque projet est une promesse tenue.</span>
+          <span class="en">From our base in Boisbriand, our team of certified roofers serves homeowners and property managers across Greater Montreal with rigorous, transparent service focused on lasting results. Every project is a promise kept.</span>
+        </p>
+      </div>
+      <div class="about-hero-image reveal">
+        <div class="about-hero-image-wrap">
+          <img src="images/TOITEX_09_54_08.016.jpg" alt="Équipe Toitex en uniformes verts sur un chantier de toiture" width="800" height="1000">
+          <div class="about-hero-badge">
+            <div class="about-hero-badge-rating">
+              <div class="about-hero-badge-stars">
+                <svg viewBox="0 0 20 20" fill="currentColor"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                <svg viewBox="0 0 20 20" fill="currentColor"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                <svg viewBox="0 0 20 20" fill="currentColor"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                <svg viewBox="0 0 20 20" fill="currentColor"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                <svg viewBox="0 0 20 20" fill="currentColor" opacity="0.4"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+              </div>
+              <span class="about-hero-badge-score">4.7/5</span>
+            </div>
+            <span class="about-hero-badge-label">Google Reviews (6 <span class="fr">avis</span><span class="en">reviews</span>)</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== OUR STORY ===== -->
+  <section class="story">
+    <div class="container story-inner">
+      <div class="story-label-col">
+        <span class="story-label reveal">
+          <span class="fr">Notre histoire</span>
+          <span class="en">Our story</span>
+        </span>
+      </div>
+      <div class="story-content-col">
+        <h2 class="story-lead reveal">
+          <span class="fr">Une entreprise enracinée dans le savoir-faire et le souci du travail bien fait.</span>
+          <span class="en">A company rooted in craftsmanship and a commitment to work done right.</span>
+        </h2>
+        <div class="story-body reveal">
+          <p>
+            <span class="fr">Toitex inc. est née d'une conviction simple : chaque propriétaire mérite un toit posé avec le même soin que s'il s'agissait du nôtre. Basée à Boisbriand, au cœur de la Rive-Nord de Montréal, notre entreprise rassemble une équipe de couvreurs passionnés, formés aux techniques les plus récentes et engagés dans la qualité totale. Que ce soit pour une résidence unifamiliale ou un bâtiment commercial à plusieurs étages, nous apportons la même rigueur à chaque intervention.</span>
+            <span class="en">Toitex inc. was born from a simple conviction: every property owner deserves a roof installed with the same care as if it were our own. Based in Boisbriand, in the heart of Montreal's North Shore, our company brings together a team of passionate roofers trained in the latest techniques and committed to total quality. Whether for a single-family home or a multi-storey commercial building, we bring the same rigor to every project.</span>
+          </p>
+          <p>
+            <span class="fr">Notre expertise couvre l'ensemble du spectre de la toiture : installation de membranes élastomères pour les toits plats, pose de bardeaux d'asphalte, réparations d'urgence, inspections préventives, isolation thermique et déneigement hivernal. Chaque matériau que nous utilisons est sélectionné pour sa durabilité et sa performance face aux conditions climatiques exigeantes du Québec — des vagues de chaleur estivales aux tempêtes de verglas hivernales.</span>
+            <span class="en">Our expertise spans the full roofing spectrum: elastomeric membrane installation for flat roofs, asphalt shingle applications, emergency repairs, preventive inspections, thermal insulation, and winter snow removal. Every material we use is selected for its durability and performance against Quebec's demanding climate — from summer heat waves to winter ice storms.</span>
+          </p>
+          <p>
+            <span class="fr">Ce qui distingue Toitex, c'est notre approche centrée sur le client. Nous croyons à la transparence totale : des estimations détaillées, des délais respectés et un chantier laissé impeccable. Nos clients le remarquent — avec une note de 4,7/5 sur Google, les retours sont unanimes sur notre professionnalisme, notre rapidité d'exécution et la propreté de nos chantiers.</span>
+            <span class="en">What sets Toitex apart is our client-centered approach. We believe in total transparency: detailed estimates, respected timelines, and worksites left spotless. Our clients notice — with a 4.7/5 rating on Google, feedback is unanimous about our professionalism, speed of execution, and clean worksites.</span>
+          </p>
+          <p>
+            <span class="fr">Nous desservons fièrement le Grand Montréal, de l'île de Montréal jusqu'à Laval, la Rive-Nord, les Laurentides et Lanaudière. Cette couverture régionale nous permet de répondre rapidement aux urgences et de maintenir des relations de proximité avec nos clients. Chez Toitex, chaque toit est un engagement, et chaque client devient un ambassadeur de notre travail.</span>
+            <span class="en">We proudly serve Greater Montreal, from the island of Montreal to Laval, the North Shore, the Laurentians, and Lanaudiere. This regional coverage allows us to respond quickly to emergencies and maintain close relationships with our clients. At Toitex, every roof is a commitment, and every client becomes an ambassador of our work.</span>
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== VALUES — numbered editorial ===== -->
+  <section class="values">
+    <div class="container">
+      <div class="values-header reveal">
+        <span class="values-label">
+          <span class="fr">Nos valeurs</span>
+          <span class="en">Our values</span>
+        </span>
+        <h2 class="values-title">
+          <span class="fr">Les principes qui guident chaque projet</span>
+          <span class="en">The principles guiding every project</span>
+        </h2>
+      </div>
+
+      <div class="value-item reveal">
+        <span class="value-number">01</span>
+        <div class="value-title-col">
+          <h3 class="value-title">
+            <span class="fr">Qualité sans compromis</span>
+            <span class="en">Uncompromising quality</span>
+          </h3>
+        </div>
+        <div class="value-desc-col">
+          <p class="value-desc">
+            <span class="fr">Chaque membrane posée, chaque bardeau cloué respecte les plus hauts standards de l'industrie. Nous sélectionnons nos matériaux avec exigence et nos techniques sont constamment mises à jour pour refléter les meilleures pratiques. Un toit signé Toitex, c'est un toit qui dure.</span>
+            <span class="en">Every membrane laid, every shingle nailed meets the highest industry standards. We select our materials with exacting care and continuously update our techniques to reflect best practices. A roof by Toitex is a roof built to last.</span>
+          </p>
+        </div>
+      </div>
+
+      <div class="value-item reveal">
+        <span class="value-number">02</span>
+        <div class="value-title-col">
+          <h3 class="value-title">
+            <span class="fr">Intégrité et transparence</span>
+            <span class="en">Integrity and transparency</span>
+          </h3>
+        </div>
+        <div class="value-desc-col">
+          <p class="value-desc">
+            <span class="fr">Pas de surprises, pas de frais cachés. Nous vous présentons un devis clair et détaillé avant chaque intervention. Notre licence RBQ et nos assurances complètes garantissent que vous faites affaire avec un entrepreneur légitime et responsable. La confiance se mérite, et nous travaillons chaque jour pour la conserver.</span>
+            <span class="en">No surprises, no hidden fees. We provide a clear, detailed quote before every project. Our RBQ license and comprehensive insurance ensure you're dealing with a legitimate, responsible contractor. Trust is earned, and we work every day to keep it.</span>
+          </p>
+        </div>
+      </div>
+
+      <div class="value-item reveal">
+        <span class="value-number">03</span>
+        <div class="value-title-col">
+          <h3 class="value-title">
+            <span class="fr">Rapidité d'exécution</span>
+            <span class="en">Speed of execution</span>
+          </h3>
+        </div>
+        <div class="value-desc-col">
+          <p class="value-desc">
+            <span class="fr">Nous comprenons qu'un toit qui fuit n'attend pas. C'est pourquoi nous offrons un service d'urgence réactif et des délais d'intervention parmi les plus courts de la région. Notre équipe est organisée pour mobiliser rapidement les ressources nécessaires, sans jamais sacrifier la qualité du résultat final.</span>
+            <span class="en">We understand that a leaking roof can't wait. That's why we offer responsive emergency service and some of the shortest response times in the region. Our team is organized to quickly mobilize the necessary resources without ever sacrificing the quality of the final result.</span>
+          </p>
+        </div>
+      </div>
+
+      <div class="value-item reveal">
+        <span class="value-number">04</span>
+        <div class="value-title-col">
+          <h3 class="value-title">
+            <span class="fr">Chantiers impeccables</span>
+            <span class="en">Spotless worksites</span>
+          </h3>
+        </div>
+        <div class="value-desc-col">
+          <p class="value-desc">
+            <span class="fr">Un bon couvreur ne se mesure pas seulement à la qualité de sa pose, mais aussi à l'état dans lequel il laisse votre propriété. Chez Toitex, nous prenons soin de protéger votre terrain, vos aménagements paysagers et vos entrées. À la fin de chaque projet, vous ne trouverez aucun débris — seulement un toit neuf et un terrain propre.</span>
+            <span class="en">A good roofer isn't measured only by the quality of the install, but also by how they leave your property. At Toitex, we take care to protect your yard, landscaping, and driveways. At the end of every project, you'll find no debris — just a new roof and a clean property.</span>
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CERTIFICATIONS ===== -->
+  <section class="certifications">
+    <div class="container cert-inner">
+      <div class="cert-left reveal">
+        <span class="cert-label">
+          <span class="fr">Certifications et garanties</span>
+          <span class="en">Certifications and guarantees</span>
+        </span>
+        <h2 class="cert-title">
+          <span class="fr">Licencié, assuré, certifié — votre tranquillité d'esprit assurée</span>
+          <span class="en">Licensed, insured, certified — your peace of mind guaranteed</span>
+        </h2>
+        <p class="cert-desc">
+          <span class="fr">Confier votre toiture à un entrepreneur certifié, c'est s'assurer d'un travail conforme aux normes, couvert par des garanties réelles et réalisé par des professionnels qualifiés. Toitex détient toutes les accréditations requises pour exercer au Québec.</span>
+          <span class="en">Entrusting your roof to a certified contractor means ensuring work that meets standards, is covered by real warranties, and is carried out by qualified professionals. Toitex holds all the credentials required to operate in Quebec.</span>
+        </p>
+      </div>
+      <div class="cert-right">
+        <div class="cert-items">
+          <div class="cert-card reveal">
+            <div class="cert-card-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            </div>
+            <h4>
+              <span class="fr">Licence RBQ</span>
+              <span class="en">RBQ License</span>
+            </h4>
+            <p>
+              <span class="fr">Licence active 5824-2371-01 délivrée par la Régie du bâtiment du Québec. Conformité garantie pour tous les travaux résidentiels et commerciaux.</span>
+              <span class="en">Active license 5824-2371-01 issued by the Regie du batiment du Quebec. Guaranteed compliance for all residential and commercial work.</span>
+            </p>
+          </div>
+          <div class="cert-card reveal">
+            <div class="cert-card-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg>
+            </div>
+            <h4>
+              <span class="fr">Assurance responsabilité complète</span>
+              <span class="en">Full liability insurance</span>
+            </h4>
+            <p>
+              <span class="fr">Couverture d'assurance responsabilité civile et professionnelle complète. Protection pour vous et votre propriété tout au long des travaux et après la livraison.</span>
+              <span class="en">Complete civil and professional liability insurance coverage. Protection for you and your property throughout the work and after delivery.</span>
+            </p>
+          </div>
+          <div class="cert-card reveal">
+            <div class="cert-card-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+            </div>
+            <h4>
+              <span class="fr">Garantie sur les travaux</span>
+              <span class="en">Work warranty</span>
+            </h4>
+            <p>
+              <span class="fr">Garantie écrite sur la main-d'œuvre et les matériaux. Nous répondons de la qualité de notre travail avec des conditions claires et un suivi post-installation attentif.</span>
+              <span class="en">Written warranty on labor and materials. We stand behind the quality of our work with clear terms and attentive post-installation follow-up.</span>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SERVICE AREA ===== -->
+  <section class="service-area">
+    <div class="container area-inner">
+      <span class="area-label reveal">
+        <span class="fr">Zones desservies</span>
+        <span class="en">Service area</span>
+      </span>
+      <h2 class="area-title reveal">
+        <span class="fr">Partout dans le Grand Montréal</span>
+        <span class="en">Across Greater Montreal</span>
+      </h2>
+      <p class="area-desc reveal">
+        <span class="fr">De notre siège à Boisbriand, nous couvrons l'ensemble du Grand Montréal avec rapidité et efficacité. Nos équipes se déplacent chaque jour dans ces cinq grandes régions pour servir nos clients résidentiels et commerciaux.</span>
+        <span class="en">From our headquarters in Boisbriand, we cover all of Greater Montreal with speed and efficiency. Our teams travel daily across these five major regions to serve our residential and commercial clients.</span>
+      </p>
+      <div class="area-regions">
+        <div class="area-region reveal">
+          <div class="area-region-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          </div>
+          <h4>Montréal</h4>
+        </div>
+        <div class="area-region reveal">
+          <div class="area-region-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          </div>
+          <h4>Laval</h4>
+        </div>
+        <div class="area-region reveal">
+          <div class="area-region-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          </div>
+          <h4><span class="fr">Rive-Nord</span><span class="en">North Shore</span></h4>
+        </div>
+        <div class="area-region reveal">
+          <div class="area-region-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          </div>
+          <h4><span class="fr">Laurentides</span><span class="en">Laurentians</span></h4>
+        </div>
+        <div class="area-region reveal">
+          <div class="area-region-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          </div>
+          <h4>Lanaudière</h4>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== TEAM ===== -->
+  <section class="team">
+    <div class="container team-inner">
+      <div class="team-info reveal">
+        <span class="team-label">
+          <span class="fr">Notre équipe</span>
+          <span class="en">Our team</span>
+        </span>
+        <h2 class="team-title">
+          <span class="fr">Des experts dévoués à votre toiture</span>
+          <span class="en">Experts dedicated to your roof</span>
+        </h2>
+        <p class="team-desc">
+          <span class="fr">Derrière chaque projet Toitex se trouve une équipe soudée, formée et motivée. Laurent et Samuel dirigent les opérations sur le terrain avec une énergie contagieuse et un souci du détail qui transparaît dans chaque réalisation. Leur leadership est régulièrement salué par nos clients dans leurs avis.</span>
+          <span class="en">Behind every Toitex project is a tight-knit, trained, and motivated team. Laurent and Samuel lead field operations with contagious energy and an attention to detail that shows in every completed project. Their leadership is regularly praised by our clients in their reviews.</span>
+        </p>
+        <div class="team-quote">
+          <p>
+            <span class="fr">« Laurent et Samuel sont très professionels et efficaces. Ils ont su répondre à toutes nos questions et ont fait un excellent travail. »</span>
+            <span class="en">"Laurent and Samuel are very professional and efficient. They answered all our questions and did an excellent job."</span>
+          </p>
+          <cite>
+            <span class="fr">— Extrait d'un avis Google</span>
+            <span class="en">— From a Google review</span>
+          </cite>
+        </div>
+      </div>
+
+      <div class="team-members">
+        <div class="team-member reveal">
+          <div class="team-member-header">
+            <div class="team-member-avatar"><span>L</span></div>
+            <div>
+              <h3 class="team-member-name">Laurent</h3>
+              <span class="team-member-role">
+                <span class="fr">Chef d'équipe — Opérations terrain</span>
+                <span class="en">Team Leader — Field Operations</span>
+              </span>
+            </div>
+          </div>
+          <p class="team-member-bio">
+            <span class="fr">Reconnu pour son professionnalisme et sa rigueur, Laurent supervise chaque chantier avec une attention méticuleuse. Sa capacité à coordonner les équipes et à anticiper les défis logistiques assure le bon déroulement de chaque projet, du début à la livraison. Ses clients le décrivent comme réactif, honnête et toujours disponible pour répondre à leurs préoccupations.</span>
+            <span class="en">Known for his professionalism and rigor, Laurent oversees every worksite with meticulous attention. His ability to coordinate teams and anticipate logistical challenges ensures every project runs smoothly from start to finish. Clients describe him as responsive, honest, and always available to address their concerns.</span>
+          </p>
+        </div>
+
+        <div class="team-member reveal">
+          <div class="team-member-header">
+            <div class="team-member-avatar"><span>S</span></div>
+            <div>
+              <h3 class="team-member-name">Samuel</h3>
+              <span class="team-member-role">
+                <span class="fr">Chef d'équipe — Expertise technique</span>
+                <span class="en">Team Leader — Technical Expertise</span>
+              </span>
+            </div>
+          </div>
+          <p class="team-member-bio">
+            <span class="fr">Samuel apporte une expertise technique pointue à chaque projet. Spécialisé dans les installations de membranes élastomères et les systèmes de toiture complexes, il veille à ce que chaque détail soit exécuté selon les normes les plus strictes. Son efficacité et la qualité de son travail sont constamment soulignées par les avis de nos clients satisfaits.</span>
+            <span class="en">Samuel brings sharp technical expertise to every project. Specializing in elastomeric membrane installations and complex roofing systems, he ensures every detail is executed to the strictest standards. His efficiency and the quality of his work are consistently highlighted in our satisfied clients' reviews.</span>
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CTA ===== -->
+  <section class="cta">
+    <div class="container cta-layout">
+      <div class="cta-text reveal">
+        <h2 class="cta-title">
+          <span class="fr">Prêt à protéger votre investissement?</span>
+          <span class="en">Ready to protect your investment?</span>
+        </h2>
+        <p class="cta-subtitle">
+          <span class="fr">Contactez-nous dès aujourd'hui pour une soumission gratuite et sans engagement. Notre équipe est prête à répondre à toutes vos questions.</span>
+          <span class="en">Contact us today for a free, no-obligation quote. Our team is ready to answer all your questions.</span>
+        </p>
+      </div>
+      <div class="cta-actions-col reveal">
+        <div class="cta-actions">
+          <a href="tel:4509490900" class="cta-btn cta-btn-fill">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+            <span class="fr">Soumission gratuite — (450) 949-0900</span>
+            <span class="en">Free Quote — (450) 949-0900</span>
+          </a>
+          <a href="mailto:info@toitex.ca" class="cta-btn cta-btn-outline">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            <span>info@toitex.ca</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <a href="/" class="nav-logo">TOIT<span>EX</span></a>
+          <p>
+            <span class="fr">Expert en toiture pour le Grand Montréal. Toit plat, bardeaux d'asphalte, réparation, inspection, isolation et déneigement.</span>
+            <span class="en">Roofing experts for Greater Montréal. Flat roof, asphalt shingles, repair, inspection, insulation and snow removal.</span>
+          </p>
+        </div>
+        <div class="footer-col">
+          <h4>Services</h4>
+          <ul>
+            <li><a href="/#services">Installation</a></li>
+            <li><a href="/#services"><span class="fr">Réparation</span><span class="en">Repair</span></a></li>
+            <li><a href="/#services">Inspection</a></li>
+            <li><a href="/#services"><span class="fr">Réfection</span><span class="en">Re-roofing</span></a></li>
+            <li><a href="/#services">Isolation</a></li>
+            <li><a href="/#services"><span class="fr">Déneigement</span><span class="en">Snow Removal</span></a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4><span class="fr">Régions</span><span class="en">Regions</span></h4>
+          <ul>
+            <li><a href="/#zones">Montréal</a></li>
+            <li><a href="/#zones">Laval</a></li>
+            <li><a href="/#zones"><span class="fr">Rive-Nord</span><span class="en">North Shore</span></a></li>
+            <li><a href="/#zones"><span class="fr">Laurentides</span><span class="en">Laurentians</span></a></li>
+            <li><a href="/#zones">Lanaudière</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <ul>
+            <li><a href="tel:4509490900">(450) 949-0900</a></li>
+            <li><a href="mailto:info@toitex.ca">info@toitex.ca</a></li>
+            <li style="color:var(--white-50);font-size:0.82rem;margin-top:0.5rem;line-height:1.5;">100 Rue Prévost<br>Boisbriand, QC<br>J7G 2S2</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span class="footer-copy">© 2026 Toitex inc. <span class="fr">Tous droits réservés.</span><span class="en">All rights reserved.</span> RBQ 5824-2371-01</span>
+        <div class="footer-social">
+          <a href="https://facebook.com/toitex.expertcouvreur" aria-label="Facebook" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+          </a>
+          <a href="https://instagram.com/toitex_" aria-label="Instagram" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ===== SCRIPTS ===== -->
+  <script>
+    // Language toggle
+    function setLang(lang) {
+      document.documentElement.classList.remove('lang-fr', 'lang-en');
+      document.documentElement.classList.add('lang-' + lang);
+      document.documentElement.lang = lang;
+      document.getElementById('langFr').classList.toggle('active', lang === 'fr');
+      document.getElementById('langEn').classList.toggle('active', lang === 'en');
+
+      document.title = lang === 'en'
+        ? 'About — Toitex | Roofing Experts, Greater Montreal'
+        : 'À propos — Toitex | Expert en Toiture, Grand Montréal';
+
+      document.querySelector('meta[name="description"]').content = lang === 'en'
+        ? 'Discover Toitex, a team of certified roofers based in Boisbriand. Residential and commercial roofing across Greater Montreal. RBQ 5824-2371-01.'
+        : 'Découvrez Toitex, équipe de couvreurs certifiés basée à Boisbriand. Toiture résidentielle et commerciale pour le Grand Montréal. RBQ 5824-2371-01.';
+
+      history.replaceState(null, '', lang === 'fr' ? '/apropos.html' : '/apropos.html#en');
+    }
+
+    if (location.hash === '#en') setLang('en');
+
+    // Nav scroll
+    const nav = document.getElementById('nav');
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('scrolled', window.scrollY > 50);
+    }, { passive: true });
+
+    // Mobile menu
+    document.getElementById('mobileToggle').addEventListener('click', () => {
+      document.getElementById('navMenu').classList.toggle('mobile-open');
+    });
+
+    // Dropdown menus
+    document.querySelectorAll('[data-dropdown]').forEach(item => {
+      const trigger = item.querySelector('.nav-menu-trigger');
+      let closeTimeout;
+      function openDropdown() {
+        clearTimeout(closeTimeout);
+        document.querySelectorAll('[data-dropdown].open').forEach(other => {
+          if (other !== item) { other.classList.remove('open'); other.querySelector('.nav-menu-trigger').setAttribute('aria-expanded', 'false'); }
+        });
+        item.classList.add('open');
+        trigger.setAttribute('aria-expanded', 'true');
+      }
+      function closeDropdown() {
+        closeTimeout = setTimeout(() => { item.classList.remove('open'); trigger.setAttribute('aria-expanded', 'false'); }, 150);
+      }
+      item.addEventListener('mouseenter', openDropdown);
+      item.addEventListener('mouseleave', closeDropdown);
+      trigger.addEventListener('click', (e) => {
+        e.preventDefault();
+        if (item.classList.contains('open')) { item.classList.remove('open'); trigger.setAttribute('aria-expanded', 'false'); }
+        else { openDropdown(); }
+      });
+      item.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') { item.classList.remove('open'); trigger.setAttribute('aria-expanded', 'false'); trigger.focus(); }
+      });
+    });
+    document.addEventListener('click', (e) => {
+      if (!e.target.closest('[data-dropdown]')) {
+        document.querySelectorAll('[data-dropdown].open').forEach(item => { item.classList.remove('open'); item.querySelector('.nav-menu-trigger').setAttribute('aria-expanded', 'false'); });
+      }
+    });
+    document.querySelectorAll('#navMenu a[href]').forEach(a => {
+      a.addEventListener('click', () => { document.getElementById('navMenu').classList.remove('mobile-open'); });
+    });
+
+    // Intersection Observer reveals
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const parent = entry.target.parentElement;
+          const siblings = parent ? Array.from(parent.querySelectorAll('.reveal')) : [];
+          const idx = siblings.indexOf(entry.target);
+          const delay = idx > 0 ? idx * 100 : 0;
+
+          setTimeout(() => {
+            entry.target.classList.add('is-visible');
+          }, delay);
+
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+    document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+  </script>
+</body>
+</html>

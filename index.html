@@ -1,0 +1,2230 @@
+<!DOCTYPE html>
+<html lang="fr" class="lang-fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Toitex — Expert en toit plat à Montréal, Laval et Rive-Nord</title>
+  <meta name="description" content="Toitex, expert en toit plat et toiture résidentielle à Montréal, Laval et Rive-Nord. Soumission gratuite en 24h. Couvreur licencié RBQ.">
+  <meta name="keywords" content="toiture montréal, couvreur montréal, toit plat, membrane élastomère, bardeaux asphalte, réparation toiture, couvreur laval, toiture rive-nord, déneigement toiture, isolation toiture">
+  <link rel="canonical" href="https://toitex.ca/">
+  <link rel="alternate" hreflang="fr" href="https://toitex.ca/">
+  <link rel="alternate" hreflang="en" href="https://toitex.ca/#en">
+
+  <meta property="og:title" content="Toitex — Expert en toit plat à Montréal, Laval et Rive-Nord">
+  <meta property="og:description" content="Expert en toit plat et toiture résidentielle à Montréal, Laval et Rive-Nord. Soumission gratuite en 24h. Couvreur licencié RBQ.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://toitex.ca/">
+  <meta property="og:locale" content="fr_CA">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "RoofingContractor",
+    "name": "Toitex",
+    "url": "https://toitex.ca",
+    "telephone": "+14509490900",
+    "email": "info@toitex.ca",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "100 Rue Prévost",
+      "addressLocality": "Boisbriand",
+      "addressRegion": "QC",
+      "postalCode": "J7G 2S2",
+      "addressCountry": "CA"
+    },
+    "areaServed": ["Montréal","Laval","Rive-Nord","Laurentides","Lanaudière"],
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.7",
+      "reviewCount": "6"
+    }
+  }
+  </script>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- SVG noise filter -->
+  <svg style="position:absolute;width:0;height:0">
+    <filter id="grain"><feTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" stitchTiles="stitch"/><feColorMatrix type="saturate" values="0"/><feBlend in="SourceGraphic" mode="multiply" result="blend"/><feComponentTransfer><feFuncA type="linear" slope="0.08"/></feComponentTransfer></filter>
+  </svg>
+
+  <style>
+    @layer reset, base, layout, components, utilities;
+
+    @layer reset {
+      *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    }
+
+    @layer base {
+      :root {
+        --dark: #567044;
+        --dark-deep: #465c37;
+        --dark-deeper: #3a4e2d;
+        --dark-light: #6a8a55;
+        --accent: oklch(72% 0.12 75);
+        --accent-hover: oklch(65% 0.14 75);
+        --white: #ffffff;
+        --white-95: rgba(255,255,255,0.95);
+        --white-90: rgba(255,255,255,0.9);
+        --white-70: rgba(255,255,255,0.7);
+        --white-50: rgba(255,255,255,0.5);
+        --white-20: rgba(255,255,255,0.2);
+        --white-10: rgba(255,255,255,0.1);
+        --white-05: rgba(255,255,255,0.05);
+        --bg-light: #f2f0eb;
+        --bg-warm: #e8e5de;
+        --text-dark: #2a2a2a;
+        --text-muted: #6a6a6a;
+        --ease: cubic-bezier(0.16, 1, 0.3, 1);
+        --ease-out: cubic-bezier(0, 0, 0.2, 1);
+      }
+
+      html {
+        font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+        scroll-behavior: auto;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+
+      body {
+        overflow-x: hidden;
+        background: var(--dark);
+        color: var(--white);
+      }
+
+      .lang-fr .en { display: none !important; }
+      .lang-en .fr { display: none !important; }
+
+      .syne { font-family: 'Manrope', sans-serif; }
+    }
+
+    @layer layout {
+      .container {
+        max-width: 1400px;
+        margin-inline: auto;
+        padding-inline: clamp(1.5rem, 4vw, 3rem);
+      }
+
+      .grain::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        filter: url(#grain);
+        pointer-events: none;
+        z-index: 1;
+      }
+    }
+
+    @layer components {
+
+      /* ===== NAV ===== */
+      .nav {
+        position: fixed;
+        top: 0; left: 0; right: 0;
+        z-index: 100;
+        height: 72px;
+        display: flex;
+        align-items: center;
+        transition: background-color 0.4s var(--ease), backdrop-filter 0.4s var(--ease);
+      }
+
+      .nav.scrolled {
+        background: oklch(33% 0.06 135 / 0.92);
+        backdrop-filter: blur(24px) saturate(1.4);
+        box-shadow:
+          0 1px 2px oklch(25% 0.05 135 / 0.15),
+          0 4px 16px oklch(25% 0.05 135 / 0.1);
+      }
+
+      .nav-inner {
+        width: 100%;
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 0 clamp(1.5rem, 4vw, 3rem);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      .nav-logo {
+        font-family: 'Manrope', sans-serif;
+        font-size: clamp(1.3rem, 2vw, 1.6rem);
+        font-weight: 800;
+        color: var(--white);
+        text-decoration: none;
+        letter-spacing: -0.03em;
+        text-transform: uppercase;
+      }
+
+      .nav-logo span { font-weight: 400; opacity: 0.7; }
+
+      /* --- Nav menu (shadcn-style) --- */
+      .nav-menu {
+        display: flex;
+        align-items: center;
+        gap: 0.25rem;
+        list-style: none;
+      }
+
+      .nav-menu-item {
+        position: relative;
+      }
+
+      .nav-menu-trigger,
+      .nav-menu-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.35rem;
+        height: 36px;
+        padding: 0 0.85rem;
+        font-family: inherit;
+        font-size: 0.84rem;
+        font-weight: 500;
+        color: var(--white-70);
+        text-decoration: none;
+        letter-spacing: 0.01em;
+        border: none;
+        background: transparent;
+        border-radius: 6px;
+        cursor: pointer;
+        transition: color 0.25s var(--ease), background 0.25s var(--ease);
+      }
+
+      .nav-menu-trigger:hover,
+      .nav-menu-trigger:focus-visible,
+      .nav-menu-trigger[aria-expanded="true"],
+      .nav-menu-link:hover,
+      .nav-menu-link:focus-visible {
+        color: var(--white);
+        background: var(--white-10);
+      }
+
+      .nav-menu-trigger:focus-visible,
+      .nav-menu-link:focus-visible {
+        outline: 2px solid var(--accent);
+        outline-offset: 1px;
+      }
+
+      .nav-menu-trigger svg.chevron {
+        width: 12px;
+        height: 12px;
+        opacity: 0.6;
+        transition: transform 0.3s var(--ease);
+      }
+
+      .nav-menu-trigger[aria-expanded="true"] svg.chevron {
+        transform: rotate(180deg);
+      }
+
+      /* --- Dropdown panel --- */
+      .nav-dropdown {
+        position: absolute;
+        top: calc(100% + 8px);
+        left: 50%;
+        transform: translateX(-50%) translateY(4px);
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+        background: var(--dark-deeper);
+        border: 1px solid var(--white-10);
+        border-radius: 10px;
+        padding: 1rem;
+        min-width: 480px;
+        box-shadow:
+          0 4px 12px oklch(20% 0.05 135 / 0.25),
+          0 16px 40px oklch(20% 0.05 135 / 0.2);
+        transition: opacity 0.2s var(--ease), transform 0.2s var(--ease), visibility 0.2s;
+      }
+
+      .nav-menu-item.open .nav-dropdown {
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+        transform: translateX(-50%) translateY(0);
+      }
+
+      .nav-dropdown-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 0.35rem;
+      }
+
+      .nav-dropdown-grid.three-col {
+        grid-template-columns: 1fr 1fr 1fr;
+        min-width: 540px;
+      }
+
+      /* --- Dropdown item (ListItem pattern) --- */
+      .nav-drop-item {
+        display: block;
+        padding: 0.65rem 0.75rem;
+        border-radius: 8px;
+        text-decoration: none;
+        transition: background 0.2s var(--ease);
+      }
+
+      .nav-drop-item:hover,
+      .nav-drop-item:focus-visible {
+        background: var(--white-10);
+      }
+
+      .nav-drop-item:focus-visible {
+        outline: 2px solid var(--accent);
+        outline-offset: -2px;
+      }
+
+      .nav-drop-item-title {
+        font-size: 0.84rem;
+        font-weight: 600;
+        color: var(--white-95);
+        line-height: 1.2;
+        margin-bottom: 0.2rem;
+      }
+
+      .nav-drop-item-desc {
+        font-size: 0.72rem;
+        color: var(--white-50);
+        line-height: 1.4;
+      }
+
+      /* --- Featured item (left column highlight) --- */
+      .nav-drop-featured {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        padding: 1.25rem 1rem;
+        border-radius: 8px;
+        background: linear-gradient(135deg, var(--dark-light), var(--dark));
+        text-decoration: none;
+        grid-row: span 3;
+        min-height: 180px;
+        transition: background 0.3s var(--ease);
+      }
+
+      .nav-drop-featured:hover {
+        background: linear-gradient(135deg, var(--dark), var(--dark-deep));
+      }
+
+      .nav-drop-featured-title {
+        font-family: 'Manrope', sans-serif;
+        font-size: 1.05rem;
+        font-weight: 800;
+        color: var(--white);
+        line-height: 1.15;
+        letter-spacing: -0.02em;
+        margin-bottom: 0.35rem;
+      }
+
+      .nav-drop-featured-desc {
+        font-size: 0.72rem;
+        color: var(--white-70);
+        line-height: 1.45;
+      }
+
+      .nav-right {
+        display: flex;
+        align-items: center;
+        gap: 1.25rem;
+      }
+
+      .lang-switch {
+        display: flex;
+        background: var(--white-10);
+        border-radius: 6px;
+        padding: 2px;
+      }
+
+      .lang-switch button {
+        padding: 0.3rem 0.6rem;
+        font-family: inherit;
+        font-size: 0.72rem;
+        font-weight: 700;
+        letter-spacing: 0.05em;
+        border: none;
+        border-radius: 4px;
+        background: transparent;
+        color: var(--white-50);
+        cursor: pointer;
+        transition: background 0.3s var(--ease), color 0.3s var(--ease);
+      }
+
+      .lang-switch button.active {
+        background: var(--white-20);
+        color: var(--white);
+      }
+
+      .btn-primary {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0.6rem 1.4rem;
+        background: var(--accent);
+        color: var(--dark-deeper);
+        font-family: inherit;
+        font-size: 0.82rem;
+        font-weight: 700;
+        text-decoration: none;
+        border-radius: 6px;
+        letter-spacing: 0.01em;
+        border: none;
+        cursor: pointer;
+        transition: background 0.3s var(--ease), transform 0.3s var(--ease);
+      }
+
+      .btn-primary:hover {
+        background: var(--accent-hover);
+        transform: translateY(-1px);
+      }
+
+      .btn-primary:focus-visible {
+        outline: 2px solid var(--accent);
+        outline-offset: 3px;
+      }
+
+      .btn-primary:active { transform: translateY(0); }
+
+      .btn-primary svg { width: 15px; height: 15px; }
+
+      .mobile-toggle {
+        display: none;
+        background: none;
+        border: none;
+        color: var(--white);
+        cursor: pointer;
+        padding: 0.5rem;
+      }
+
+      .mobile-toggle svg { width: 24px; height: 24px; }
+
+      /* ===== HERO — Pomerleau-style asymmetric editorial ===== */
+      .hero {
+        position: relative;
+        background: var(--dark);
+        padding-top: 72px;
+        overflow: hidden;
+      }
+
+      .hero-top {
+        display: grid;
+        grid-template-columns: 1.3fr 0.7fr;
+        grid-template-areas: "headline info";
+        gap: clamp(3rem, 6vw, 8rem);
+        align-items: end;
+        padding-block: clamp(3.5rem, 7vw, 6rem) clamp(2rem, 4vw, 3.5rem);
+      }
+
+      .hero-headline { grid-area: headline; }
+      .hero-info { grid-area: info; }
+
+      .hero h1 {
+        font-family: 'Manrope', sans-serif;
+        font-size: clamp(3.2rem, 7.5vw, 6.5rem);
+        font-weight: 800;
+        color: var(--white);
+        line-height: 0.95;
+        letter-spacing: -0.025em;
+      }
+
+      .hero-info p {
+        font-size: clamp(0.88rem, 1.2vw, 0.95rem);
+        font-weight: 400;
+        color: var(--white-70);
+        line-height: 1.7;
+        margin-bottom: 1.75rem;
+      }
+
+      .hero-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.6rem;
+        font-size: 0.9rem;
+        font-weight: 700;
+        color: var(--white);
+        text-decoration: none;
+        letter-spacing: 0.01em;
+        transition: gap 0.4s var(--ease), color 0.3s var(--ease);
+      }
+
+      .hero-link:hover { gap: 1rem; color: var(--accent); }
+      .hero-link:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
+
+      .hero-link svg {
+        width: 20px;
+        height: 20px;
+        transition: transform 0.4s var(--ease);
+      }
+
+      .hero-link:hover svg { transform: translateX(4px); }
+
+      .hero-image-wrap {
+        position: relative;
+      }
+
+      .hero-image {
+        position: relative;
+        width: 100%;
+        aspect-ratio: 2.4 / 1;
+        border-radius: 10px;
+        overflow: hidden;
+      }
+
+      .hero-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center 30%;
+      }
+
+      .hero-image::after {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background:
+          linear-gradient(0deg, oklch(30% 0.06 135 / 0.7) 0%, transparent 35%),
+          linear-gradient(90deg, oklch(30% 0.06 135 / 0.3) 0%, transparent 50%);
+      }
+
+      .hero-overlay {
+        position: absolute;
+        bottom: clamp(1.25rem, 3vw, 2.5rem);
+        left: clamp(1.25rem, 3vw, 2.5rem);
+        z-index: 2;
+      }
+
+      .hero-overlay h3 {
+        font-family: 'Manrope', sans-serif;
+        font-size: clamp(1.1rem, 2vw, 1.5rem);
+        font-weight: 700;
+        color: var(--white);
+        line-height: 1.15;
+        letter-spacing: -0.02em;
+        margin-bottom: 0.4rem;
+      }
+
+      .hero-overlay h3 a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      .hero-overlay h3 a::after { content: ' →'; color: var(--accent); }
+
+      .hero-overlay-tags {
+        display: flex;
+        gap: 1.25rem;
+        font-size: 0.7rem;
+        font-weight: 600;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+
+      .hero-overlay-tags span { color: var(--accent); }
+      .hero-overlay-tags span:last-child { color: var(--white-50); }
+
+      /* ===== FEATURED — Two asymmetric cards ===== */
+      .featured {
+        background: var(--dark);
+        padding-block: clamp(1rem, 2vw, 1.5rem) clamp(3rem, 5vw, 5rem);
+      }
+
+      .featured-grid {
+        display: grid;
+        grid-template-columns: 1.15fr 0.85fr;
+        gap: clamp(0.75rem, 1.5vw, 1.25rem);
+      }
+
+      .featured-card {
+        position: relative;
+        border-radius: 10px;
+        overflow: hidden;
+        aspect-ratio: 16 / 9;
+        cursor: pointer;
+      }
+
+      .featured-card img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.8s var(--ease);
+      }
+
+      .featured-card:hover img { transform: scale(1.04); }
+
+      .featured-card::after {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(0deg, oklch(25% 0.06 135 / 0.85) 0%, oklch(30% 0.06 135 / 0.15) 55%, transparent);
+        transition: opacity 0.4s var(--ease);
+      }
+
+      .featured-card-content {
+        position: absolute;
+        bottom: 0; left: 0; right: 0;
+        padding: clamp(1.25rem, 2.5vw, 2rem);
+        z-index: 2;
+      }
+
+      .featured-card-label {
+        font-size: 0.68rem;
+        font-weight: 700;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: var(--accent);
+        margin-bottom: 0.4rem;
+      }
+
+      .featured-card h3 {
+        font-family: 'Manrope', sans-serif;
+        font-size: clamp(1.1rem, 2vw, 1.5rem);
+        font-weight: 700;
+        color: var(--white);
+        line-height: 1.15;
+        letter-spacing: -0.02em;
+      }
+
+      /* ===== TICKER / MARQUEE ===== */
+      .ticker {
+        background: var(--dark-deeper);
+        padding-block: clamp(0.8rem, 1.5vw, 1.1rem);
+        overflow: hidden;
+        position: relative;
+      }
+
+      .ticker::before,
+      .ticker::after {
+        content: '';
+        position: absolute;
+        top: 0; bottom: 0;
+        width: 80px;
+        z-index: 2;
+        pointer-events: none;
+      }
+
+      .ticker::before {
+        left: 0;
+        background: linear-gradient(90deg, var(--dark-deeper), transparent);
+      }
+
+      .ticker::after {
+        right: 0;
+        background: linear-gradient(270deg, var(--dark-deeper), transparent);
+      }
+
+      .ticker-track {
+        display: flex;
+        gap: 0;
+        width: max-content;
+        animation: ticker-scroll 40s linear infinite;
+      }
+
+      .ticker-item {
+        display: flex;
+        align-items: center;
+        gap: clamp(1.5rem, 3vw, 3rem);
+        padding-inline: clamp(1.5rem, 3vw, 3rem);
+        white-space: nowrap;
+        font-size: clamp(0.78rem, 1vw, 0.88rem);
+        font-weight: 600;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        color: var(--white-50);
+      }
+
+      .ticker-item .dot {
+        width: 4px;
+        height: 4px;
+        border-radius: 50%;
+        background: var(--accent);
+        flex-shrink: 0;
+      }
+
+      @keyframes ticker-scroll {
+        0% { transform: translateX(0); }
+        100% { transform: translateX(-50%); }
+      }
+
+      /* ===== ABOUT — Text-image overlap ===== */
+      .about {
+        background: var(--dark);
+        padding-block: clamp(5rem, 10vw, 9rem);
+        position: relative;
+      }
+
+      .about-layout {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas: "text image";
+        gap: clamp(2rem, 5vw, 5rem);
+        align-items: center;
+      }
+
+      .about-text { grid-area: text; }
+
+      .about-label {
+        font-size: 0.72rem;
+        font-weight: 700;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: var(--accent);
+        margin-bottom: 1.25rem;
+      }
+
+      .about h2 {
+        font-family: 'Manrope', sans-serif;
+        font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+        font-weight: 800;
+        color: var(--white);
+        letter-spacing: -0.03em;
+        line-height: 1.05;
+        margin-bottom: clamp(1rem, 2vw, 1.5rem);
+      }
+
+      .about-desc {
+        font-size: clamp(0.92rem, 1.2vw, 1rem);
+        color: var(--white-70);
+        line-height: 1.75;
+        margin-bottom: 2rem;
+        max-width: 50ch;
+      }
+
+      .about-proof {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
+      }
+
+      .about-proof-item {
+        display: flex;
+        align-items: flex-start;
+        gap: 0.75rem;
+        padding: 1rem;
+        background: var(--white-05);
+        border: 1px solid var(--white-10);
+        border-radius: 8px;
+        transition: border-color 0.3s var(--ease), background 0.3s var(--ease);
+      }
+
+      .about-proof-item:hover {
+        border-color: var(--white-20);
+        background: var(--white-10);
+      }
+
+      .about-proof-icon {
+        width: 36px;
+        height: 36px;
+        flex-shrink: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: oklch(40% 0.08 135 / 0.5);
+        border-radius: 8px;
+        color: var(--accent);
+      }
+
+      .about-proof-icon svg { width: 18px; height: 18px; }
+
+      .about-proof-item h4 {
+        font-size: 0.85rem;
+        font-weight: 700;
+        color: var(--white-95);
+        margin-bottom: 0.1rem;
+      }
+
+      .about-proof-item p {
+        font-size: 0.78rem;
+        color: var(--white-50);
+        line-height: 1.45;
+      }
+
+      .about-visual {
+        grid-area: image;
+        position: relative;
+      }
+
+      .about-img-main {
+        position: relative;
+        border-radius: 10px;
+        overflow: hidden;
+        aspect-ratio: 3 / 4;
+      }
+
+      .about-img-main img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .about-img-main::after {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(135deg, oklch(35% 0.08 135 / 0.25), transparent);
+        mix-blend-mode: multiply;
+      }
+
+      .about-stat-float {
+        position: absolute;
+        bottom: -1.5rem;
+        left: -2rem;
+        background: var(--accent);
+        color: var(--dark-deeper);
+        padding: clamp(1rem, 2vw, 1.5rem) clamp(1.25rem, 2.5vw, 2rem);
+        border-radius: 10px;
+        z-index: 2;
+        box-shadow:
+          0 2px 4px oklch(25% 0.08 75 / 0.1),
+          0 8px 24px oklch(25% 0.08 75 / 0.15),
+          0 24px 48px oklch(25% 0.08 75 / 0.1);
+      }
+
+      .about-stat-float .num {
+        font-family: 'Manrope', sans-serif;
+        font-size: clamp(2rem, 3.5vw, 2.8rem);
+        font-weight: 800;
+        letter-spacing: -0.03em;
+        line-height: 1;
+      }
+
+      .about-stat-float .label {
+        font-size: 0.75rem;
+        font-weight: 600;
+        letter-spacing: 0.02em;
+        opacity: 0.8;
+      }
+
+      /* ===== SERVICES — Numbered editorial list ===== */
+      .services {
+        background: var(--bg-light);
+        padding-block: clamp(5rem, 10vw, 9rem);
+        position: relative;
+      }
+
+      .services-header {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas: "label ." "title desc";
+        gap: 0 clamp(2rem, 5vw, 5rem);
+        margin-bottom: clamp(3rem, 6vw, 5rem);
+      }
+
+      .services-label {
+        grid-area: label;
+        font-size: 0.72rem;
+        font-weight: 700;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: var(--dark-light);
+        margin-bottom: 1rem;
+      }
+
+      .services-header h2 {
+        grid-area: title;
+        font-family: 'Manrope', sans-serif;
+        font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+        font-weight: 800;
+        color: var(--dark-deeper);
+        letter-spacing: -0.03em;
+        line-height: 1.05;
+      }
+
+      .services-header p {
+        grid-area: desc;
+        font-size: clamp(0.88rem, 1.2vw, 0.95rem);
+        color: var(--text-muted);
+        line-height: 1.7;
+        align-self: end;
+      }
+
+      .service-list { list-style: none; }
+
+      .service-item {
+        display: grid;
+        grid-template-columns: auto 1fr auto;
+        gap: clamp(1.25rem, 3vw, 2.5rem);
+        align-items: baseline;
+        padding-block: clamp(1.25rem, 2.5vw, 2rem);
+        border-top: 1px solid oklch(50% 0.05 135 / 0.2);
+        cursor: default;
+        transition: background 0.3s var(--ease);
+      }
+
+      .service-item:last-child {
+        border-bottom: 1px solid oklch(50% 0.05 135 / 0.2);
+      }
+
+      .service-item:hover {
+        background: oklch(90% 0.02 135 / 0.5);
+      }
+
+      .service-num {
+        font-family: 'Manrope', sans-serif;
+        font-size: clamp(0.85rem, 1.2vw, 1rem);
+        font-weight: 800;
+        color: var(--dark-light);
+        letter-spacing: -0.02em;
+        min-width: 2.5rem;
+      }
+
+      .service-item h3 {
+        font-family: 'Manrope', sans-serif;
+        font-size: clamp(1.15rem, 2vw, 1.6rem);
+        font-weight: 700;
+        color: var(--dark-deeper);
+        letter-spacing: -0.02em;
+        line-height: 1.15;
+      }
+
+      .service-item-desc {
+        font-size: clamp(0.82rem, 1vw, 0.88rem);
+        color: var(--text-muted);
+        line-height: 1.6;
+        max-width: 300px;
+        text-align: right;
+        opacity: 0;
+        transform: translateX(8px);
+        transition: opacity 0.4s var(--ease), transform 0.4s var(--ease);
+      }
+
+      .service-item:hover .service-item-desc {
+        opacity: 1;
+        transform: translateX(0);
+      }
+
+      /* ===== STATS — Bold numbers ===== */
+      .stats {
+        background: var(--dark);
+        padding-block: clamp(4rem, 8vw, 7rem);
+      }
+
+      .stats-row {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: clamp(1rem, 2vw, 2rem);
+      }
+
+      .stat {
+        text-align: center;
+        padding-block: clamp(1rem, 2vw, 2rem);
+        border-top: 2px solid var(--white-20);
+      }
+
+      .stat-num {
+        font-family: 'Manrope', sans-serif;
+        font-size: clamp(2.5rem, 5vw, 4rem);
+        font-weight: 800;
+        color: var(--white);
+        letter-spacing: -0.025em;
+        line-height: 1;
+        margin-bottom: 0.35rem;
+      }
+
+      .stat-label {
+        font-size: clamp(0.78rem, 1vw, 0.88rem);
+        font-weight: 400;
+        color: var(--white-50);
+        line-height: 1.45;
+      }
+
+      /* ===== TESTIMONIAL — Large editorial quote ===== */
+      .testimonial-section {
+        background: var(--bg-light);
+        padding-block: clamp(5rem, 10vw, 9rem);
+        position: relative;
+      }
+
+      .testimonial-layout {
+        display: grid;
+        grid-template-columns: 0.35fr 1fr;
+        grid-template-areas: "meta quote";
+        gap: clamp(2rem, 5vw, 5rem);
+        align-items: start;
+      }
+
+      .testimonial-meta {
+        grid-area: meta;
+      }
+
+      .testimonial-meta-label {
+        font-size: 0.72rem;
+        font-weight: 700;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: var(--dark-light);
+        margin-bottom: 0.75rem;
+      }
+
+      .testimonial-meta-rating {
+        font-size: clamp(2rem, 3.5vw, 3rem);
+        font-weight: 800;
+        font-family: 'Manrope', sans-serif;
+        color: var(--dark-deeper);
+        letter-spacing: -0.03em;
+        line-height: 1;
+        margin-bottom: 0.25rem;
+      }
+
+      .testimonial-meta-stars {
+        color: var(--accent);
+        font-size: 0.9rem;
+        letter-spacing: 0.06em;
+        margin-bottom: 0.5rem;
+      }
+
+      .testimonial-meta-count {
+        font-size: 0.82rem;
+        color: var(--text-muted);
+      }
+
+      .testimonial-content { grid-area: quote; }
+
+      .testimonial-quote {
+        font-family: 'Manrope', sans-serif;
+        font-size: clamp(1.4rem, 2.8vw, 2.2rem);
+        font-weight: 600;
+        color: var(--dark-deeper);
+        line-height: 1.35;
+        letter-spacing: -0.02em;
+        margin-bottom: 2rem;
+        position: relative;
+        padding-left: clamp(1.5rem, 3vw, 2.5rem);
+        border-left: 3px solid var(--dark);
+      }
+
+      .testimonial-author-name {
+        font-size: 0.92rem;
+        font-weight: 700;
+        color: var(--dark-deeper);
+        padding-left: clamp(1.5rem, 3vw, 2.5rem);
+      }
+
+      .testimonial-author-loc {
+        font-size: 0.82rem;
+        color: var(--text-muted);
+        padding-left: clamp(1.5rem, 3vw, 2.5rem);
+      }
+
+      .testimonial-secondary {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: clamp(1rem, 2vw, 1.5rem);
+        margin-top: clamp(3rem, 5vw, 5rem);
+      }
+
+      .testimonial-card {
+        background: var(--white);
+        border-radius: 10px;
+        padding: clamp(1.5rem, 2.5vw, 2rem);
+        box-shadow:
+          0 1px 2px oklch(40% 0.05 135 / 0.06),
+          0 4px 12px oklch(40% 0.05 135 / 0.04);
+        transition: transform 0.4s var(--ease), box-shadow 0.4s var(--ease);
+      }
+
+      .testimonial-card:hover {
+        transform: translateY(-3px);
+        box-shadow:
+          0 2px 4px oklch(40% 0.05 135 / 0.08),
+          0 8px 24px oklch(40% 0.05 135 / 0.08),
+          0 20px 40px oklch(40% 0.05 135 / 0.06);
+      }
+
+      .testimonial-card-stars {
+        color: var(--accent);
+        font-size: 0.82rem;
+        letter-spacing: 0.06em;
+        margin-bottom: 0.75rem;
+      }
+
+      .testimonial-card p {
+        font-size: clamp(0.88rem, 1.1vw, 0.95rem);
+        color: var(--text-dark);
+        line-height: 1.65;
+        font-style: italic;
+        margin-bottom: 1rem;
+      }
+
+      .testimonial-card-author {
+        font-size: 0.82rem;
+        font-weight: 700;
+        color: var(--dark-deeper);
+      }
+
+      .testimonial-card-loc {
+        font-size: 0.75rem;
+        color: var(--text-muted);
+      }
+
+      /* ===== AREAS — Pill tags ===== */
+      .areas {
+        background: var(--dark);
+        padding-block: clamp(5rem, 10vw, 8rem);
+      }
+
+      .areas-header {
+        margin-bottom: clamp(2rem, 4vw, 3rem);
+      }
+
+      .areas-label {
+        font-size: 0.72rem;
+        font-weight: 700;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: var(--accent);
+        margin-bottom: 1rem;
+      }
+
+      .areas h2 {
+        font-family: 'Manrope', sans-serif;
+        font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+        font-weight: 800;
+        color: var(--white);
+        letter-spacing: -0.03em;
+        line-height: 1.05;
+        max-width: 500px;
+      }
+
+      .areas-tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: clamp(0.5rem, 1vw, 0.75rem);
+      }
+
+      .area-tag {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0.65rem 1.25rem;
+        background: var(--white-10);
+        border: 1px solid var(--white-10);
+        border-radius: 100px;
+        font-size: clamp(0.82rem, 1vw, 0.92rem);
+        font-weight: 500;
+        color: var(--white-90);
+        transition: background 0.3s var(--ease), border-color 0.3s var(--ease), transform 0.3s var(--ease);
+        cursor: default;
+      }
+
+      .area-tag:hover {
+        background: var(--white-20);
+        border-color: var(--accent);
+        transform: translateY(-2px);
+      }
+
+      .area-tag.primary {
+        background: var(--accent);
+        border-color: var(--accent);
+        color: var(--dark-deeper);
+        font-weight: 700;
+      }
+
+      .area-tag.primary:hover {
+        background: var(--accent-hover);
+      }
+
+      /* ===== FAQ ===== */
+      .faq {
+        background: var(--bg-light);
+        padding-block: clamp(5rem, 10vw, 8rem);
+      }
+
+      .faq-layout {
+        display: grid;
+        grid-template-columns: 0.4fr 1fr;
+        grid-template-areas: "header items";
+        gap: clamp(2rem, 5vw, 5rem);
+        align-items: start;
+      }
+
+      .faq-header {
+        grid-area: header;
+        position: sticky;
+        top: 100px;
+      }
+
+      .faq-header-label {
+        font-size: 0.72rem;
+        font-weight: 700;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: var(--dark-light);
+        margin-bottom: 1rem;
+      }
+
+      .faq h2 {
+        font-family: 'Manrope', sans-serif;
+        font-size: clamp(1.6rem, 3vw, 2.4rem);
+        font-weight: 800;
+        color: var(--dark-deeper);
+        letter-spacing: -0.03em;
+        line-height: 1.1;
+      }
+
+      .faq-items { grid-area: items; }
+
+      .faq-item {
+        border-bottom: 1px solid oklch(50% 0.05 135 / 0.15);
+      }
+
+      .faq-q {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1rem;
+        padding-block: clamp(1rem, 2vw, 1.4rem);
+        background: none;
+        border: none;
+        cursor: pointer;
+        font-family: 'Plus Jakarta Sans', sans-serif;
+        font-size: clamp(0.92rem, 1.2vw, 1.05rem);
+        font-weight: 600;
+        color: var(--dark-deeper);
+        text-align: left;
+        transition: color 0.3s var(--ease);
+      }
+
+      .faq-q:hover { color: var(--dark-light); }
+      .faq-q:focus-visible { outline: 2px solid var(--dark-light); outline-offset: 2px; }
+
+      .faq-q svg {
+        width: 18px;
+        height: 18px;
+        flex-shrink: 0;
+        color: var(--dark-light);
+        transition: transform 0.4s var(--ease);
+      }
+
+      .faq-item.open .faq-q svg { transform: rotate(45deg); }
+
+      .faq-a {
+        max-height: 0;
+        overflow: hidden;
+        opacity: 0;
+        transition: max-height 0.5s var(--ease), opacity 0.4s var(--ease);
+      }
+
+      .faq-item.open .faq-a { opacity: 1; }
+
+      .faq-a-inner {
+        padding-bottom: clamp(1rem, 2vw, 1.5rem);
+        font-size: clamp(0.85rem, 1.1vw, 0.92rem);
+        color: var(--text-muted);
+        line-height: 1.7;
+        max-width: 60ch;
+      }
+
+      /* ===== CTA — Full-screen moment ===== */
+      .cta-section {
+        background: var(--accent);
+        padding-block: clamp(5rem, 10vw, 9rem);
+        position: relative;
+        overflow: hidden;
+      }
+
+      .cta-layout {
+        display: grid;
+        grid-template-columns: 1fr auto;
+        gap: clamp(2rem, 5vw, 4rem);
+        align-items: center;
+      }
+
+      .cta-section h2 {
+        font-family: 'Manrope', sans-serif;
+        font-size: clamp(2rem, 4.5vw, 3.8rem);
+        font-weight: 800;
+        color: var(--dark-deeper);
+        letter-spacing: -0.025em;
+        line-height: 1.02;
+      }
+
+      .cta-actions {
+        display: flex;
+        gap: 1rem;
+        flex-shrink: 0;
+      }
+
+      .cta-btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.6rem;
+        padding: 0.9rem 2rem;
+        font-family: 'Plus Jakarta Sans', sans-serif;
+        font-size: 0.92rem;
+        font-weight: 700;
+        text-decoration: none;
+        border-radius: 8px;
+        letter-spacing: 0.01em;
+        transition: transform 0.3s var(--ease), box-shadow 0.3s var(--ease), background 0.3s var(--ease);
+      }
+
+      .cta-btn.dark {
+        background: var(--dark-deeper);
+        color: var(--white);
+      }
+
+      .cta-btn.dark:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 8px 24px oklch(25% 0.05 135 / 0.3);
+      }
+
+      .cta-btn.outline {
+        background: transparent;
+        color: var(--dark-deeper);
+        border: 2px solid var(--dark-deeper);
+      }
+
+      .cta-btn.outline:hover {
+        background: var(--dark-deeper);
+        color: var(--white);
+        transform: translateY(-2px);
+      }
+
+      .cta-btn:focus-visible {
+        outline: 2px solid var(--dark-deeper);
+        outline-offset: 3px;
+      }
+
+      .cta-btn:active { transform: translateY(0); }
+
+      .cta-btn svg { width: 18px; height: 18px; }
+
+      /* ===== FOOTER ===== */
+      .footer {
+        background: var(--dark-deeper);
+        padding-block: clamp(3.5rem, 6vw, 5.5rem) clamp(1.5rem, 3vw, 2rem);
+      }
+
+      .footer-top {
+        display: grid;
+        grid-template-columns: 1.8fr 1fr 1fr 1fr;
+        grid-template-areas: "brand services regions contact";
+        gap: clamp(2rem, 4vw, 3rem);
+        padding-bottom: clamp(2.5rem, 4vw, 3.5rem);
+        border-bottom: 1px solid var(--white-10);
+      }
+
+      .footer-brand { grid-area: brand; }
+
+      .footer-brand .nav-logo {
+        display: inline-block;
+        margin-bottom: 1rem;
+        font-size: 1.3rem;
+      }
+
+      .footer-brand p {
+        font-size: 0.85rem;
+        color: var(--white-50);
+        line-height: 1.65;
+        max-width: 280px;
+      }
+
+      .footer-col h4 {
+        font-size: 0.72rem;
+        font-weight: 700;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: var(--white-70);
+        margin-bottom: 1rem;
+      }
+
+      .footer-col ul { list-style: none; }
+      .footer-col li { margin-bottom: 0.35rem; }
+
+      .footer-col a {
+        font-size: 0.82rem;
+        color: var(--white-50);
+        text-decoration: none;
+        transition: color 0.3s var(--ease);
+      }
+
+      .footer-col a:hover { color: var(--accent); }
+      .footer-col a:focus-visible { outline: 1px solid var(--accent); outline-offset: 2px; }
+
+      .footer-col:nth-child(2) { grid-area: services; }
+      .footer-col:nth-child(3) { grid-area: regions; }
+      .footer-col:nth-child(4) { grid-area: contact; }
+
+      .footer-bottom {
+        padding-top: clamp(1.5rem, 3vw, 2rem);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 1rem;
+      }
+
+      .footer-copy {
+        font-size: 0.75rem;
+        color: var(--white-50);
+      }
+
+      .footer-social {
+        display: flex;
+        gap: 1rem;
+      }
+
+      .footer-social a {
+        color: var(--white-50);
+        transition: color 0.3s var(--ease), transform 0.3s var(--ease);
+      }
+
+      .footer-social a:hover { color: var(--accent); transform: translateY(-2px); }
+      .footer-social a:focus-visible { outline: 1px solid var(--accent); outline-offset: 2px; }
+      .footer-social svg { width: 18px; height: 18px; }
+
+      /* ===== SCROLL REVEAL ===== */
+      .reveal {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+
+      .reveal.is-visible {
+        opacity: 1;
+        transform: translateY(0);
+        transition: opacity 0.7s var(--ease), transform 0.7s var(--ease);
+      }
+    }
+
+    @layer utilities {
+      @media (max-width: 1024px) {
+        .services-header { grid-template-columns: 1fr; grid-template-areas: "label" "title" "desc"; }
+        .stats-row { grid-template-columns: 1fr 1fr; }
+        .testimonial-layout { grid-template-columns: 1fr; grid-template-areas: "meta" "quote"; gap: 2rem; }
+        .testimonial-secondary { grid-template-columns: 1fr; }
+        .faq-layout { grid-template-columns: 1fr; grid-template-areas: "header" "items"; }
+        .faq-header { position: static; }
+        .footer-top { grid-template-columns: 1fr 1fr; grid-template-areas: "brand brand" "services regions" "contact contact"; }
+      }
+
+      @media (max-width: 768px) {
+        .nav-menu { display: none; }
+        .mobile-toggle { display: block; }
+
+        .nav-menu.mobile-open {
+          display: flex;
+          flex-direction: column;
+          position: absolute;
+          top: 72px;
+          left: 0; right: 0;
+          background: oklch(33% 0.06 135 / 0.97);
+          backdrop-filter: blur(24px);
+          padding: 1.5rem clamp(1.5rem, 4vw, 3rem);
+          gap: 0.25rem;
+          border-top: 1px solid var(--white-10);
+          max-height: calc(100vh - 72px);
+          overflow-y: auto;
+        }
+
+        .nav-menu.mobile-open .nav-dropdown {
+          position: static;
+          transform: none;
+          opacity: 1;
+          visibility: visible;
+          pointer-events: auto;
+          min-width: 0;
+          border: none;
+          box-shadow: none;
+          background: var(--white-05);
+          border-radius: 8px;
+          padding: 0.5rem;
+          margin-top: 0.25rem;
+          display: none;
+        }
+
+        .nav-menu.mobile-open .nav-menu-item.open .nav-dropdown {
+          display: block;
+        }
+
+        .nav-menu.mobile-open .nav-dropdown-grid {
+          grid-template-columns: 1fr !important;
+          min-width: 0 !important;
+        }
+
+        .nav-menu.mobile-open .nav-drop-featured {
+          grid-row: auto;
+          min-height: auto;
+          padding: 0.75rem;
+        }
+
+        .hero-top {
+          grid-template-columns: 1fr;
+          grid-template-areas: "headline" "info";
+          gap: 1.5rem;
+        }
+
+        .hero-image { aspect-ratio: 16 / 10; }
+
+        .featured-grid { grid-template-columns: 1fr; }
+
+        .about-layout {
+          grid-template-columns: 1fr;
+          grid-template-areas: "image" "text";
+        }
+
+        .about-stat-float {
+          left: auto;
+          right: 1rem;
+          bottom: -1rem;
+        }
+
+        .about-proof { grid-template-columns: 1fr; }
+
+        .service-item {
+          grid-template-columns: auto 1fr;
+        }
+
+        .service-item-desc { display: none; }
+
+        .stats-row { grid-template-columns: 1fr 1fr; }
+
+        .cta-layout {
+          grid-template-columns: 1fr;
+          text-align: center;
+        }
+
+        .cta-actions {
+          flex-direction: column;
+          width: 100%;
+        }
+
+        .cta-btn { justify-content: center; }
+
+        .footer-top {
+          grid-template-columns: 1fr;
+          grid-template-areas: "brand" "services" "regions" "contact";
+        }
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ===== NAV ===== -->
+  <nav class="nav" id="nav" role="navigation">
+    <div class="nav-inner">
+      <a href="/" class="nav-logo">TOIT<span>EX</span></a>
+
+      <button class="mobile-toggle" id="mobileToggle" aria-label="Menu">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h18M3 6h18M3 18h18"/></svg>
+      </button>
+
+      <ul class="nav-menu" id="navMenu">
+        <!-- Services dropdown -->
+        <li class="nav-menu-item" data-dropdown>
+          <button class="nav-menu-trigger" aria-expanded="false" aria-haspopup="true">
+            <span class="fr">Services</span><span class="en">Services</span>
+            <svg class="chevron" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 4l4 4 4-4"/></svg>
+          </button>
+          <div class="nav-dropdown">
+            <div class="nav-dropdown-grid" style="grid-template-columns:.85fr 1fr 1fr">
+              <a href="/nos-services.html" class="nav-drop-featured">
+                <div class="nav-drop-featured-title">TOIT<span style="font-weight:400;opacity:0.6">EX</span></div>
+                <p class="nav-drop-featured-desc">
+                  <span class="fr">Services complets de toiture pour le résidentiel et le commercial dans le Grand Montréal.</span>
+                  <span class="en">Complete roofing services for residential and commercial in Greater Montréal.</span>
+                </p>
+              </a>
+              <a href="/toits-plats.html" class="nav-drop-item">
+                <div class="nav-drop-item-title"><span class="fr">Toits plats</span><span class="en">Flat Roofs</span></div>
+                <div class="nav-drop-item-desc"><span class="fr">Membrane élastomère — 25 à 40 ans de durabilité</span><span class="en">Elastomeric membrane — 25-40 year durability</span></div>
+              </a>
+              <a href="/reparation-toiture.html" class="nav-drop-item">
+                <div class="nav-drop-item-title"><span class="fr">Réparation</span><span class="en">Repair</span></div>
+                <div class="nav-drop-item-desc"><span class="fr">Infiltrations, membranes et bardeaux endommagés</span><span class="en">Leaks, damaged membranes and shingles</span></div>
+              </a>
+              <a href="/bardeaux-asphalte.html" class="nav-drop-item">
+                <div class="nav-drop-item-title"><span class="fr">Bardeaux d'asphalte</span><span class="en">Asphalt Shingles</span></div>
+                <div class="nav-drop-item-desc"><span class="fr">Le classique pour les toits en pente résidentiels</span><span class="en">The classic for residential sloped roofs</span></div>
+              </a>
+              <a href="/isolation-toiture.html" class="nav-drop-item">
+                <div class="nav-drop-item-title">Isolation</div>
+                <div class="nav-drop-item-desc"><span class="fr">Efficacité énergétique et prévention des glaces</span><span class="en">Energy efficiency and ice prevention</span></div>
+              </a>
+              <a href="/urgence-toiture.html" class="nav-drop-item">
+                <div class="nav-drop-item-title"><span class="fr">Urgence 24/7</span><span class="en">24/7 Emergency</span></div>
+                <div class="nav-drop-item-desc"><span class="fr">Intervention rapide — tempêtes, infiltrations</span><span class="en">Fast response — storms, leaks</span></div>
+              </a>
+              <a href="/deneigement-toiture.html" class="nav-drop-item">
+                <div class="nav-drop-item-title"><span class="fr">Déneigement</span><span class="en">Snow Removal</span></div>
+                <div class="nav-drop-item-desc"><span class="fr">Protection contre les surcharges structurelles</span><span class="en">Protection against structural overload</span></div>
+              </a>
+              <a href="/type-de-toiture.html" class="nav-drop-item">
+                <div class="nav-drop-item-title"><span class="fr">Types de toiture</span><span class="en">Roofing Types</span></div>
+                <div class="nav-drop-item-desc"><span class="fr">Guide complet — élastomère, TPO, bardeaux, tôle</span><span class="en">Complete guide — elastomeric, TPO, shingles, metal</span></div>
+              </a>
+            </div>
+          </div>
+        </li>
+
+        <!-- Régions dropdown -->
+        <li class="nav-menu-item" data-dropdown>
+          <button class="nav-menu-trigger" aria-expanded="false" aria-haspopup="true">
+            <span class="fr">Régions</span><span class="en">Regions</span>
+            <svg class="chevron" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 4l4 4 4-4"/></svg>
+          </button>
+          <div class="nav-dropdown" style="min-width:360px">
+            <div class="nav-dropdown-grid">
+              <a href="/couvreur-montreal.html" class="nav-drop-item">
+                <div class="nav-drop-item-title">Montréal</div>
+                <div class="nav-drop-item-desc"><span class="fr">Centre, Est, Nord, Ouest, Sud</span><span class="en">Centre, East, North, West, South</span></div>
+              </a>
+              <a href="/couvreur-laval.html" class="nav-drop-item">
+                <div class="nav-drop-item-title">Laval</div>
+                <div class="nav-drop-item-desc"><span class="fr">Tous les quartiers</span><span class="en">All neighbourhoods</span></div>
+              </a>
+              <a href="/couvreur-rive-nord.html" class="nav-drop-item">
+                <div class="nav-drop-item-title"><span class="fr">Rive-Nord</span><span class="en">North Shore</span></div>
+                <div class="nav-drop-item-desc">Boisbriand, Blainville, Terrebonne…</div>
+              </a>
+              <a href="#zones" class="nav-drop-item">
+                <div class="nav-drop-item-title"><span class="fr">Laurentides</span><span class="en">Laurentians</span></div>
+                <div class="nav-drop-item-desc">Saint-Jérôme, Sainte-Thérèse…</div>
+              </a>
+            </div>
+          </div>
+        </li>
+
+        <!-- Direct links -->
+        <li class="nav-menu-item"><a href="/apropos.html" class="nav-menu-link"><span class="fr">À propos</span><span class="en">About</span></a></li>
+        <li class="nav-menu-item"><a href="/financement.html" class="nav-menu-link"><span class="fr">Financement</span><span class="en">Financing</span></a></li>
+        <li class="nav-menu-item"><a href="/nous-joindre.html" class="nav-menu-link">Contact</a></li>
+      </ul>
+
+      <div class="nav-right">
+        <div class="lang-switch">
+          <button id="langFr" class="active" onclick="setLang('fr')">FR</button>
+          <button id="langEn" onclick="setLang('en')">EN</button>
+        </div>
+        <a href="tel:4509490900" class="btn-primary">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+          <span class="fr">Soumission gratuite</span>
+          <span class="en">Free Quote</span>
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ===== HERO ===== -->
+  <section class="hero">
+    <div class="container hero-top">
+      <div class="hero-headline">
+        <h1 class="syne">
+          <span class="fr">Expert en toit plat dans le Grand Montréal</span>
+          <span class="en">Flat Roof Experts in Greater Montréal</span>
+        </h1>
+      </div>
+      <div class="hero-info">
+        <p>
+          <span class="fr">Toitex est votre couvreur certifié RBQ pour la pose, la réparation et l'inspection de toitures résidentielles et commerciales à <a href="/couvreur-montreal.html" style="color:var(--white);text-decoration:underline;text-underline-offset:3px">Montréal</a>, <a href="/couvreur-laval.html" style="color:var(--white);text-decoration:underline;text-underline-offset:3px">Laval</a> et sur la <a href="/couvreur-rive-nord.html" style="color:var(--white);text-decoration:underline;text-underline-offset:3px">Rive-Nord</a>. Membrane élastomère, bardeaux d'asphalte, urgence 24/7.</span>
+          <span class="en">Toitex is your RBQ-certified roofer for residential and commercial roof installation, repair and inspection across <a href="/couvreur-montreal.html" style="color:var(--white);text-decoration:underline;text-underline-offset:3px">Montréal</a>, <a href="/couvreur-laval.html" style="color:var(--white);text-decoration:underline;text-underline-offset:3px">Laval</a> and the <a href="/couvreur-rive-nord.html" style="color:var(--white);text-decoration:underline;text-underline-offset:3px">North Shore</a>. Elastomeric membrane, asphalt shingles, 24/7 emergency.</span>
+        </p>
+        <a href="/soumission.html" class="hero-link">
+          <span class="fr">Soumission gratuite en 24h</span>
+          <span class="en">Free quote within 24h</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+    </div>
+    <div class="container hero-image-wrap">
+      <div class="hero-image">
+        <img src="images/TOITEX_09_54_08.016.jpg" alt="Équipe Toitex posant une membrane élastomère sur un toit plat à Montréal" width="1920" height="800">
+        <div class="hero-overlay">
+          <h3><a href="#services"><span class="fr">Membrane élastomère — Toit plat</span><span class="en">Elastomeric Membrane — Flat Roof</span></a></h3>
+          <div class="hero-overlay-tags">
+            <span><span class="fr">Résidentiel & commercial</span><span class="en">Residential & Commercial</span></span>
+            <span><span class="fr">Grand Montréal, QC</span><span class="en">Greater Montréal, QC</span></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FEATURED ===== -->
+  <section class="featured">
+    <div class="container">
+      <div class="featured-grid">
+        <a href="/toits-plats.html" class="featured-card reveal" style="text-decoration:none">
+          <img src="images/plat4.jpg" alt="Installation de membrane élastomère au chalumeau sur toit plat par Toitex" width="800" height="450" loading="lazy">
+          <div class="featured-card-content">
+            <div class="featured-card-label">
+              <span class="fr">Spécialité</span>
+              <span class="en">Specialty</span>
+            </div>
+            <h3 class="syne">
+              <span class="fr">Toits plats — Membrane élastomère</span>
+              <span class="en">Flat Roofs — Elastomeric Membrane</span>
+            </h3>
+          </div>
+        </a>
+        <a href="/bardeaux-asphalte.html" class="featured-card reveal" style="text-decoration:none">
+          <img src="images/bardeau1.jpg" alt="Toiture résidentielle en bardeaux d'asphalte à Laval par Toitex" width="800" height="450" loading="lazy">
+          <div class="featured-card-content">
+            <div class="featured-card-label">
+              <span class="fr">Spécialité</span>
+              <span class="en">Specialty</span>
+            </div>
+            <h3 class="syne">
+              <span class="fr">Bardeaux d'asphalte</span>
+              <span class="en">Asphalt Shingles</span>
+            </h3>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== TICKER ===== -->
+  <div class="ticker" aria-hidden="true">
+    <div class="ticker-track">
+      <div class="ticker-item"><span class="dot"></span>RBQ 5824-2371-01</div>
+      <div class="ticker-item"><span class="dot"></span><span class="fr">Urgence 24/7</span><span class="en">24/7 Emergency</span></div>
+      <div class="ticker-item"><span class="dot"></span><span class="fr">Soumission gratuite</span><span class="en">Free Quote</span></div>
+      <div class="ticker-item"><span class="dot"></span><span class="fr">Résidentiel & Commercial</span><span class="en">Residential & Commercial</span></div>
+      <div class="ticker-item"><span class="dot"></span>Grand Montréal</div>
+      <div class="ticker-item"><span class="dot"></span>4.7★ Google</div>
+      <div class="ticker-item"><span class="dot"></span><span class="fr">Membrane élastomère</span><span class="en">Elastomeric Membrane</span></div>
+      <div class="ticker-item"><span class="dot"></span><span class="fr">Bardeaux d'asphalte</span><span class="en">Asphalt Shingles</span></div>
+      <!-- Duplicate for seamless loop -->
+      <div class="ticker-item"><span class="dot"></span>RBQ 5824-2371-01</div>
+      <div class="ticker-item"><span class="dot"></span><span class="fr">Urgence 24/7</span><span class="en">24/7 Emergency</span></div>
+      <div class="ticker-item"><span class="dot"></span><span class="fr">Soumission gratuite</span><span class="en">Free Quote</span></div>
+      <div class="ticker-item"><span class="dot"></span><span class="fr">Résidentiel & Commercial</span><span class="en">Residential & Commercial</span></div>
+      <div class="ticker-item"><span class="dot"></span>Grand Montréal</div>
+      <div class="ticker-item"><span class="dot"></span>4.7★ Google</div>
+      <div class="ticker-item"><span class="dot"></span><span class="fr">Membrane élastomère</span><span class="en">Elastomeric Membrane</span></div>
+      <div class="ticker-item"><span class="dot"></span><span class="fr">Bardeaux d'asphalte</span><span class="en">Asphalt Shingles</span></div>
+    </div>
+  </div>
+
+  <!-- ===== ABOUT ===== -->
+  <section class="about" id="about">
+    <div class="container about-layout">
+      <div class="about-text reveal">
+        <div class="about-label">
+          <span class="fr">Pourquoi Toitex</span>
+          <span class="en">Why Toitex</span>
+        </div>
+        <h2>
+          <span class="fr">Pourquoi choisir Toitex comme couvreur à Montréal</span>
+          <span class="en">Why choose Toitex as your Montréal roofer</span>
+        </h2>
+        <p class="about-desc">
+          <span class="fr">Basé à Boisbriand, Toitex est un entrepreneur en toiture licencié RBQ (5824-2371-01) qui dessert l'ensemble du Grand Montréal. Notre équipe de couvreurs certifiés, dirigée par Laurent et Samuel, offre un service complet et irréprochable — du petit dépannage au remplacement majeur de toiture. Spécialisés en <a href="/toits-plats.html" style="color:var(--accent)">membrane élastomère pour toits plats</a> et en <a href="/bardeaux-asphalte.html" style="color:var(--accent)">bardeaux d'asphalte</a>, nous intervenons aussi pour l'<a href="/isolation-toiture.html" style="color:var(--accent)">isolation</a>, le <a href="/deneigement-toiture.html" style="color:var(--accent)">déneigement</a> et les <a href="/urgence-toiture.html" style="color:var(--accent)">urgences 24/7</a>.</span>
+          <span class="en">Based in Boisbriand, Toitex is an RBQ-licensed roofing contractor (5824-2371-01) serving all of Greater Montréal. Our team of certified roofers, led by Laurent and Samuel, delivers complete, impeccable service — from quick fixes to major roof replacements. Specializing in <a href="/toits-plats.html" style="color:var(--accent)">elastomeric membrane for flat roofs</a> and <a href="/bardeaux-asphalte.html" style="color:var(--accent)">asphalt shingles</a>, we also handle <a href="/isolation-toiture.html" style="color:var(--accent)">insulation</a>, <a href="/deneigement-toiture.html" style="color:var(--accent)">snow removal</a> and <a href="/urgence-toiture.html" style="color:var(--accent)">24/7 emergencies</a>.</span>
+        </p>
+        <div class="about-proof">
+          <div class="about-proof-item">
+            <div class="about-proof-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            </div>
+            <div>
+              <h4><span class="fr">Licence RBQ</span><span class="en">RBQ Licence</span></h4>
+              <p>5824-2371-01</p>
+            </div>
+          </div>
+          <div class="about-proof-item">
+            <div class="about-proof-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+            </div>
+            <div>
+              <h4><span class="fr">Urgence 24/7</span><span class="en">24/7 Emergency</span></h4>
+              <p><span class="fr">Réponse rapide</span><span class="en">Fast response</span></p>
+            </div>
+          </div>
+          <div class="about-proof-item">
+            <div class="about-proof-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg>
+            </div>
+            <div>
+              <h4><span class="fr">Soumission gratuite</span><span class="en">Free Estimate</span></h4>
+              <p><span class="fr">Sans engagement</span><span class="en">No obligation</span></p>
+            </div>
+          </div>
+          <div class="about-proof-item">
+            <div class="about-proof-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            </div>
+            <div>
+              <h4>4.7 / 5</h4>
+              <p>Google Reviews</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="about-visual reveal">
+        <div class="about-img-main">
+          <img src="images/TOITEX_10_46_21.017.jpg" alt="Couvreur Toitex transportant un rouleau de membrane sur son épaule" width="600" height="800" loading="lazy">
+        </div>
+        <div class="about-stat-float">
+          <div class="num">5+</div>
+          <div class="label"><span class="fr">Régions desservies</span><span class="en">Regions served</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SERVICES — Numbered editorial list ===== -->
+  <section class="services" id="services">
+    <div class="container">
+      <div class="services-header reveal">
+        <div class="services-label">
+          <span class="fr">Nos services</span>
+          <span class="en">Our Services</span>
+        </div>
+        <h2>
+          <span class="fr">Services complets de toiture — résidentiel et commercial</span>
+          <span class="en">Complete roofing services — residential and commercial</span>
+        </h2>
+        <p>
+          <span class="fr">Du petit dépannage au remplacement majeur, en passant par l'inspection annuelle et le déneigement — notre équipe a les outils et l'expertise pour tous les défis de toiture dans le Grand Montréal.</span>
+          <span class="en">From quick fixes to major replacements, including annual inspection and snow removal — our team has the tools and expertise for every roofing challenge in Greater Montréal.</span>
+        </p>
+      </div>
+
+      <ol class="service-list">
+        <li class="service-item reveal">
+          <span class="service-num">01</span>
+          <h3><a href="/toits-plats.html" style="color:inherit;text-decoration:none"><span class="fr">Toit plat — Membrane élastomère</span><span class="en">Flat Roof — Elastomeric Membrane</span></a></h3>
+          <span class="service-item-desc"><span class="fr">Solution la plus durable pour les toits plats au Québec. 25 à 40 ans de durée de vie et étanchéité supérieure.</span><span class="en">Most durable solution for flat roofs in Quebec. 25-40 year lifespan and superior waterproofing.</span></span>
+        </li>
+        <li class="service-item reveal">
+          <span class="service-num">02</span>
+          <h3><a href="/bardeaux-asphalte.html" style="color:inherit;text-decoration:none"><span class="fr">Bardeaux d'asphalte</span><span class="en">Asphalt Shingles</span></a></h3>
+          <span class="service-item-desc"><span class="fr">Le choix classique pour les toitures en pente. Grand choix de couleurs, excellent rapport qualité-prix.</span><span class="en">The classic choice for sloped roofs. Wide color range, excellent value.</span></span>
+        </li>
+        <li class="service-item reveal">
+          <span class="service-num">03</span>
+          <h3><a href="/reparation-toiture.html" style="color:inherit;text-decoration:none"><span class="fr">Réparation de toiture</span><span class="en">Roof Repair</span></a></h3>
+          <span class="service-item-desc"><span class="fr">Infiltrations, membranes endommagées, bardeaux manquants, solins défectueux. Urgence 24/7.</span><span class="en">Leaks, damaged membranes, missing shingles, faulty flashing. 24/7 emergency.</span></span>
+        </li>
+        <li class="service-item reveal">
+          <span class="service-num">04</span>
+          <h3><a href="/nos-services.html" style="color:inherit;text-decoration:none"><span class="fr">Inspection et réfection</span><span class="en">Inspection and Re-roofing</span></a></h3>
+          <span class="service-item-desc"><span class="fr">Évaluation complète avec rapport détaillé. Remplacement intégral si nécessaire.</span><span class="en">Complete assessment with detailed report. Full replacement if needed.</span></span>
+        </li>
+        <li class="service-item reveal">
+          <span class="service-num">05</span>
+          <h3><a href="/isolation-toiture.html" style="color:inherit;text-decoration:none"><span class="fr">Isolation de toiture</span><span class="en">Roof Insulation</span></a></h3>
+          <span class="service-item-desc"><span class="fr">Améliorez l'efficacité énergétique et prévenez les barrières de glace.</span><span class="en">Improve energy efficiency and prevent ice dams.</span></span>
+        </li>
+        <li class="service-item reveal">
+          <span class="service-num">06</span>
+          <h3><a href="/deneigement-toiture.html" style="color:inherit;text-decoration:none"><span class="fr">Déneigement de toiture</span><span class="en">Roof Snow Removal</span></a></h3>
+          <span class="service-item-desc"><span class="fr">Protection contre les surcharges de neige. Techniques sécuritaires qui préservent la membrane.</span><span class="en">Protection against snow overload. Safe techniques that preserve the membrane.</span></span>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- ===== STATS ===== -->
+  <section class="stats">
+    <div class="container">
+      <div class="stats-row">
+        <div class="stat reveal">
+          <div class="stat-num">24/7</div>
+          <div class="stat-label"><span class="fr">Service d'urgence</span><span class="en">Emergency service</span></div>
+        </div>
+        <div class="stat reveal">
+          <div class="stat-num">4.7<small style="font-size:0.45em;color:var(--accent);vertical-align:super">★</small></div>
+          <div class="stat-label"><span class="fr">Note Google</span><span class="en">Google Rating</span></div>
+        </div>
+        <div class="stat reveal">
+          <div class="stat-num">5+</div>
+          <div class="stat-label"><span class="fr">Régions desservies</span><span class="en">Regions served</span></div>
+        </div>
+        <div class="stat reveal">
+          <div class="stat-num">RBQ</div>
+          <div class="stat-label"><span class="fr">Licence certifiée</span><span class="en">Certified licence</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== TESTIMONIALS ===== -->
+  <section class="testimonial-section" id="avis">
+    <div class="container">
+      <div class="testimonial-layout reveal">
+        <div class="testimonial-meta">
+          <div class="testimonial-meta-label">
+            <span class="fr">Avis clients</span>
+            <span class="en">Client reviews</span>
+          </div>
+          <div class="testimonial-meta-rating">4.7</div>
+          <div class="testimonial-meta-stars">★★★★★</div>
+          <div class="testimonial-meta-count">Google Reviews</div>
+        </div>
+        <div class="testimonial-content">
+          <blockquote class="testimonial-quote">
+            <span class="fr">« L'équipe de Laurent et Samuel a fait un travail excellent ! Ils sont professionnels et connaissent leur métier. Je les recommande sans hésitation ! »</span>
+            <span class="en">"Laurent and Samuel's team did an excellent job! They are professional and know their craft. I recommend them without hesitation!"</span>
+          </blockquote>
+          <div class="testimonial-author-name">Martin L.</div>
+          <div class="testimonial-author-loc">Montréal</div>
+        </div>
+      </div>
+
+      <div class="testimonial-secondary">
+        <div class="testimonial-card reveal">
+          <div class="testimonial-card-stars">★★★★★</div>
+          <p>
+            <span class="fr">« Excellent travail pour la réfection de mon toit plat en membrane élastomère. Équipe très professionnelle, efficace et dévouée. »</span>
+            <span class="en">"Excellent work on my flat roof with elastomeric membrane. Very professional, efficient and dedicated team."</span>
+          </p>
+          <div class="testimonial-card-author">Philippe R.</div>
+          <div class="testimonial-card-loc">Laval</div>
+        </div>
+        <div class="testimonial-card reveal">
+          <div class="testimonial-card-stars">★★★★★</div>
+          <p>
+            <span class="fr">« Des travailleurs fiables, expérimentés, ponctuels, proactifs, qui travaillent dans la bonne humeur. Soucieux de la propreté des lieux ! »</span>
+            <span class="en">"Reliable, experienced, punctual, proactive workers who work in good spirits. Very clean worksite!"</span>
+          </p>
+          <div class="testimonial-card-author">Sophie B.</div>
+          <div class="testimonial-card-loc"><span class="fr">Rive-Nord</span><span class="en">North Shore</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== AREAS ===== -->
+  <section class="areas" id="zones">
+    <div class="container">
+      <div class="areas-header reveal">
+        <div class="areas-label">
+          <span class="fr">Zones desservies</span>
+          <span class="en">Service areas</span>
+        </div>
+        <h2>
+          <span class="fr">Partout dans le Grand Montréal</span>
+          <span class="en">Across Greater Montréal</span>
+        </h2>
+      </div>
+      <div class="areas-tags reveal">
+        <a href="/couvreur-montreal.html" class="area-tag primary" style="text-decoration:none">Montréal</a>
+        <a href="/couvreur-laval.html" class="area-tag primary" style="text-decoration:none">Laval</a>
+        <a href="/couvreur-rive-nord.html" class="area-tag" style="text-decoration:none">Boisbriand</a>
+        <a href="/couvreur-rive-nord.html" class="area-tag" style="text-decoration:none">Blainville</a>
+        <a href="/couvreur-rive-nord.html" class="area-tag" style="text-decoration:none">Rosemère</a>
+        <a href="/couvreur-rive-nord.html" class="area-tag" style="text-decoration:none">Terrebonne</a>
+        <a href="/couvreur-rive-nord.html" class="area-tag" style="text-decoration:none">Mascouche</a>
+        <a href="/couvreur-rive-nord.html" class="area-tag" style="text-decoration:none">Sainte-Thérèse</a>
+        <span class="area-tag">Saint-Jérôme</span>
+        <span class="area-tag">Repentigny</span>
+        <span class="area-tag"><span class="fr">Laurentides</span><span class="en">Laurentians</span></span>
+        <span class="area-tag">Lanaudière</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FAQ ===== -->
+  <section class="faq" id="faq">
+    <div class="container">
+      <div class="faq-layout">
+        <div class="faq-header">
+          <div class="faq-header-label">FAQ</div>
+          <h2>
+            <span class="fr">Questions fréquentes</span>
+            <span class="en">Frequently asked questions</span>
+          </h2>
+        </div>
+        <div class="faq-items">
+          <div class="faq-item reveal">
+            <button class="faq-q" aria-expanded="false">
+              <span><span class="fr">Quel type de toiture convient le mieux à ma maison ?</span><span class="en">Which type of roofing is best for my home?</span></span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg>
+            </button>
+            <div class="faq-a"><div class="faq-a-inner"><span class="fr">Pour les toits plats, nous recommandons la membrane élastomère — la solution la plus durable pour le climat québécois. Pour les toits en pente, les bardeaux d'asphalte offrent un excellent rapport qualité-prix. Nous évaluons chaque projet individuellement.</span><span class="en">For flat roofs, we recommend elastomeric membrane — the most durable solution for Quebec's climate. For sloped roofs, asphalt shingles offer excellent value. We evaluate each project individually.</span></div></div>
+          </div>
+          <div class="faq-item reveal">
+            <button class="faq-q" aria-expanded="false">
+              <span><span class="fr">Combien coûte une nouvelle toiture ?</span><span class="en">How much does a new roof cost?</span></span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg>
+            </button>
+            <div class="faq-a"><div class="faq-a-inner"><span class="fr">Le coût varie selon le type de toiture, la superficie et l'état de la structure. Nous offrons des soumissions gratuites et détaillées. Contactez-nous au (450) 949-0900 pour une évaluation sans engagement.</span><span class="en">Cost varies depending on roof type, surface area and structure condition. We offer free, detailed quotes. Contact us at (450) 949-0900 for a no-obligation assessment.</span></div></div>
+          </div>
+          <div class="faq-item reveal">
+            <button class="faq-q" aria-expanded="false">
+              <span><span class="fr">Offrez-vous un service d'urgence ?</span><span class="en">Do you offer emergency service?</span></span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg>
+            </button>
+            <div class="faq-a"><div class="faq-a-inner"><span class="fr">Oui, notre service d'urgence est disponible 24/7. Infiltrations, toits endommagés par une tempête — nous intervenons rapidement dans tout le Grand Montréal.</span><span class="en">Yes, our emergency service is available 24/7. Leaks, storm-damaged roofs — we respond quickly across Greater Montréal.</span></div></div>
+          </div>
+          <div class="faq-item reveal">
+            <button class="faq-q" aria-expanded="false">
+              <span><span class="fr">Êtes-vous un entrepreneur licencié ?</span><span class="en">Are you a licensed contractor?</span></span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg>
+            </button>
+            <div class="faq-a"><div class="faq-a-inner"><span class="fr">Oui, Toitex détient une licence active de la RBQ sous le numéro 5824-2371-01. Notre licence est vérifiée régulièrement pour assurer un travail conforme aux normes.</span><span class="en">Yes, Toitex holds an active RBQ licence under number 5824-2371-01. Our licence is regularly verified to ensure work meets industry standards.</span></div></div>
+          </div>
+          <div class="faq-item reveal">
+            <button class="faq-q" aria-expanded="false">
+              <span><span class="fr">Quelles régions desservez-vous ?</span><span class="en">Which regions do you serve?</span></span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg>
+            </button>
+            <div class="faq-a"><div class="faq-a-inner"><span class="fr">Nous desservons tout le Grand Montréal : Montréal, Laval, la Rive-Nord (Boisbriand, Blainville, Terrebonne, Mascouche), les Laurentides et Lanaudière.</span><span class="en">We serve all of Greater Montréal: Montréal, Laval, the North Shore (Boisbriand, Blainville, Terrebonne, Mascouche), the Laurentians and Lanaudière.</span></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SERVICES CONNEXES (internal linking) ===== -->
+  <section class="areas" style="border-top:1px solid var(--white-10)">
+    <div class="container">
+      <div class="areas-header reveal">
+        <div class="areas-label">
+          <span class="fr">En savoir plus</span>
+          <span class="en">Learn more</span>
+        </div>
+        <h2 style="font-size:clamp(1.4rem,2.5vw,2rem)">
+          <span class="fr">Explorer nos services</span>
+          <span class="en">Explore our services</span>
+        </h2>
+      </div>
+      <div class="areas-tags reveal">
+        <a href="/toits-plats.html" class="area-tag" style="text-decoration:none"><span class="fr">Toits plats</span><span class="en">Flat Roofs</span></a>
+        <a href="/bardeaux-asphalte.html" class="area-tag" style="text-decoration:none"><span class="fr">Bardeaux d'asphalte</span><span class="en">Asphalt Shingles</span></a>
+        <a href="/reparation-toiture.html" class="area-tag" style="text-decoration:none"><span class="fr">Réparation</span><span class="en">Repair</span></a>
+        <a href="/isolation-toiture.html" class="area-tag" style="text-decoration:none">Isolation</a>
+        <a href="/deneigement-toiture.html" class="area-tag" style="text-decoration:none"><span class="fr">Déneigement</span><span class="en">Snow Removal</span></a>
+        <a href="/urgence-toiture.html" class="area-tag" style="text-decoration:none"><span class="fr">Urgence 24/7</span><span class="en">24/7 Emergency</span></a>
+        <a href="/financement.html" class="area-tag" style="text-decoration:none"><span class="fr">Financement 0%</span><span class="en">0% Financing</span></a>
+        <a href="/type-de-toiture.html" class="area-tag" style="text-decoration:none"><span class="fr">Types de toiture</span><span class="en">Roofing Types</span></a>
+        <a href="/soumission.html" class="area-tag primary" style="text-decoration:none"><span class="fr">Soumission gratuite</span><span class="en">Free Quote</span></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CTA ===== -->
+  <section class="cta-section">
+    <div class="container">
+      <div class="cta-layout reveal">
+        <h2>
+          <span class="fr">Obtenez votre soumission gratuite en 24h</span>
+          <span class="en">Get your free quote within 24h</span>
+        </h2>
+        <div class="cta-actions">
+          <a href="tel:4509490900" class="cta-btn dark">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+            (450) 949-0900
+          </a>
+          <a href="mailto:info@toitex.ca" class="cta-btn outline">info@toitex.ca</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <a href="/" class="nav-logo">TOIT<span>EX</span></a>
+          <p>
+            <span class="fr">Expert en toiture pour le Grand Montréal. Toit plat, bardeaux d'asphalte, réparation, inspection, isolation et déneigement.</span>
+            <span class="en">Roofing experts for Greater Montréal. Flat roof, asphalt shingles, repair, inspection, insulation and snow removal.</span>
+          </p>
+        </div>
+        <div class="footer-col">
+          <h4>Services</h4>
+          <ul>
+            <li><a href="/toits-plats.html"><span class="fr">Toit plat</span><span class="en">Flat Roof</span></a></li>
+            <li><a href="/bardeaux-asphalte.html"><span class="fr">Bardeaux</span><span class="en">Shingles</span></a></li>
+            <li><a href="/reparation-toiture.html"><span class="fr">Réparation</span><span class="en">Repair</span></a></li>
+            <li><a href="/isolation-toiture.html">Isolation</a></li>
+            <li><a href="/deneigement-toiture.html"><span class="fr">Déneigement</span><span class="en">Snow Removal</span></a></li>
+            <li><a href="/urgence-toiture.html"><span class="fr">Urgence 24/7</span><span class="en">24/7 Emergency</span></a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4><span class="fr">Régions</span><span class="en">Regions</span></h4>
+          <ul>
+            <li><a href="/couvreur-montreal.html">Montréal</a></li>
+            <li><a href="/couvreur-laval.html">Laval</a></li>
+            <li><a href="/couvreur-rive-nord.html"><span class="fr">Rive-Nord</span><span class="en">North Shore</span></a></li>
+            <li><a href="#zones"><span class="fr">Laurentides</span><span class="en">Laurentians</span></a></li>
+            <li><a href="#zones">Lanaudière</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <ul>
+            <li><a href="tel:4509490900">(450) 949-0900</a></li>
+            <li><a href="mailto:info@toitex.ca">info@toitex.ca</a></li>
+            <li style="color:var(--white-50);font-size:0.82rem;margin-top:0.5rem;line-height:1.5;">100 Rue Prévost<br>Boisbriand, QC<br>J7G 2S2</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span class="footer-copy">© 2026 Toitex inc. <span class="fr">Tous droits réservés.</span><span class="en">All rights reserved.</span> RBQ 5824-2371-01</span>
+        <div class="footer-social">
+          <a href="https://facebook.com/toitex.expertcouvreur" aria-label="Facebook" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+          </a>
+          <a href="https://instagram.com/toitex_" aria-label="Instagram" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ===== SCRIPTS ===== -->
+  <script>
+    // Language toggle
+    function setLang(lang) {
+      document.documentElement.classList.remove('lang-fr', 'lang-en');
+      document.documentElement.classList.add('lang-' + lang);
+      document.documentElement.lang = lang;
+      document.getElementById('langFr').classList.toggle('active', lang === 'fr');
+      document.getElementById('langEn').classList.toggle('active', lang === 'en');
+
+      document.title = lang === 'en'
+        ? 'Toitex — Flat Roof Experts in Montréal, Laval and North Shore'
+        : 'Toitex — Expert en toit plat à Montréal, Laval et Rive-Nord';
+
+      document.querySelector('meta[name="description"]').content = lang === 'en'
+        ? 'Toitex, flat roof and residential roofing experts in Montréal, Laval and North Shore. Free quote within 24h. RBQ-licensed roofer.'
+        : 'Toitex, expert en toit plat et toiture résidentielle à Montréal, Laval et Rive-Nord. Soumission gratuite en 24h. Couvreur licencié RBQ.';
+
+      history.replaceState(null, '', lang === 'fr' ? '/' : '#en');
+    }
+
+    if (location.hash === '#en') setLang('en');
+
+    // Nav scroll
+    const nav = document.getElementById('nav');
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('scrolled', window.scrollY > 50);
+    }, { passive: true });
+
+    // Mobile menu
+    document.getElementById('mobileToggle').addEventListener('click', () => {
+      document.getElementById('navMenu').classList.toggle('mobile-open');
+    });
+
+    // Dropdown menus (shadcn NavigationMenu pattern)
+    document.querySelectorAll('[data-dropdown]').forEach(item => {
+      const trigger = item.querySelector('.nav-menu-trigger');
+      let closeTimeout;
+
+      function openDropdown() {
+        clearTimeout(closeTimeout);
+        // Close other dropdowns
+        document.querySelectorAll('[data-dropdown].open').forEach(other => {
+          if (other !== item) {
+            other.classList.remove('open');
+            other.querySelector('.nav-menu-trigger').setAttribute('aria-expanded', 'false');
+          }
+        });
+        item.classList.add('open');
+        trigger.setAttribute('aria-expanded', 'true');
+      }
+
+      function closeDropdown() {
+        closeTimeout = setTimeout(() => {
+          item.classList.remove('open');
+          trigger.setAttribute('aria-expanded', 'false');
+        }, 150);
+      }
+
+      // Desktop: hover
+      item.addEventListener('mouseenter', openDropdown);
+      item.addEventListener('mouseleave', closeDropdown);
+
+      // Click toggle (mobile + desktop fallback)
+      trigger.addEventListener('click', (e) => {
+        e.preventDefault();
+        if (item.classList.contains('open')) {
+          item.classList.remove('open');
+          trigger.setAttribute('aria-expanded', 'false');
+        } else {
+          openDropdown();
+        }
+      });
+
+      // Keyboard: Escape to close
+      item.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+          item.classList.remove('open');
+          trigger.setAttribute('aria-expanded', 'false');
+          trigger.focus();
+        }
+      });
+    });
+
+    // Close dropdowns when clicking outside
+    document.addEventListener('click', (e) => {
+      if (!e.target.closest('[data-dropdown]')) {
+        document.querySelectorAll('[data-dropdown].open').forEach(item => {
+          item.classList.remove('open');
+          item.querySelector('.nav-menu-trigger').setAttribute('aria-expanded', 'false');
+        });
+      }
+    });
+
+    // Close mobile menu on anchor click
+    document.querySelectorAll('#navMenu a[href]').forEach(a => {
+      a.addEventListener('click', () => {
+        document.getElementById('navMenu').classList.remove('mobile-open');
+      });
+    });
+
+    // FAQ accordion
+    document.querySelectorAll('.faq-q').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const item = btn.closest('.faq-item');
+        const answer = item.querySelector('.faq-a');
+        const isOpen = item.classList.contains('open');
+
+        document.querySelectorAll('.faq-item.open').forEach(el => {
+          el.classList.remove('open');
+          el.querySelector('.faq-a').style.maxHeight = '0';
+          el.querySelector('.faq-q').setAttribute('aria-expanded', 'false');
+        });
+
+        if (!isOpen) {
+          item.classList.add('open');
+          answer.style.maxHeight = answer.scrollHeight + 'px';
+          btn.setAttribute('aria-expanded', 'true');
+        }
+      });
+    });
+
+    // Intersection Observer reveals
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          // Stagger siblings
+          const parent = entry.target.parentElement;
+          const siblings = parent ? Array.from(parent.querySelectorAll('.reveal')) : [];
+          const idx = siblings.indexOf(entry.target);
+          const delay = idx > 0 ? idx * 100 : 0;
+
+          setTimeout(() => {
+            entry.target.classList.add('is-visible');
+          }, delay);
+
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+    document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+    // Smooth anchor scrolling (no library)
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+      a.addEventListener('click', e => {
+        const target = document.querySelector(a.getAttribute('href'));
+        if (target) {
+          e.preventDefault();
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      });
+    });
+  </script>
+</body>
+</html>
