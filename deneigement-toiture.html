@@ -200,7 +200,8 @@
         justify-content: space-between;
       }
 
-      .nav-logo {
+      .nav-logo-img { height: clamp(28px, 3vw, 38px); width: auto; display: block; }
+    .nav-logo {
         font-family: 'Manrope', sans-serif;
         font-size: clamp(1.3rem, 2vw, 1.6rem);
         font-weight: 800;
@@ -949,7 +950,8 @@
 
       .footer-brand { grid-area: brand; }
 
-      .footer-brand .nav-logo {
+      .footer-brand .nav-logo-img { height: clamp(28px, 3vw, 38px); width: auto; display: block; }
+    .nav-logo {
         display: inline-block;
         margin-bottom: 1rem;
         font-size: 1.3rem;
@@ -1120,7 +1122,7 @@
   <!-- ===== NAV ===== -->
   <nav class="nav" id="nav" role="navigation">
     <div class="nav-inner">
-      <a href="index.html" class="nav-logo">TOIT<span>EX</span></a>
+      <a href="index.html" class="nav-logo"><img src="logo-blanc.png" alt="Toitex Expert Couvreur" class="nav-logo-img"></a>
 
       <button class="mobile-toggle" id="mobileToggle" aria-label="Menu">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h18M3 6h18M3 18h18"/></svg>
@@ -1584,7 +1586,7 @@
     <div class="container">
       <div class="footer-top">
         <div class="footer-brand">
-          <a href="index.html" class="nav-logo">TOIT<span>EX</span></a>
+          <a href="index.html" class="nav-logo"><img src="logo-blanc.png" alt="Toitex Expert Couvreur" class="nav-logo-img"></a>
           <p>
             <span class="fr">Expert en toiture pour le Grand Montréal. Toit plat, bardeaux d'asphalte, réparation, inspection, isolation et déneigement.</span>
             <span class="en">Roofing experts for Greater Montréal. Flat roof, asphalt shingles, repair, inspection, insulation and snow removal.</span>
