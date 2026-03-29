@@ -120,7 +120,7 @@
         justify-content: space-between;
       }
 
-      .nav-logo-img { height: clamp(28px, 3vw, 38px); width: auto; display: block; }
+      .nav-logo-img { height: clamp(49px, 5.25vw, 66px); width: auto; display: block; }
     .nav-logo {
         font-family: 'Manrope', sans-serif;
         font-size: clamp(1.3rem, 2vw, 1.6rem);
@@ -664,7 +664,7 @@
 
       .footer-brand { grid-area: brand; }
 
-      .footer-brand .nav-logo-img { height: clamp(28px, 3vw, 38px); width: auto; display: block; }
+      .footer-brand .nav-logo-img { height: clamp(49px, 5.25vw, 66px); width: auto; display: block; }
     .nav-logo {
         display: inline-block;
         margin-bottom: 1rem;
@@ -1025,7 +1025,7 @@
               </div>
               <div>
                 <span class="label"><span class="fr">Courriel</span><span class="en">Email</span></span>
-                <a href="mailto:info@toitex.ca">info@toitex.ca</a>
+                <a href="nous-joindre.html#formulaire"><span class="fr">Écrivez-nous</span><span class="en">Write to us</span></a>
               </div>
             </div>
 
@@ -1096,7 +1096,7 @@
           <h4>Contact</h4>
           <ul>
             <li><a href="tel:4509490900">(450) 949-0900</a></li>
-            <li><a href="mailto:info@toitex.ca">info@toitex.ca</a></li>
+            <li><a href="nous-joindre.html#formulaire"><span class="fr">Écrivez-nous</span><span class="en">Write to us</span></a></li>
             <li style="color:var(--white-50);font-size:0.82rem;margin-top:0.5rem;line-height:1.5;">100 Rue Prévost<br>Boisbriand, QC<br>J7G 2S2</li>
           </ul>
         </div>
@@ -1119,6 +1119,7 @@
   <script>
     // Language toggle
     function setLang(lang) {
+      localStorage.setItem('toitex-lang', lang);
       document.documentElement.classList.remove('lang-fr', 'lang-en');
       document.documentElement.classList.add('lang-' + lang);
       document.documentElement.lang = lang;
@@ -1134,7 +1135,7 @@
         : 'Demandez une soumission gratuite pour votre toiture à Montréal, Laval et Rive-Nord. Réponse en 24h. Toitex, couvreur certifié RBQ.';
     }
 
-    if (location.hash === '#en') setLang('en');
+    var savedLang = localStorage.getItem('toitex-lang') || (location.hash === '#en' ? 'en' : 'fr'); setLang(savedLang);
 
     // Mobile menu
     document.getElementById('mobileToggle').addEventListener('click', () => {

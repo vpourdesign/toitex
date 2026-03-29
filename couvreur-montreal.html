@@ -189,7 +189,7 @@
         justify-content: space-between;
       }
 
-      .nav-logo-img { height: clamp(28px, 3vw, 38px); width: auto; display: block; }
+      .nav-logo-img { height: clamp(49px, 5.25vw, 66px); width: auto; display: block; }
     .nav-logo {
         font-family: 'Manrope', sans-serif;
         font-size: clamp(1.3rem, 2vw, 1.6rem);
@@ -1014,7 +1014,7 @@
       }
 
       .footer-brand { grid-area: brand; }
-      .footer-brand .nav-logo-img { height: clamp(28px, 3vw, 38px); width: auto; display: block; }
+      .footer-brand .nav-logo-img { height: clamp(49px, 5.25vw, 66px); width: auto; display: block; }
     .nav-logo { display: inline-block; margin-bottom: 1rem; font-size: 1.3rem; }
       .footer-brand p { font-size: 0.85rem; color: var(--white-50); line-height: 1.65; max-width: 280px; }
 
@@ -1563,7 +1563,7 @@
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
             (450) 949-0900
           </a>
-          <a href="mailto:info@toitex.ca" class="cta-btn outline">info@toitex.ca</a>
+          <a href="nous-joindre.html#formulaire" class="cta-btn outline"><span class="fr">Écrivez-nous</span><span class="en">Write to us</span></a>
         </div>
       </div>
     </div>
@@ -1603,7 +1603,7 @@
           <h4>Contact</h4>
           <ul>
             <li><a href="tel:4509490900">(450) 949-0900</a></li>
-            <li><a href="mailto:info@toitex.ca">info@toitex.ca</a></li>
+            <li><a href="nous-joindre.html#formulaire"><span class="fr">Écrivez-nous</span><span class="en">Write to us</span></a></li>
             <li style="color:var(--white-50);font-size:0.82rem;margin-top:0.5rem;line-height:1.5;">100 Rue Prévost<br>Boisbriand, QC<br>J7G 2S2</li>
           </ul>
         </div>
@@ -1625,6 +1625,7 @@
   <!-- ===== SCRIPTS ===== -->
   <script>
     function setLang(lang) {
+      localStorage.setItem('toitex-lang', lang);
       document.documentElement.classList.remove('lang-fr', 'lang-en');
       document.documentElement.classList.add('lang-' + lang);
       document.documentElement.lang = lang;
@@ -1642,7 +1643,7 @@
       history.replaceState(null, '', lang === 'fr' ? '/couvreur-montreal.html' : '/couvreur-montreal.html#en');
     }
 
-    if (location.hash === '#en') setLang('en');
+    var savedLang = localStorage.getItem('toitex-lang') || (location.hash === '#en' ? 'en' : 'fr'); setLang(savedLang);
 
     const nav = document.getElementById('nav');
     window.addEventListener('scroll', () => {
