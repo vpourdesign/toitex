@@ -199,7 +199,7 @@
         justify-content: space-between;
       }
 
-      .nav-logo-img { height: clamp(49px, 5.25vw, 66px); width: auto; display: block; padding: 20px 0; }
+      .nav-logo-img { height: clamp(60px, 6vw, 80px); width: auto; display: block; padding: 20px 0; }
     .nav-logo {
         font-family: 'Manrope', sans-serif;
         font-size: clamp(1.3rem, 2vw, 1.6rem);
@@ -1068,7 +1068,7 @@
 
       .footer-brand { grid-area: brand; }
 
-      .footer-brand .nav-logo-img { height: clamp(49px, 5.25vw, 66px); width: auto; display: block; padding: 20px 0; }
+      .footer-brand .nav-logo-img { height: clamp(60px, 6vw, 80px); width: auto; display: block; padding: 20px 0; }
     .nav-logo {
         display: inline-block;
         margin-bottom: 1rem;
@@ -1159,7 +1159,8 @@
       }
 
       @media (max-width: 768px) {
-        .nav-inner { flex-wrap: wrap; }
+        .nav-inner { flex-wrap: wrap; justify-content: space-between; }
+        .nav-logo-img { height: 50px; padding: 12px 0; }
         .mobile-toggle { order: 3; margin-left: auto; }
         .nav-right { order: 2; }
         .btn-primary { font-size: 0.7rem; padding: 0.4rem 0.8rem; gap: 0.3rem; }

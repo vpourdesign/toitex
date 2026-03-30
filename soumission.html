@@ -153,7 +153,7 @@
         justify-content: space-between;
       }
 
-      .nav-logo-img { height: clamp(49px, 5.25vw, 66px); width: auto; display: block; padding: 20px 0; }
+      .nav-logo-img { height: clamp(60px, 6vw, 80px); width: auto; display: block; padding: 20px 0; }
     .nav-logo {
         font-family: 'Manrope', sans-serif;
         font-size: clamp(1.3rem, 2vw, 1.6rem);
@@ -697,7 +697,7 @@
 
       .footer-brand { grid-area: brand; }
 
-      .footer-brand .nav-logo-img { height: clamp(49px, 5.25vw, 66px); width: auto; display: block; padding: 20px 0; }
+      .footer-brand .nav-logo-img { height: clamp(60px, 6vw, 80px); width: auto; display: block; padding: 20px 0; }
     .nav-logo {
         display: inline-block;
         margin-bottom: 1rem;
@@ -788,7 +788,8 @@
       }
 
       @media (max-width: 768px) {
-        .nav-inner { flex-wrap: wrap; }
+        .nav-inner { flex-wrap: wrap; justify-content: space-between; }
+        .nav-logo-img { height: 50px; padding: 12px 0; }
         .mobile-toggle { order: 3; margin-left: auto; }
         .nav-right { order: 2; }
         .btn-primary { font-size: 0.7rem; padding: 0.4rem 0.8rem; gap: 0.3rem; }
@@ -986,37 +987,20 @@
               <input type="text" id="adresse" name="adresse" autocomplete="street-address">
             </div>
 
-            <div class="form-field field-type-toit">
-              <label for="type-toit">
-                <span class="fr" lang="fr">Type de toiture</span>
-                <span class="en" lang="en">Roof Type</span>
-              </label>
-              <select id="type-toit" name="type-toit" required>
-                <option value="" disabled selected>
-                  <span class="fr" lang="fr">Sélectionnez</span>
-                </option>
-                <option value="toit-plat">Toit plat / Flat Roof</option>
-                <option value="bardeaux">Bardeaux / Shingles</option>
-                <option value="autre">Autre / Other</option>
-              </select>
-            </div>
-
             <div class="form-field field-type-service">
               <label for="type-service">
                 <span class="fr" lang="fr">Type de service</span>
                 <span class="en" lang="en">Service Type</span>
               </label>
-              <select id="type-service" name="type-service" required>
+              <select id="type-service" name="service" required>
                 <option value="" disabled selected>
                   <span class="fr" lang="fr">Sélectionnez</span>
                 </option>
-                <option value="installation">Installation</option>
-                <option value="reparation">Réparation / Repair</option>
-                <option value="inspection">Inspection</option>
-                <option value="refection">Réfection / Re-roofing</option>
-                <option value="isolation">Isolation / Insulation</option>
-                <option value="deneigement">Déneigement / Snow Removal</option>
-                <option value="autre">Autre / Other</option>
+                <option value="Toit plat">Toit plat / Flat Roof</option>
+                <option value="Toiture de bardeaux">Toiture de bardeaux / Shingle Roof</option>
+                <option value="Réparation de toiture">Réparation de toiture / Roof Repair</option>
+                <option value="Déneigement">Déneigement / Snow Removal</option>
+                <option value="Autres">Autres / Other</option>
               </select>
             </div>
 
