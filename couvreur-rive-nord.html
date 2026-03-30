@@ -1250,6 +1250,19 @@
             <form action="#" method="POST">
               <input type="hidden" name="source" value="couvreur-rive-nord">
               <input type="hidden" name="ville" value="Rive-Nord">
+              <input type="hidden" name="agency" value="V pour Design">
+              <input type="hidden" name="provenance" value="">
+              <input type="hidden" name="page_name" value="">
+              <input type="hidden" name="campaign_name" value="">
+              <input type="hidden" name="campaign_id" value="">
+              <input type="hidden" name="adset_name" value="">
+              <input type="hidden" name="adset_id" value="">
+              <input type="hidden" name="ad_name" value="">
+              <input type="hidden" name="ad_id" value="">
+              <input type="hidden" name="form_name" value="">
+              <input type="hidden" name="gclid" value="">
+              <input type="hidden" name="fbclid" value="">
+              <input type="hidden" name="page_url" value="">
               <div class="hero-form-row">
                 <input type="text" name="nom_complet" placeholder="Nom / Name" required>
                 <input type="tel" name="telephone" placeholder="Téléphone / Phone" required>
@@ -1659,6 +1672,8 @@
         </div>
       </div>
     </div>
+      <div class="footer-credit">Stratégie web <a href="https://www.vpourdesign.com" target="_blank" rel="noopener"><img src="logo-vpourdesign.png" alt="vpourdesign" class="vp-logo"></a></div>
+    </div>
   </footer>
 
   <!-- ===== SCRIPTS ===== -->
@@ -1822,5 +1837,60 @@
       }
     });
   </script>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  var params = new URLSearchParams(window.location.search);
+  var fieldMap = {
+    'utm_source': 'provenance', 'utm_campaign': 'campaign_name', 'utm_campaignid': 'campaign_id',
+    'utm_adgroup': 'adset_name', 'utm_adgroupid': 'adset_id', 'utm_creative': 'ad_name',
+    'utm_adid': 'ad_id', 'gclid': 'gclid', 'fbclid': 'fbclid'
+  };
+  Object.entries(fieldMap).forEach(function(e) {
+    var value = params.get(e[0]);
+    if (value) document.querySelectorAll('input[name="' + e[1] + '"]').forEach(function(i) { i.value = value; });
+  });
+  document.querySelectorAll('input[name="provenance"]').forEach(function(input) {
+    if (!input.value) {
+      var ref = document.referrer;
+      if (ref.includes('google')) input.value = 'Google Organic';
+      else if (ref.includes('facebook')) input.value = 'Facebook Organic';
+      else if (ref.includes('bing')) input.value = 'Bing';
+      else if (ref) input.value = 'Referral';
+      else input.value = 'Direct';
+    }
+    if (params.get('gclid')) input.value = 'Google Ads';
+    if (params.get('fbclid')) input.value = 'Facebook Ads';
+  });
+  var pageName = document.querySelector('input[name="source"]');
+  document.querySelectorAll('input[name="page_name"]').forEach(function(i) {
+    i.value = pageName ? pageName.value : window.location.pathname.replace(/^\/|\.html$/g, '') || 'accueil';
+  });
+  document.querySelectorAll('input[name="form_name"]').forEach(function(i) {
+    var src = pageName ? pageName.value : 'principal';
+    i.value = 'Formulaire ' + src;
+  });
+  document.querySelectorAll('input[name="page_url"]').forEach(function(i) { i.value = window.location.href; });
+  if (window.location.search) {
+    sessionStorage.setItem('toitex_utm', window.location.search);
+  } else {
+    var saved = sessionStorage.getItem('toitex_utm');
+    if (saved) {
+      var sp = new URLSearchParams(saved);
+      Object.entries(fieldMap).forEach(function(e) {
+        var v = sp.get(e[0]);
+        if (v) document.querySelectorAll('input[name="' + e[1] + '"]').forEach(function(i) { if (!i.value) i.value = v; });
+      });
+      if (sp.get('gclid')) {
+        document.querySelectorAll('input[name="provenance"]').forEach(function(i) { i.value = 'Google Ads'; });
+        document.querySelectorAll('input[name="gclid"]').forEach(function(i) { if (!i.value) i.value = sp.get('gclid'); });
+      }
+      if (sp.get('fbclid')) {
+        document.querySelectorAll('input[name="provenance"]').forEach(function(i) { i.value = 'Facebook Ads'; });
+        document.querySelectorAll('input[name="fbclid"]').forEach(function(i) { if (!i.value) i.value = sp.get('fbclid'); });
+      }
+    }
+  }
+});
+</script>
 </body>
 </html>
