@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/jpeg" href="../favicon.jpeg">
   <title>Blogue Toitex — Conseils et expertise en toiture | Toitex</title>
   <meta name="description" content="Blogue Toitex : articles, guides et conseils d'experts en toiture pour Montréal et le Québec. Entretien, réparation, comparatifs et saisonnier.">
   <meta name="keywords" content="blogue toiture, conseils toiture montréal, entretien toit plat, membrane élastomère, couvreur montréal, réparation toiture, guide toiture québec">
@@ -214,7 +215,7 @@
           0 4px 16px oklch(25% 0.05 135 / 0.1);
       }
 
-      .nav-inner {
+      .nav-inner { align-items: center;
         width: 100%;
         max-width: 1400px;
         margin: 0 auto;
@@ -945,10 +946,10 @@
       }
 
       @media (max-width: 768px) {
-        .nav-inner { flex-wrap: wrap; }
-        .mobile-toggle { order: 3; margin-left: auto; }
-        .nav-right { order: 2; }
-        .btn-primary { font-size: 0.7rem; padding: 0.4rem 0.8rem; gap: 0.3rem; }
+        .nav-inner { align-items: center; flex-wrap: wrap; }
+        .nav-right { order: 2; flex-direction: row-reverse; gap: 0.75rem; } .btn-primary { order: 1; font-size: 0.7rem; padding: 0.4rem 0.8rem; gap: 0.3rem; } .lang-switch { order: 2; } .mobile-toggle { order: 3; }
+        
+        
         .btn-primary svg { width: 12px; height: 12px; }
         .nav-menu { display: none; }
         .mobile-toggle { display: block; }

@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/jpeg" href="favicon.jpeg">
   <title>Nous joindre — Toitex | Couvreur Montréal, Laval, Rive-Nord</title>
   <meta name="description" content="Contactez Toitex pour vos besoins en toiture. (450) 949-0900. 100 Rue Prévost, Boisbriand, QC.">
   <meta name="keywords" content="contact toitex, couvreur montréal contact, toiture laval téléphone, couvreur boisbriand">
@@ -143,7 +144,7 @@
           0 4px 16px oklch(25% 0.05 135 / 0.1);
       }
 
-      .nav-inner {
+      .nav-inner { align-items: center;
         width: 100%;
         max-width: 1400px;
         margin: 0 auto;
@@ -153,7 +154,7 @@
         justify-content: space-between;
       }
 
-      .nav-logo-img { height: clamp(60px, 6vw, 80px); width: auto; display: block; padding: 20px 0; }
+      .nav-logo-img { height: clamp(102px, 10vw, 136px); width: auto; display: block; padding: 20px 0; }
     .nav-logo {
         font-family: 'Manrope', sans-serif;
         font-size: clamp(1.3rem, 2vw, 1.6rem);
@@ -761,7 +762,7 @@
 
       .footer-brand { grid-area: brand; }
 
-      .footer-brand .nav-logo-img { height: clamp(60px, 6vw, 80px); width: auto; display: block; padding: 20px 0; }
+      .footer-brand .nav-logo-img { height: clamp(102px, 10vw, 136px); width: auto; display: block; padding: 20px 0; }
     .nav-logo {
         display: inline-block;
         margin-bottom: 1rem;
@@ -852,11 +853,11 @@
       }
 
       @media (max-width: 768px) {
-        .nav-inner { flex-wrap: wrap; justify-content: space-between; }
-        .nav-logo-img { height: 50px; padding: 12px 0; }
-        .mobile-toggle { order: 3; margin-left: auto; }
-        .nav-right { order: 2; }
-        .btn-primary { font-size: 0.7rem; padding: 0.4rem 0.8rem; gap: 0.3rem; }
+        .nav-inner { align-items: center; flex-wrap: wrap; justify-content: space-between; align-items: center; }
+        .nav-logo { order: 1; } .nav-logo-img { height: 85px; padding: 10px 0; }
+        .nav-right { order: 2; flex-direction: row-reverse; gap: 0.75rem; } .btn-primary { order: 1; font-size: 0.7rem; padding: 0.4rem 0.8rem; gap: 0.3rem; } .lang-switch { order: 2; } .mobile-toggle { order: 3; }
+        
+        
         .btn-primary svg { width: 12px; height: 12px; }
         .nav-menu { display: none; }
         .mobile-toggle { display: block; }

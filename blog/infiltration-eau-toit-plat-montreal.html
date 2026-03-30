@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/jpeg" href="../favicon.jpeg">
   <title>Infiltration d'eau sur toit plat à Montréal : causes et solutions | Toitex</title>
   <meta name="description" content="Découvrez les causes d'infiltration d'eau sur toit plat à Montréal et les solutions professionnelles. Membrane vieillissante, drainage défaillant, solins abîmés. Guide complet par Toitex.">
   <meta name="keywords" content="infiltration eau toit plat, fuite toiture montréal, réparation toit plat, infiltration toiture, toit plat qui coule">
@@ -168,7 +169,7 @@
           0 4px 16px oklch(25% 0.05 135 / 0.1);
       }
 
-      .nav-inner {
+      .nav-inner { align-items: center;
         width: 100%;
         max-width: 1400px;
         margin: 0 auto;
@@ -716,10 +717,10 @@
       }
 
       @media (max-width: 768px) {
-        .nav-inner { flex-wrap: wrap; }
-        .mobile-toggle { order: 3; margin-left: auto; }
-        .nav-right { order: 2; }
-        .btn-primary { font-size: 0.7rem; padding: 0.4rem 0.8rem; gap: 0.3rem; }
+        .nav-inner { align-items: center; flex-wrap: wrap; }
+        .nav-right { order: 2; flex-direction: row-reverse; gap: 0.75rem; } .btn-primary { order: 1; font-size: 0.7rem; padding: 0.4rem 0.8rem; gap: 0.3rem; } .lang-switch { order: 2; } .mobile-toggle { order: 3; }
+        
+        
         .btn-primary svg { width: 12px; height: 12px; }
         .nav-menu { display: none; }
         .mobile-toggle { display: block; }
