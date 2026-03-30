@@ -961,7 +961,7 @@
                 <span class="fr" lang="fr">Nom complet</span>
                 <span class="en" lang="en">Full Name</span>
               </label>
-              <input type="text" id="nom" name="nom" required autocomplete="name">
+              <input type="text" id="nom" name="nom_complet" required autocomplete="name">
             </div>
 
             <div class="form-field field-email">
@@ -1236,7 +1236,7 @@
         await fetch('https://n8n.groupemercure.ca/webhook/5aea17b6-21eb-4063-b264-668c2d265732/', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify(data)
+          body: JSON.stringify(Object.assign(data, {page_url: window.location.href, date: new Date().toISOString()}))
         });
         btn.innerHTML = '<span class="fr" lang="fr">✓ Demande envoyée!</span><span class="en" lang="en">✓ Request sent!</span>';
         btn.style.background = 'var(--dark)';

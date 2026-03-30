@@ -1251,7 +1251,7 @@
               <input type="hidden" name="source" value="couvreur-rive-nord">
               <input type="hidden" name="ville" value="Rive-Nord">
               <div class="hero-form-row">
-                <input type="text" name="nom" placeholder="Nom / Name" required>
+                <input type="text" name="nom_complet" placeholder="Nom / Name" required>
                 <input type="tel" name="telephone" placeholder="Téléphone / Phone" required>
               </div>
               <input type="email" name="email" placeholder="Courriel / Email" required>
@@ -1792,7 +1792,7 @@
         await fetch('https://n8n.groupemercure.ca/webhook/5aea17b6-21eb-4063-b264-668c2d265732/', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify(data)
+          body: JSON.stringify(Object.assign(data, {page_url: window.location.href, date: new Date().toISOString()}))
         });
 
         if (typeof gtag !== 'undefined') {
