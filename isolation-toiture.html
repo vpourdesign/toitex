@@ -1074,7 +1074,7 @@
         transform: translateY(20px);
       }
 
-      .reveal.is-visible {
+      .reveal.is-visible, .reveal.force-visible {
         opacity: 1;
         transform: translateY(0);
         transition: opacity 0.7s var(--ease), transform 0.7s var(--ease);
@@ -1902,7 +1902,8 @@
       });
     }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
 
-    document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+    document.querySelectorAll(".reveal").forEach(el => revealObserver.observe(el));
+    setTimeout(() => { document.querySelectorAll(".reveal:not(.is-visible)").forEach(el => el.classList.add("is-visible")); }, 1500);
 
     // Smooth anchor scrolling
     document.querySelectorAll('a[href^="#"]').forEach(a => {
