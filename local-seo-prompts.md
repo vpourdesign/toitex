@@ -24,13 +24,13 @@ Team size: Large team
 
 SERVICES + MARKET:
 Primary service: flat roofs, toits plats
-Secondary services: shingle roofs, toits en bardeau
+Secondary services: shingle roofs, toits en bardeaux
 Service areas: Montréal, Laval
-Target customer: [who your best customer is]
-Average job value: [$X]
+Target customer: Plex owners, commercial strip owners, Propriétaires de plex et strips commerciales
+Average job value: 20,000$
 
 SEO GOALS:
-Top 5 keywords I want to rank for: [keyword 1], [keyword 2], [keyword 3], [keyword 4], [keyword 5]
+Top 5 keywords I want to rank for: toit plat, toit plat montréal, élastomère, toit élastomère, réparation toit plat
 Keywords I currently rank for: [keyword 1], [keyword 2]
 Keywords I should rank for but don't: [keyword 1], [keyword 2]
 
