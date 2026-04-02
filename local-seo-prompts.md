@@ -35,11 +35,11 @@ Keywords I currently rank for: [keyword 1], [keyword 2]
 Keywords I should rank for but don't: [keyword 1], [keyword 2]
 
 CURRENT STANDINGS:
-Google reviews: [X] total, [X] star rating, [X] new reviews per month
-GBP monthly views: [X impressions if known]
-Monthly website traffic: [X visits if known]
+Google reviews: 61 tpotal, 4.9 star rating, 5 new reviews per month
+GBP monthly views: unknown
+Monthly website traffic: 500
 Current map pack status: [ranking for X, not ranking for Y]
-Biggest SEO problem right now: [one sentence — be honest]
+Biggest SEO problem right now: young URL, no authority
 
 COMPETITORS:
 [competitor name] — [GBP URL] — [website] — [why they're beating you if you know]
