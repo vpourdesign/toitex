@@ -1871,35 +1871,36 @@
       const data = Object.fromEntries(new FormData(form));
 
       try {
-        // n8n webhook — replace URL when available
+        // 1. Send data to n8n webhook
         await fetch('https://n8n.groupemercure.ca/webhook/5aea17b6-21eb-4063-b264-668c2d265732/', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify(Object.assign(data, {page_url: window.location.href, date: new Date().toISOString()}))
         });
 
-        // Google Ads conversion
-        if (typeof gtag !== 'undefined') {
-          gtag('event', 'conversion', { 'send_to': 'AW-695468280/8XHCCKuL9_EbEPiB0MsC' });
+        // 2. Fire Google Ads conversion with callback redirect
+        var redirected = false;
+        function doRedirect() {
+          if (!redirected) {
+            redirected = true;
+            window.location.href = 'merci.html';
+          }
         }
 
-        // Facebook conversion
+        if (typeof gtag !== 'undefined') {
+          gtag('event', 'conversion', {
+            'send_to': 'AW-695468280/8XHCCKuL9_EbEPiB0MsC',
+            'event_callback': doRedirect
+          });
+        }
+
+        // 3. Fire Facebook Lead pixel
         if (typeof fbq !== 'undefined') {
           fbq('track', 'Lead', { content_name: 'soumission-couvreur-montreal' });
         }
 
-        // Success state
-        btn.innerHTML = '<span class="fr" lang="fr">✓ Demande envoyée!</span><span class="en" lang="en">✓ Request sent!</span>';
-        btn.style.background = 'var(--dark)';
-        btn.style.color = 'var(--white)';
-        form.reset();
-
-        setTimeout(() => {
-          btn.innerHTML = originalText;
-          btn.style.background = '';
-          btn.style.color = '';
-          btn.disabled = false;
-        }, 4000);
+        // 4. Fallback redirect if gtag doesn't respond within 1 second
+        setTimeout(doRedirect, 1000);
 
       } catch (err) {
         btn.innerHTML = '<span class="fr" lang="fr">Erreur — Réessayer</span><span class="en" lang="en">Error — Retry</span>';

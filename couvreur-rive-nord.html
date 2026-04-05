@@ -1811,25 +1811,23 @@
           body: JSON.stringify(Object.assign(data, {page_url: window.location.href, date: new Date().toISOString()}))
         });
 
+        var redirected = false;
+        function doRedirect() {
+          if (!redirected) { redirected = true; window.location.href = 'merci.html'; }
+        }
+
         if (typeof gtag !== 'undefined') {
-          gtag('event', 'conversion', { 'send_to': 'AW-695468280/8XHCCKuL9_EbEPiB0MsC' });
+          gtag('event', 'conversion', {
+            'send_to': 'AW-695468280/8XHCCKuL9_EbEPiB0MsC',
+            'event_callback': doRedirect
+          });
         }
 
         if (typeof fbq !== 'undefined') {
           fbq('track', 'Lead', { content_name: 'soumission-couvreur-rive-nord' });
         }
 
-        btn.innerHTML = '<span class="fr" lang="fr">✓ Demande envoyée!</span><span class="en" lang="en">✓ Request sent!</span>';
-        btn.style.background = 'var(--dark)';
-        btn.style.color = 'var(--white)';
-        form.reset();
-
-        setTimeout(() => {
-          btn.innerHTML = originalText;
-          btn.style.background = '';
-          btn.style.color = '';
-          btn.disabled = false;
-        }, 4000);
+        setTimeout(doRedirect, 1000);
 
       } catch (err) {
         btn.innerHTML = '<span class="fr" lang="fr">Erreur — Réessayer</span><span class="en" lang="en">Error — Retry</span>';
