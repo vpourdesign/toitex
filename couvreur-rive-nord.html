@@ -1803,31 +1803,47 @@
       btn.disabled = true;
 
       const data = Object.fromEntries(new FormData(form));
+      Object.assign(data, { page_url: window.location.href, date: new Date().toISOString() });
+
+      var redirected = false;
+      function doRedirect() {
+        if (!redirected) { redirected = true; window.location.href = 'merci.html'; }
+      }
 
       try {
-        await fetch('https://n8n.groupemercure.ca/webhook/5aea17b6-21eb-4063-b264-668c2d265732/', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify(Object.assign(data, {page_url: window.location.href, date: new Date().toISOString()}))
-        });
+        // Envoi parallèle — n8n + Formspree
+        const [n8nResult, formspreeResult] = await Promise.allSettled([
+          fetch('https://n8n.groupemercure.ca/webhook/5aea17b6-21eb-4063-b264-668c2d265732/', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(data)
+          }),
+          fetch('https://formspree.io/f/mnjbpkpo', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+            body: JSON.stringify(data)
+          })
+        ]);
 
-        var redirected = false;
-        function doRedirect() {
-          if (!redirected) { redirected = true; window.location.href = 'merci.html'; }
+        console.log('n8n:', n8nResult.status);
+        console.log('formspree:', formspreeResult.status);
+
+        if (n8nResult.status === 'fulfilled') {
+          if (typeof gtag !== 'undefined') {
+            gtag('event', 'conversion', {
+              'send_to': 'AW-695468280/8XHCCKuL9_EbEPiB0MsC',
+              'event_callback': doRedirect
+            });
+          }
+
+          if (typeof fbq !== 'undefined') {
+            fbq('track', 'Lead', { content_name: 'soumission-couvreur-rive-nord' });
+          }
+
+          setTimeout(doRedirect, 1000);
+        } else {
+          doRedirect();
         }
-
-        if (typeof gtag !== 'undefined') {
-          gtag('event', 'conversion', {
-            'send_to': 'AW-695468280/8XHCCKuL9_EbEPiB0MsC',
-            'event_callback': doRedirect
-          });
-        }
-
-        if (typeof fbq !== 'undefined') {
-          fbq('track', 'Lead', { content_name: 'soumission-couvreur-rive-nord' });
-        }
-
-        setTimeout(doRedirect, 1000);
 
       } catch (err) {
         btn.innerHTML = '<span class="fr" lang="fr">Erreur — Réessayer</span><span class="en" lang="en">Error — Retry</span>';
