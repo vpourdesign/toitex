@@ -662,6 +662,7 @@
         grid-template-columns: 1fr 1fr;
         grid-template-areas:
           "c-nom c-email"
+          "c-tel c-tel"
           "c-message c-message"
           "c-submit c-submit";
         gap: clamp(1rem, 2vw, 1.5rem);
@@ -669,6 +670,7 @@
 
       .c-field-nom { grid-area: c-nom; }
       .c-field-email { grid-area: c-email; }
+      .c-field-tel { grid-area: c-tel; }
       .c-field-message { grid-area: c-message; }
       .c-field-submit { grid-area: c-submit; text-align: center; }
 
@@ -887,6 +889,7 @@
           grid-template-areas:
             "c-nom"
             "c-email"
+            "c-tel"
             "c-message"
             "c-submit";
         }
@@ -1136,6 +1139,14 @@
             <input type="email" id="c-email" name="email" required autocomplete="email">
           </div>
 
+          <div class="form-field c-field-tel">
+            <label for="c-tel">
+              <span class="fr" lang="fr">Téléphone</span>
+              <span class="en" lang="en">Phone</span>
+            </label>
+            <input type="tel" id="c-tel" name="tel" required autocomplete="tel">
+          </div>
+
           <div class="form-field c-field-message">
             <label for="c-message">Message</label>
             <textarea id="c-message" name="message" rows="5" required></textarea>
@@ -1293,6 +1304,50 @@
 
     document.querySelectorAll(".reveal").forEach(el => revealObserver.observe(el));
     setTimeout(() => { document.querySelectorAll(".reveal:not(.is-visible)").forEach(el => el.classList.add("is-visible")); }, 1500);
+
+    // Form submission → n8n webhook
+    document.getElementById('contactForm').addEventListener('submit', async function(e) {
+      e.preventDefault();
+      const btn = this.querySelector('.submit-btn-dark');
+      const originalHTML = btn.innerHTML;
+      btn.innerHTML = '<span>Envoi...</span>';
+      btn.disabled = true;
+
+      const data = Object.fromEntries(new FormData(this));
+
+      try {
+        await fetch('https://n8n.groupemercure.ca/webhook/5aea17b6-21eb-4063-b264-668c2d265732/', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(Object.assign(data, {page_url: window.location.href, date: new Date().toISOString()}))
+        });
+
+        var redirected = false;
+        function doRedirect() {
+          if (!redirected) { redirected = true; window.location.href = 'merci.html'; }
+        }
+
+        if (typeof gtag !== 'undefined') {
+          gtag('event', 'conversion', {
+            'send_to': 'AW-695468280/8XHCCKuL9_EbEPiB0MsC',
+            'event_callback': doRedirect
+          });
+        }
+
+        if (typeof fbq !== 'undefined') {
+          fbq('track', 'Lead', { content_name: 'nous-joindre' });
+        }
+
+        setTimeout(doRedirect, 1000);
+
+      } catch (err) {
+        btn.innerHTML = '<span class="fr" lang="fr">Erreur — réessayez</span><span class="en" lang="en">Error — try again</span>';
+        btn.style.background = '#c0392b';
+        btn.style.color = 'var(--white)';
+        btn.disabled = false;
+        setTimeout(() => { btn.innerHTML = originalHTML; btn.style.background = ''; btn.style.color = ''; }, 3000);
+      }
+    });
   </script>
 <script>
 document.addEventListener('DOMContentLoaded', function() {
