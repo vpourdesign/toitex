@@ -31,9 +31,22 @@ createServer(async (req, res) => {
   const ext = extname(filePath).toLowerCase();
   const contentType = MIME_TYPES[ext] || 'application/octet-stream';
 
+  // Cache-Control: long cache for static assets, no-cache for HTML
+  const CACHE_LONG = 'public, max-age=31536000, immutable'; // 1 year
+  const CACHE_SHORT = 'public, max-age=3600'; // 1 hour
+  const CACHE_NONE = 'no-cache, no-store, must-revalidate';
+  const isImage = ['.jpg', '.jpeg', '.png', '.webp', '.gif', '.svg', '.ico'].includes(ext);
+  const isFont = ['.woff2', '.woff'].includes(ext);
+  const cacheControl = (isImage || isFont) ? CACHE_LONG
+    : (ext === '.css' || ext === '.js') ? CACHE_SHORT
+    : CACHE_NONE;
+
   try {
     const data = await readFile(filePath);
-    res.writeHead(200, { 'Content-Type': contentType });
+    res.writeHead(200, {
+      'Content-Type': contentType,
+      'Cache-Control': cacheControl,
+    });
     res.end(data);
   } catch {
     res.writeHead(404, { 'Content-Type': 'text/html; charset=utf-8' });
