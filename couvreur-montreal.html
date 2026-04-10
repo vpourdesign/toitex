@@ -150,19 +150,28 @@
   }
   </script>
 
-  <!-- Google Ads -->
+  <!-- Google Ads — async (non-blocking) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=AW-695468280"></script>
   <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','AW-695468280');</script>
 
-  <!-- Meta Pixel Code -->
-  <script>!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init','1271841963539865');fbq('track','PageView');</script>
+  <!-- Meta Pixel Code — deferred to not block first paint -->
+  <script>
+  window.addEventListener('load', function() {
+    !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init','1271841963539865');fbq('track','PageView');
+  });
+  </script>
   <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1271841963539865&ev=PageView&noscript=1"/></noscript>
   <!-- End Meta Pixel Code -->
+
+  <!-- Preload hero image (responsive) -->
+  <link rel="preload" as="image" type="image/webp" href="images/mtlmobile.webp" fetchpriority="high" media="(max-width: 768px)">
+  <link rel="preload" as="image" type="image/webp" href="images/mtl.webp" fetchpriority="high" media="(min-width: 769px)">
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet"></noscript>
 
   <!-- SVG noise filter -->
   <svg style="position:absolute;width:0;height:0">
@@ -624,514 +633,7 @@
           linear-gradient(90deg, oklch(30% 0.06 135 / 0.3) 0%, transparent 50%);
       }
 
-      /* ===== SERVICES ===== */
-      .services {
-        background: var(--bg-light);
-        padding-block: clamp(5rem, 10vw, 9rem);
-        position: relative;
-      }
-
-      .services-header {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        grid-template-areas: "label ." "title desc";
-        gap: 0 clamp(2rem, 5vw, 5rem);
-        margin-bottom: clamp(3rem, 6vw, 5rem);
-      }
-
-      .services-label {
-        grid-area: label;
-        font-size: 0.72rem;
-        font-weight: 700;
-        letter-spacing: 0.12em;
-        text-transform: uppercase;
-        color: var(--dark-light);
-        margin-bottom: 1rem;
-      }
-
-      .services-header h2 {
-        grid-area: title;
-        font-family: 'Manrope', sans-serif;
-        font-size: clamp(1.8rem, 3.5vw, 2.8rem);
-        font-weight: 800;
-        color: var(--dark-deeper);
-        letter-spacing: -0.03em;
-        line-height: 1.05;
-      }
-
-      .services-header p {
-        grid-area: desc;
-        font-size: clamp(0.88rem, 1.2vw, 0.95rem);
-        color: var(--text-muted);
-        line-height: 1.7;
-        align-self: end;
-      }
-
-      .service-list { list-style: none; }
-
-      .service-item {
-        display: grid;
-        grid-template-columns: auto 1fr auto;
-        gap: clamp(1.25rem, 3vw, 2.5rem);
-        align-items: baseline;
-        padding-block: clamp(1.25rem, 2.5vw, 2rem);
-        border-top: 1px solid oklch(50% 0.05 135 / 0.2);
-        cursor: default;
-        transition: background 0.3s var(--ease);
-      }
-
-      .service-item:last-child { border-bottom: 1px solid oklch(50% 0.05 135 / 0.2); }
-      .service-item:hover { background: oklch(90% 0.02 135 / 0.5); }
-
-      .service-num {
-        font-family: 'Manrope', sans-serif;
-        font-size: clamp(0.85rem, 1.2vw, 1rem);
-        font-weight: 800;
-        color: var(--dark-light);
-        letter-spacing: -0.02em;
-        min-width: 2.5rem;
-      }
-
-      .service-item h3 {
-        font-family: 'Manrope', sans-serif;
-        font-size: clamp(1.15rem, 2vw, 1.6rem);
-        font-weight: 700;
-        color: var(--dark-deeper);
-        letter-spacing: -0.02em;
-        line-height: 1.15;
-      }
-
-      .service-item-desc {
-        font-size: clamp(0.82rem, 1vw, 0.88rem);
-        color: var(--text-muted);
-        line-height: 1.6;
-        max-width: 300px;
-        text-align: right;
-        opacity: 0;
-        transform: translateX(8px);
-        transition: opacity 0.4s var(--ease), transform 0.4s var(--ease);
-      }
-
-      .service-item:hover .service-item-desc {
-        opacity: 1;
-        transform: translateX(0);
-      }
-
-      /* ===== CONTENT SECTION ===== */
-      .content-section {
-        background: var(--dark);
-        padding-block: clamp(5rem, 10vw, 9rem);
-      }
-
-      .content-grid {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        grid-template-areas: "text aside";
-        gap: clamp(3rem, 6vw, 6rem);
-        align-items: start;
-      }
-
-      .content-text { grid-area: text; }
-
-      .content-text h2 {
-        font-family: 'Manrope', sans-serif;
-        font-size: clamp(1.6rem, 3vw, 2.4rem);
-        font-weight: 800;
-        color: var(--white);
-        letter-spacing: -0.03em;
-        line-height: 1.1;
-        margin-bottom: clamp(1.25rem, 2.5vw, 2rem);
-      }
-
-      .content-text p {
-        font-size: clamp(0.9rem, 1.15vw, 1rem);
-        color: var(--white-70);
-        line-height: 1.75;
-        margin-bottom: 1.25rem;
-        max-width: 60ch;
-      }
-
-      .content-aside {
-        grid-area: aside;
-        position: sticky;
-        top: 100px;
-      }
-
-      .content-aside-card {
-        background: var(--white-05);
-        border: 1px solid var(--white-10);
-        border-radius: 12px;
-        padding: clamp(1.5rem, 3vw, 2.5rem);
-      }
-
-      .content-aside-card h3 {
-        font-family: 'Manrope', sans-serif;
-        font-size: clamp(1.1rem, 1.5vw, 1.3rem);
-        font-weight: 700;
-        color: var(--white);
-        margin-bottom: 1rem;
-        letter-spacing: -0.02em;
-      }
-
-      .content-aside-card p {
-        font-size: clamp(0.85rem, 1vw, 0.92rem);
-        color: var(--white-50);
-        line-height: 1.65;
-        margin-bottom: 1.5rem;
-      }
-
-      .content-aside-card .btn-primary { width: 100%; justify-content: center; }
-
-      /* ===== AREAS ===== */
-      .areas {
-        background: var(--dark);
-        padding-block: clamp(4rem, 8vw, 7rem);
-      }
-
-      .areas-header { margin-bottom: clamp(2rem, 4vw, 3rem); }
-
-      .areas-label {
-        font-size: 0.72rem;
-        font-weight: 700;
-        letter-spacing: 0.12em;
-        text-transform: uppercase;
-        color: var(--accent);
-        margin-bottom: 1rem;
-      }
-
-      .areas h2 {
-        font-family: 'Manrope', sans-serif;
-        font-size: clamp(1.8rem, 3.5vw, 2.8rem);
-        font-weight: 800;
-        color: var(--white);
-        letter-spacing: -0.03em;
-        line-height: 1.05;
-        max-width: 550px;
-      }
-
-      .areas-tags {
-        display: flex;
-        flex-wrap: wrap;
-        gap: clamp(0.5rem, 1vw, 0.75rem);
-      }
-
-      .area-tag {
-        display: inline-flex;
-        align-items: center;
-        gap: 0.5rem;
-        padding: 0.65rem 1.25rem;
-        background: var(--white-10);
-        border: 1px solid var(--white-10);
-        border-radius: 100px;
-        font-size: clamp(0.82rem, 1vw, 0.92rem);
-        font-weight: 500;
-        color: var(--white-90);
-        transition: background 0.3s var(--ease), border-color 0.3s var(--ease), transform 0.3s var(--ease);
-        cursor: default;
-      }
-
-      .area-tag:hover {
-        background: var(--white-20);
-        border-color: var(--accent);
-        transform: translateY(-2px);
-      }
-
-      .area-tag.primary {
-        background: var(--accent);
-        border-color: var(--accent);
-        color: var(--dark-deeper);
-        font-weight: 700;
-      }
-
-      .area-tag.primary:hover { background: var(--accent-hover); }
-
-      /* ===== WHY SECTION ===== */
-      .why-section {
-        background: var(--bg-light);
-        padding-block: clamp(5rem, 10vw, 9rem);
-      }
-
-      .why-grid {
-        display: grid;
-        grid-template-columns: 0.4fr 1fr;
-        grid-template-areas: "label reasons";
-        gap: clamp(2rem, 5vw, 5rem);
-        align-items: start;
-      }
-
-      .why-label-area {
-        grid-area: label;
-        position: sticky;
-        top: 100px;
-      }
-
-      .why-label {
-        font-size: 0.72rem;
-        font-weight: 700;
-        letter-spacing: 0.12em;
-        text-transform: uppercase;
-        color: var(--dark-light);
-        margin-bottom: 1rem;
-      }
-
-      .why-label-area h2 {
-        font-family: 'Manrope', sans-serif;
-        font-size: clamp(1.6rem, 3vw, 2.4rem);
-        font-weight: 800;
-        color: var(--dark-deeper);
-        letter-spacing: -0.03em;
-        line-height: 1.1;
-      }
-
-      .why-reasons { grid-area: reasons; }
-
-      .why-reason {
-        padding-block: clamp(1.25rem, 2.5vw, 2rem);
-        border-top: 1px solid oklch(50% 0.05 135 / 0.2);
-      }
-
-      .why-reason:last-child { border-bottom: 1px solid oklch(50% 0.05 135 / 0.2); }
-
-      .why-reason h3 {
-        font-family: 'Manrope', sans-serif;
-        font-size: clamp(1.05rem, 1.5vw, 1.3rem);
-        font-weight: 700;
-        color: var(--dark-deeper);
-        margin-bottom: 0.5rem;
-        letter-spacing: -0.02em;
-      }
-
-      .why-reason p {
-        font-size: clamp(0.85rem, 1.1vw, 0.92rem);
-        color: var(--text-muted);
-        line-height: 1.7;
-        max-width: 55ch;
-      }
-
-      /* ===== SEO TEXT ===== */
-      .seo-text {
-        background: var(--bg-light);
-        padding-block: clamp(4rem, 8vw, 7rem);
-      }
-
-      .seo-text-inner { max-width: 75ch; }
-
-      .seo-text h2 {
-        font-family: 'Manrope', sans-serif;
-        font-size: clamp(1.4rem, 2.5vw, 2rem);
-        font-weight: 800;
-        color: var(--dark-deeper);
-        letter-spacing: -0.03em;
-        line-height: 1.1;
-        margin-bottom: clamp(1rem, 2vw, 1.5rem);
-      }
-
-      .seo-text h3 {
-        font-family: 'Manrope', sans-serif;
-        font-size: clamp(1.1rem, 1.8vw, 1.4rem);
-        font-weight: 700;
-        color: var(--dark-deep);
-        letter-spacing: -0.02em;
-        margin-top: clamp(1.5rem, 3vw, 2.5rem);
-        margin-bottom: 0.75rem;
-      }
-
-      .seo-text p {
-        font-size: clamp(0.9rem, 1.15vw, 1rem);
-        color: var(--text-muted);
-        line-height: 1.75;
-        margin-bottom: 1rem;
-      }
-
-      /* ===== FAQ ===== */
-      .faq {
-        background: var(--bg-light);
-        padding-block: clamp(5rem, 10vw, 8rem);
-      }
-
-      .faq-layout {
-        display: grid;
-        grid-template-columns: 0.4fr 1fr;
-        grid-template-areas: "header items";
-        gap: clamp(2rem, 5vw, 5rem);
-        align-items: start;
-      }
-
-      .faq-header {
-        grid-area: header;
-        position: sticky;
-        top: 100px;
-      }
-
-      .faq-header-label {
-        font-size: 0.72rem;
-        font-weight: 700;
-        letter-spacing: 0.12em;
-        text-transform: uppercase;
-        color: var(--dark-light);
-        margin-bottom: 1rem;
-      }
-
-      .faq h2 {
-        font-family: 'Manrope', sans-serif;
-        font-size: clamp(1.6rem, 3vw, 2.4rem);
-        font-weight: 800;
-        color: var(--dark-deeper);
-        letter-spacing: -0.03em;
-        line-height: 1.1;
-      }
-
-      .faq-items { grid-area: items; }
-
-      .faq-item { border-bottom: 1px solid oklch(50% 0.05 135 / 0.15); }
-
-      .faq-q {
-        width: 100%;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        gap: 1rem;
-        padding-block: clamp(1rem, 2vw, 1.4rem);
-        background: none;
-        border: none;
-        cursor: pointer;
-        font-family: 'Plus Jakarta Sans', sans-serif;
-        font-size: clamp(0.92rem, 1.2vw, 1.05rem);
-        font-weight: 600;
-        color: var(--dark-deeper);
-        text-align: left;
-        transition: color 0.3s var(--ease);
-      }
-
-      .faq-q:hover { color: var(--dark-light); }
-      .faq-q:focus-visible { outline: 2px solid var(--dark-light); outline-offset: 2px; }
-
-      .faq-q svg {
-        width: 18px; height: 18px;
-        flex-shrink: 0;
-        color: var(--dark-light);
-        transition: transform 0.4s var(--ease);
-      }
-
-      .faq-item.open .faq-q svg { transform: rotate(45deg); }
-
-      .faq-a {
-        max-height: 0;
-        overflow: hidden;
-        opacity: 0;
-        transition: max-height 0.5s var(--ease), opacity 0.4s var(--ease);
-      }
-
-      .faq-item.open .faq-a { opacity: 1; }
-
-      .faq-a-inner {
-        padding-bottom: clamp(1rem, 2vw, 1.5rem);
-        font-size: clamp(0.85rem, 1.1vw, 0.92rem);
-        color: var(--text-muted);
-        line-height: 1.7;
-        max-width: 60ch;
-      }
-
-      /* ===== CTA ===== */
-      .cta-section {
-        background: var(--accent);
-        padding-block: clamp(5rem, 10vw, 9rem);
-        position: relative;
-        overflow: hidden;
-      }
-
-      .cta-layout {
-        display: grid;
-        grid-template-columns: 1fr auto;
-        gap: clamp(2rem, 5vw, 4rem);
-        align-items: center;
-      }
-
-      .cta-section h2 {
-        font-family: 'Manrope', sans-serif;
-        font-size: clamp(2rem, 4.5vw, 3.8rem);
-        font-weight: 800;
-        color: var(--dark-deeper);
-        letter-spacing: -0.025em;
-        line-height: 1.02;
-      }
-
-      .cta-actions {
-        display: flex;
-        gap: 1rem;
-        flex-shrink: 0;
-      }
-
-      .cta-btn {
-        display: inline-flex;
-        align-items: center;
-        gap: 0.6rem;
-        padding: 0.9rem 2rem;
-        font-family: 'Plus Jakarta Sans', sans-serif;
-        font-size: 0.92rem;
-        font-weight: 700;
-        text-decoration: none;
-        border-radius: 8px;
-        letter-spacing: 0.01em;
-        transition: transform 0.3s var(--ease), box-shadow 0.3s var(--ease), background 0.3s var(--ease);
-      }
-
-      .cta-btn.dark { background: var(--dark-deeper); color: var(--white); }
-      .cta-btn.dark:hover { transform: translateY(-2px); box-shadow: 0 8px 24px oklch(25% 0.05 135 / 0.3); }
-
-      .cta-btn.outline { background: transparent; color: var(--dark-deeper); border: 2px solid var(--dark-deeper); }
-      .cta-btn.outline:hover { background: var(--dark-deeper); color: var(--white); transform: translateY(-2px); }
-
-      .cta-btn:focus-visible { outline: 2px solid var(--dark-deeper); outline-offset: 3px; }
-      .cta-btn:active { transform: translateY(0); }
-      .cta-btn svg { width: 18px; height: 18px; }
-
-      /* ===== FOOTER ===== */
-      .footer {
-        background: var(--dark-deeper);
-        padding-block: clamp(3.5rem, 6vw, 5.5rem) clamp(1.5rem, 3vw, 2rem);
-      }
-
-      .footer-top {
-        display: grid;
-        grid-template-columns: 1.8fr 1fr 1fr 1fr;
-        grid-template-areas: "brand services regions contact";
-        gap: clamp(2rem, 4vw, 3rem);
-        padding-bottom: clamp(2.5rem, 4vw, 3.5rem);
-        border-bottom: 1px solid var(--white-10);
-      }
-
-      .footer-brand { grid-area: brand; }
-      .footer-brand .nav-logo-img { height: clamp(102px, 10vw, 136px); width: auto; display: block; padding: 45px 0 35px; }
-    .nav-logo { display: inline-block; margin-bottom: 1rem; font-size: 1.3rem; }
-      .footer-brand p { font-size: 0.85rem; color: var(--white-50); line-height: 1.65; max-width: 280px; }
-
-      .footer-col h4 { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--white-70); margin-bottom: 1rem; }
-      .footer-col ul { list-style: none; }
-      .footer-col li { margin-bottom: 0.35rem; }
-      .footer-col a { font-size: 0.82rem; color: var(--white-50); text-decoration: none; transition: color 0.3s var(--ease); }
-      .footer-col a:hover { color: var(--accent); }
-
-      .footer-bottom {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding-top: clamp(1.5rem, 2.5vw, 2rem);
-      }
-
-      .footer-copy { font-size: 0.78rem; color: var(--white-50); }
-
-      .footer-social { display: flex; gap: 1rem; }
-      .footer-social a {
-        display: flex; align-items: center; justify-content: center;
-        width: 36px; height: 36px; border-radius: 8px;
-        background: var(--white-05); border: 1px solid var(--white-10);
-        color: var(--white-50);
-        transition: color 0.3s var(--ease), border-color 0.3s var(--ease), transform 0.3s var(--ease);
-      }
-      .footer-social a:hover { color: var(--accent); border-color: var(--accent); transform: translateY(-2px); }
-      .footer-social svg { width: 16px; height: 16px; }
-    }
+      /* Non-critical CSS loaded async — see couvreur-montreal-defer.css */
 
     @layer utilities {
       @media (max-width: 900px) {
@@ -1174,12 +676,9 @@
         .footer-top { grid-template-columns: 1fr; grid-template-areas: "brand" "services" "regions" "contact"; }
       }
     }
-        .footer-credit { display: flex; align-items: center; justify-content: center; gap: 10px; margin-top: 28px; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.06); font-size: 10px; letter-spacing: 0.14em; color: rgba(255,255,255,0.25); text-transform: uppercase; }
-      .vp-logo { height: 52px; animation: vpFloat 3s ease-in-out infinite, vpGlow 3s ease-in-out infinite; cursor: pointer; }
-      .vp-logo:hover { animation: none; filter: invert(1) brightness(1.4) drop-shadow(0 0 18px rgba(200,170,110,0.9)); transform: scale(1.07) translateY(-2px); transition: filter 0.3s, transform 0.3s; }
-      @keyframes vpFloat { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-5px); } }
-      @keyframes vpGlow { 0%, 100% { filter: invert(1) brightness(0.7) drop-shadow(0 0 0px rgba(200,170,110,0)); } 50% { filter: invert(1) brightness(1.25) drop-shadow(0 0 14px rgba(200,170,110,0.6)); } }
     </style>
+    <link rel="preload" href="couvreur-montreal-defer.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="couvreur-montreal-defer.css"></noscript>
 </head>
 <body>
 
@@ -1355,7 +854,11 @@
       </div>
       <div class="hero-image-wrap reveal">
         <div class="hero-image">
-          <img src="images/mtl.jpg" alt="Vue aérienne des toit plat de Montréal avec horizon urbain — couvreur Toitex" width="1400" height="580" loading="eager">
+          <picture>
+            <source srcset="images/mtlmobile.webp 600w, images/mtl.webp 1400w" sizes="(max-width: 768px) 100vw, 1400px" type="image/webp">
+            <source srcset="images/mtlmobile.jpg 600w, images/mtl.jpg 1400w" sizes="(max-width: 768px) 100vw, 1400px" type="image/jpeg">
+            <img src="images/mtl.jpg" alt="Vue aérienne des toit plat de Montréal avec horizon urbain — couvreur Toitex" width="1400" height="580" loading="eager" fetchpriority="high">
+          </picture>
         </div>
       </div>
     </div>
@@ -1687,7 +1190,7 @@
     <div class="container">
       <div class="footer-top">
         <div class="footer-brand">
-          <a href="index.html" class="nav-logo"><img src="logo-blanc.png" alt="Toitex Expert Couvreur" class="nav-logo-img"></a>
+          <a href="index.html" class="nav-logo"><img src="logo-blanc.png" alt="Toitex Expert Couvreur" class="nav-logo-img" loading="lazy"></a>
           <p>
             <span class="fr" lang="fr">Expert en toiture pour le Grand Montréal. Toit plat, bardeaux d'asphalte, réparation, inspection, isolation et déneigement.</span>
             <span class="en" lang="en">Roofing experts for Greater Montréal. Flat roof, asphalt shingles, repair, inspection, insulation and snow removal.</span>
@@ -1733,7 +1236,7 @@
         </div>
       </div>
     </div>
-      <div class="footer-credit">Stratégie web <a href="https://www.vpourdesign.com" target="_blank" rel="noopener"><img src="logo-vpourdesign.png" alt="vpourdesign" class="vp-logo"></a></div>
+      <div class="footer-credit">Stratégie web <a href="https://www.vpourdesign.com" target="_blank" rel="noopener"><img src="logo-vpourdesign.png" alt="vpourdesign" class="vp-logo" loading="lazy"></a></div>
     </div>
   </footer>
 
