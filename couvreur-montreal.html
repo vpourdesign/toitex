@@ -1398,6 +1398,23 @@
         // Tracking + redirect si n8n a réussi
         if (n8nResult.status === 'fulfilled') {
           if (typeof gtag !== 'undefined') {
+            // Enhanced Conversions — user_data (Google auto-hashes in-browser)
+            var nameParts = (data.nom_complet || '').trim().split(/\s+/);
+            var firstName = nameParts.shift() || '';
+            var lastName = nameParts.join(' ') || '';
+            var digits = (data.tel || '').replace(/\D/g, '');
+            if (digits.length === 10) digits = '1' + digits;
+            var phoneE164 = digits ? '+' + digits : '';
+
+            gtag('set', 'user_data', {
+              phone_number: phoneE164,
+              address: {
+                first_name: firstName,
+                last_name: lastName,
+                country: 'CA'
+              }
+            });
+
             gtag('event', 'conversion', {
               'send_to': 'AW-695468280/8XHCCKuL9_EbEPiB0MsC',
               'event_callback': doRedirect
