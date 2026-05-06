@@ -901,6 +901,32 @@
       }
     }
   </style>
+
+  <!-- Google Consent Mode v2 — defaults BEFORE any tag fires (Loi 25 / PIPEDA) -->
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    (function(){
+      var saved = null;
+      try { saved = JSON.parse(localStorage.getItem('toitex_consent') || 'null'); } catch(e) {}
+      var c = saved && saved.v === 1 ? saved.c : null;
+      gtag('consent', 'default', {
+        ad_storage:           c ? (c.ads ? 'granted':'denied') : 'denied',
+        ad_user_data:         c ? (c.ads ? 'granted':'denied') : 'denied',
+        ad_personalization:   c ? (c.ads ? 'granted':'denied') : 'denied',
+        analytics_storage:    c ? (c.analytics ? 'granted':'denied') : 'denied',
+        functionality_storage:'granted',
+        security_storage:     'granted',
+        wait_for_update: 500
+      });
+      window.__toitexConsent = c;
+    })();
+  </script>
+
+  <!-- Google Ads — async (non-blocking) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-695468280"></script>
+  <script>gtag('js',new Date());gtag('config','AW-695468280');</script>
+
   <!-- Meta Pixel Code -->
   <script>!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init','1271841963539865');fbq('track','PageView');</script>
   <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1271841963539865&ev=PageView&noscript=1"/></noscript>
@@ -1341,6 +1367,20 @@
 
         if (n8nResult.status === 'fulfilled') {
           if (typeof gtag !== 'undefined') {
+            // Enhanced Conversions — user_data (Google auto-hashes in-browser)
+            var nameParts = (data.nom_complet || '').trim().split(/\s+/);
+            var firstName = nameParts.shift() || '';
+            var lastName = nameParts.join(' ') || '';
+            var digits = (data.tel || '').replace(/\D/g, '');
+            if (digits.length === 10) digits = '1' + digits;
+            var phoneE164 = digits ? '+' + digits : '';
+
+            gtag('set', 'user_data', {
+              email: (data.email || '').trim().toLowerCase(),
+              phone_number: phoneE164,
+              address: { first_name: firstName, last_name: lastName, country: 'CA' }
+            });
+
             gtag('event', 'conversion', {
               'send_to': 'AW-695468280/8XHCCKuL9_EbEPiB0MsC',
               'event_callback': doRedirect
