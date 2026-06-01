@@ -19,49 +19,90 @@
 
   <script type="application/ld+json">
   {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "name": "Toitex",
+      "url": "https://toitex.ca",
+      "logo": "https://toitex.ca/logo-vert.png",
+      "telephone": "+14509490900",
+      "email": "info@toitex.ca",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "100 Rue Prevost",
+        "addressLocality": "Boisbriand",
+        "addressRegion": "QC",
+        "postalCode": "J7G 2S2",
+        "addressCountry": "CA"
+      },
+      "sameAs": [
+        "https://facebook.com/toitex.expertcouvreur",
+        "https://instagram.com/toitex_"
+      ],
+      "@id": "https://toitex.ca/#organization",
+      "foundingDate": "2017",
+      "slogan": "Expert en toit plat dans le Grand Montréal",
+      "knowsLanguage": [
+        "fr-CA",
+        "en-CA"
+      ],
+      "priceRange": "$$",
+      "hasCredential": {
+        "@type": "EducationalOccupationalCredential",
+        "credentialCategory": "license",
+        "name": "Licence RBQ",
+        "identifier": "5824-2371-01",
+        "recognizedBy": {
+          "@type": "GovernmentOrganization",
+          "name": "Régie du bâtiment du Québec",
+          "url": "https://www.rbq.gouv.qc.ca/"
+        }
+      }
+    },
+    {
+      "@type": "WebSite",
+      "name": "Toitex",
+      "url": "https://toitex.ca",
+      "@id": "https://toitex.ca/#website",
+      "inLanguage": [
+        "fr-CA",
+        "en-CA"
+      ],
+      "publisher": {
+        "@id": "https://toitex.ca/#organization"
+      },
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": {
+          "@type": "EntryPoint",
+          "urlTemplate": "https://toitex.ca/?s={search_term_string}"
+        },
+        "query-input": "required name=search_term_string"
+      }
+    },
+    {
+      "@type": "Article",
+      "headline": "Inspection de toiture au printemps a Montreal : checklist complete",
+      "author": {
+        "@type": "Organization",
+        "name": "Toitex"
+      },
+      "publisher": {
         "@type": "Organization",
         "name": "Toitex",
-        "url": "https://toitex.ca",
-        "logo": "https://toitex.ca/logo-vert.png",
-        "telephone": "+14509490900",
-        "email": "info@toitex.ca",
-        "address": {
-          "@type": "PostalAddress",
-          "streetAddress": "100 Rue Prevost",
-          "addressLocality": "Boisbriand",
-          "addressRegion": "QC",
-          "postalCode": "J7G 2S2",
-          "addressCountry": "CA"
-        },
-        "sameAs": [
-          "https://facebook.com/toitex.expertcouvreur",
-          "https://instagram.com/toitex_"
-        ]
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://toitex.ca/logo-vert.png"
+        }
       },
-      {
-        "@type": "WebSite",
-        "name": "Toitex",
-        "url": "https://toitex.ca"
-      },
-      {
-        "@type": "Article",
-        "headline": "Inspection de toiture au printemps a Montreal : checklist complete",
-        "author": { "@type": "Organization", "name": "Toitex" },
-        "publisher": {
-          "@type": "Organization",
-          "name": "Toitex",
-          "logo": { "@type": "ImageObject", "url": "https://toitex.ca/logo-vert.png" }
-        },
-        "datePublished": "2026-03-29",
-        "dateModified": "2026-03-29",
-        "mainEntityOfPage": "https://toitex.ca/blog/inspection-toiture-printemps-montreal.html",
-        "description": "Checklist complete pour l'inspection de votre toiture au printemps a Montreal. Membrane, drains, solins, ventilation, gouttières."
-      }
-    ]
-  }
+      "datePublished": "2026-03-29",
+      "dateModified": "2026-03-29",
+      "mainEntityOfPage": "https://toitex.ca/blog/inspection-toiture-printemps-montreal.html",
+      "description": "Checklist complete pour l'inspection de votre toiture au printemps a Montreal. Membrane, drains, solins, ventilation, gouttières."
+    }
+  ]
+}
   </script>
 
   <!-- Fonts -->
@@ -715,6 +756,60 @@
   <script>!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init','1271841963539865');fbq('track','PageView');</script>
   <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1271841963539865&ev=PageView&noscript=1"/></noscript>
   <!-- End Meta Pixel Code -->
+  <!-- AI-SEO Phase 1 schema -->
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "@id": "https://toitex.ca/blog/inspection-toiture-printemps-montreal#webpage",
+      "url": "https://toitex.ca/blog/inspection-toiture-printemps-montreal",
+      "name": "Inspection de toiture au printemps à Montréal",
+      "isPartOf": {
+        "@id": "https://toitex.ca/#website"
+      },
+      "about": {
+        "@id": "https://toitex.ca/#organization"
+      },
+      "inLanguage": "fr-CA",
+      "breadcrumb": {
+        "@id": "https://toitex.ca/blog/inspection-toiture-printemps-montreal#breadcrumb"
+      },
+      "speakable": {
+        "@type": "SpeakableSpecification",
+        "cssSelector": [
+          ".article-layout h1", ".article-content > p:first-of-type", ".article-content h2"
+        ]
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://toitex.ca/blog/inspection-toiture-printemps-montreal#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Accueil",
+          "item": "https://toitex.ca/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Blogue",
+          "item": "https://toitex.ca/blog/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Inspection toiture printemps",
+          "item": "https://toitex.ca/blog/inspection-toiture-printemps-montreal"
+        }
+      ]
+    }
+  ]
+}
+  </script>
 </head>
 <body>
 

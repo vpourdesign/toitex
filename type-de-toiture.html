@@ -19,35 +19,70 @@
 
   <script type="application/ld+json">
   {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "Organization",
-        "name": "Toitex",
-        "url": "https://toitex.ca",
-        "logo": "https://toitex.ca/logo-vert.png",
-        "telephone": "+14509490900",
-        "email": "info@toitex.ca",
-        "address": {
-          "@type": "PostalAddress",
-          "streetAddress": "100 Rue Prévost",
-          "addressLocality": "Boisbriand",
-          "addressRegion": "QC",
-          "postalCode": "J7G 2S2",
-          "addressCountry": "CA"
-        },
-        "sameAs": [
-          "https://facebook.com/toitex.expertcouvreur",
-          "https://instagram.com/toitex_"
-        ]
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "name": "Toitex",
+      "url": "https://toitex.ca",
+      "logo": "https://toitex.ca/logo-vert.png",
+      "telephone": "+14509490900",
+      "email": "info@toitex.ca",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "100 Rue Prévost",
+        "addressLocality": "Boisbriand",
+        "addressRegion": "QC",
+        "postalCode": "J7G 2S2",
+        "addressCountry": "CA"
       },
-      {
-        "@type": "WebSite",
-        "name": "Toitex",
-        "url": "https://toitex.ca"
+      "sameAs": [
+        "https://facebook.com/toitex.expertcouvreur",
+        "https://instagram.com/toitex_"
+      ],
+      "@id": "https://toitex.ca/#organization",
+      "foundingDate": "2017",
+      "slogan": "Expert en toit plat dans le Grand Montréal",
+      "knowsLanguage": [
+        "fr-CA",
+        "en-CA"
+      ],
+      "priceRange": "$$",
+      "hasCredential": {
+        "@type": "EducationalOccupationalCredential",
+        "credentialCategory": "license",
+        "name": "Licence RBQ",
+        "identifier": "5824-2371-01",
+        "recognizedBy": {
+          "@type": "GovernmentOrganization",
+          "name": "Régie du bâtiment du Québec",
+          "url": "https://www.rbq.gouv.qc.ca/"
+        }
       }
-    ]
-  }
+    },
+    {
+      "@type": "WebSite",
+      "name": "Toitex",
+      "url": "https://toitex.ca",
+      "@id": "https://toitex.ca/#website",
+      "inLanguage": [
+        "fr-CA",
+        "en-CA"
+      ],
+      "publisher": {
+        "@id": "https://toitex.ca/#organization"
+      },
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": {
+          "@type": "EntryPoint",
+          "urlTemplate": "https://toitex.ca/?s={search_term_string}"
+        },
+        "query-input": "required name=search_term_string"
+      }
+    }
+  ]
+}
   </script>
 
   <script type="application/ld+json">
@@ -986,6 +1021,61 @@
   <script>!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init','1271841963539865');fbq('track','PageView');</script>
   <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1271841963539865&ev=PageView&noscript=1"/></noscript>
   <!-- End Meta Pixel Code -->
+  <!-- AI-SEO Phase 1 schema -->
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://toitex.ca/type-de-toiture#webpage",
+      "url": "https://toitex.ca/type-de-toiture",
+      "name": "Types de toiture — Guide complet",
+      "isPartOf": {
+        "@id": "https://toitex.ca/#website"
+      },
+      "about": {
+        "@id": "https://toitex.ca/#organization"
+      },
+      "inLanguage": "fr-CA",
+      "breadcrumb": {
+        "@id": "https://toitex.ca/type-de-toiture#breadcrumb"
+      },
+      "speakable": {
+        "@type": "SpeakableSpecification",
+        "cssSelector": [
+          ".hero-headline h1",
+          ".hero-headline p"
+        ]
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://toitex.ca/type-de-toiture#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Accueil",
+          "item": "https://toitex.ca/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Nos services",
+          "item": "https://toitex.ca/nos-services"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Types de toiture",
+          "item": "https://toitex.ca/type-de-toiture"
+        }
+      ]
+    }
+  ]
+}
+  </script>
 </head>
 <body>
 

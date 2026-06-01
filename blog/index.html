@@ -19,102 +19,137 @@
 
   <script type="application/ld+json">
   {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "Organization",
-        "name": "Toitex",
-        "url": "https://toitex.ca",
-        "logo": "https://toitex.ca/logo-vert.png",
-        "telephone": "+14509490900",
-        "email": "info@toitex.ca",
-        "address": {
-          "@type": "PostalAddress",
-          "streetAddress": "100 Rue Prévost",
-          "addressLocality": "Boisbriand",
-          "addressRegion": "QC",
-          "postalCode": "J7G 2S2",
-          "addressCountry": "CA"
-        },
-        "sameAs": [
-          "https://facebook.com/toitex.expertcouvreur",
-          "https://instagram.com/toitex_"
-        ]
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "name": "Toitex",
+      "url": "https://toitex.ca",
+      "logo": "https://toitex.ca/logo-vert.png",
+      "telephone": "+14509490900",
+      "email": "info@toitex.ca",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "100 Rue Prévost",
+        "addressLocality": "Boisbriand",
+        "addressRegion": "QC",
+        "postalCode": "J7G 2S2",
+        "addressCountry": "CA"
       },
-      {
-        "@type": "WebSite",
+      "sameAs": [
+        "https://facebook.com/toitex.expertcouvreur",
+        "https://instagram.com/toitex_"
+      ],
+      "@id": "https://toitex.ca/#organization",
+      "foundingDate": "2017",
+      "slogan": "Expert en toit plat dans le Grand Montréal",
+      "knowsLanguage": [
+        "fr-CA",
+        "en-CA"
+      ],
+      "priceRange": "$$",
+      "hasCredential": {
+        "@type": "EducationalOccupationalCredential",
+        "credentialCategory": "license",
+        "name": "Licence RBQ",
+        "identifier": "5824-2371-01",
+        "recognizedBy": {
+          "@type": "GovernmentOrganization",
+          "name": "Régie du bâtiment du Québec",
+          "url": "https://www.rbq.gouv.qc.ca/"
+        }
+      }
+    },
+    {
+      "@type": "WebSite",
+      "name": "Toitex",
+      "url": "https://toitex.ca",
+      "@id": "https://toitex.ca/#website",
+      "inLanguage": [
+        "fr-CA",
+        "en-CA"
+      ],
+      "publisher": {
+        "@id": "https://toitex.ca/#organization"
+      },
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": {
+          "@type": "EntryPoint",
+          "urlTemplate": "https://toitex.ca/?s={search_term_string}"
+        },
+        "query-input": "required name=search_term_string"
+      }
+    },
+    {
+      "@type": "Blog",
+      "name": "Blogue Toitex",
+      "url": "https://toitex.ca/blog/",
+      "description": "Articles, guides et conseils d'experts en toiture pour Montréal et le Québec.",
+      "publisher": {
+        "@type": "Organization",
         "name": "Toitex",
         "url": "https://toitex.ca"
       },
-      {
-        "@type": "Blog",
-        "name": "Blogue Toitex",
-        "url": "https://toitex.ca/blog/",
-        "description": "Articles, guides et conseils d'experts en toiture pour Montréal et le Québec.",
-        "publisher": {
-          "@type": "Organization",
-          "name": "Toitex",
-          "url": "https://toitex.ca"
+      "blogPost": [
+        {
+          "@type": "BlogPosting",
+          "headline": "Infiltration d'eau sur toit plat à Montréal : causes et solutions",
+          "url": "https://toitex.ca/blog/infiltration-eau-toit-plat-montreal.html",
+          "datePublished": "2026-03-29"
         },
-        "blogPost": [
-          {
-            "@type": "BlogPosting",
-            "headline": "Infiltration d'eau sur toit plat à Montréal : causes et solutions",
-            "url": "https://toitex.ca/blog/infiltration-eau-toit-plat-montreal.html",
-            "datePublished": "2026-03-29"
-          },
-          {
-            "@type": "BlogPosting",
-            "headline": "Membrane élastomère qui décolle au printemps : que faire?",
-            "url": "https://toitex.ca/blog/membrane-elastomere-decolle-printemps.html",
-            "datePublished": "2026-03-29"
-          },
-          {
-            "@type": "BlogPosting",
-            "headline": "Fissures sur toit plat après l'hiver à Montréal : diagnostic et réparation",
-            "url": "https://toitex.ca/blog/fissures-toit-plat-hiver-montreal.html",
-            "datePublished": "2026-03-29"
-          },
-          {
-            "@type": "BlogPosting",
-            "headline": "Inspection de toiture au printemps à Montréal : checklist complète",
-            "url": "https://toitex.ca/blog/inspection-toiture-printemps-montreal.html",
-            "datePublished": "2026-03-29"
-          },
-          {
-            "@type": "BlogPosting",
-            "headline": "Dommages de l'hiver sur les toit plat : quoi vérifier au dégel",
-            "url": "https://toitex.ca/blog/dommages-hiver-toits-plats-degel.html",
-            "datePublished": "2026-03-29"
-          },
-          {
-            "@type": "BlogPosting",
-            "headline": "Préparer son toit plat pour l'été : entretien post-hiver à Montréal",
-            "url": "https://toitex.ca/blog/entretien-toit-plat-post-hiver-montreal.html",
-            "datePublished": "2026-03-29"
-          },
-          {
-            "@type": "BlogPosting",
-            "headline": "Combien coûte une toiture neuve à Montréal en 2026?",
-            "url": "https://toitex.ca/blog/cout-toiture-neuve-montreal-2026.html",
-            "datePublished": "2026-03-29"
-          },
-          {
-            "@type": "BlogPosting",
-            "headline": "Membrane élastomère vs TPO : quel choix pour un toit plat à Montréal?",
-            "url": "https://toitex.ca/blog/membrane-elastomere-vs-tpo-montreal.html",
-            "datePublished": "2026-03-29"
-          },
-          {
-            "@type": "BlogPosting",
-            "headline": "Subventions et financement pour une toiture au Québec en 2026",
-            "url": "https://toitex.ca/blog/subventions-financement-toiture-quebec-2026.html",
-            "datePublished": "2026-03-29"
-          }
-        ]
-      }
-    ]
-  }
+        {
+          "@type": "BlogPosting",
+          "headline": "Membrane élastomère qui décolle au printemps : que faire?",
+          "url": "https://toitex.ca/blog/membrane-elastomere-decolle-printemps.html",
+          "datePublished": "2026-03-29"
+        },
+        {
+          "@type": "BlogPosting",
+          "headline": "Fissures sur toit plat après l'hiver à Montréal : diagnostic et réparation",
+          "url": "https://toitex.ca/blog/fissures-toit-plat-hiver-montreal.html",
+          "datePublished": "2026-03-29"
+        },
+        {
+          "@type": "BlogPosting",
+          "headline": "Inspection de toiture au printemps à Montréal : checklist complète",
+          "url": "https://toitex.ca/blog/inspection-toiture-printemps-montreal.html",
+          "datePublished": "2026-03-29"
+        },
+        {
+          "@type": "BlogPosting",
+          "headline": "Dommages de l'hiver sur les toit plat : quoi vérifier au dégel",
+          "url": "https://toitex.ca/blog/dommages-hiver-toits-plats-degel.html",
+          "datePublished": "2026-03-29"
+        },
+        {
+          "@type": "BlogPosting",
+          "headline": "Préparer son toit plat pour l'été : entretien post-hiver à Montréal",
+          "url": "https://toitex.ca/blog/entretien-toit-plat-post-hiver-montreal.html",
+          "datePublished": "2026-03-29"
+        },
+        {
+          "@type": "BlogPosting",
+          "headline": "Combien coûte une toiture neuve à Montréal en 2026?",
+          "url": "https://toitex.ca/blog/cout-toiture-neuve-montreal-2026.html",
+          "datePublished": "2026-03-29"
+        },
+        {
+          "@type": "BlogPosting",
+          "headline": "Membrane élastomère vs TPO : quel choix pour un toit plat à Montréal?",
+          "url": "https://toitex.ca/blog/membrane-elastomere-vs-tpo-montreal.html",
+          "datePublished": "2026-03-29"
+        },
+        {
+          "@type": "BlogPosting",
+          "headline": "Subventions et financement pour une toiture au Québec en 2026",
+          "url": "https://toitex.ca/blog/subventions-financement-toiture-quebec-2026.html",
+          "datePublished": "2026-03-29"
+        }
+      ]
+    }
+  ]
+}
   </script>
 
   <!-- Fonts -->
@@ -1005,6 +1040,56 @@
   <script>!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init','1271841963539865');fbq('track','PageView');</script>
   <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1271841963539865&ev=PageView&noscript=1"/></noscript>
   <!-- End Meta Pixel Code -->
+  <!-- AI-SEO Phase 1 schema -->
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "CollectionPage",
+      "@id": "https://toitex.ca/blog/#webpage",
+      "url": "https://toitex.ca/blog/",
+      "name": "Blogue",
+      "isPartOf": {
+        "@id": "https://toitex.ca/#website"
+      },
+      "about": {
+        "@id": "https://toitex.ca/#organization"
+      },
+      "inLanguage": "fr-CA",
+      "breadcrumb": {
+        "@id": "https://toitex.ca/blog/#breadcrumb"
+      },
+      "speakable": {
+        "@type": "SpeakableSpecification",
+        "cssSelector": [
+          "article h1",
+          "article .lede",
+          "article p:first-of-type"
+        ]
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://toitex.ca/blog/#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Accueil",
+          "item": "https://toitex.ca/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Blogue",
+          "item": "https://toitex.ca/blog/"
+        }
+      ]
+    }
+  ]
+}
+  </script>
 </head>
 <body>
 
