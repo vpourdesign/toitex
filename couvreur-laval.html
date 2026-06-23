@@ -2129,10 +2129,7 @@
 
         if (n8nResult.status === 'fulfilled') {
           if (typeof gtag !== 'undefined') {
-            gtag('event', 'conversion', {
-              'send_to': 'AW-695468280/8XHCCKuL9_EbEPiB0MsC',
-              'event_callback': doRedirect
-            });
+            try { sessionStorage.setItem('toitex_lead', JSON.stringify({ n: data.nom_complet||'', t: data.tel||'' })); } catch(e){}
           }
 
           if (typeof fbq !== 'undefined') {
