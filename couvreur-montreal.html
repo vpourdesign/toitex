@@ -928,6 +928,7 @@
               <input type="hidden" name="page_url" value="">
               <input type="text" name="nom_complet" placeholder="Nom complet / Full name" required>
               <input type="tel" name="tel" placeholder="Téléphone / Phone" required>
+              <input type="email" name="email" placeholder="Courriel / Email" autocomplete="email" required>
               <select name="service" required>
                 <option value="" disabled selected>Type de service / Service type</option>
                 <option value="Toit plat">Toit plat / Flat Roof</option>
@@ -1495,6 +1496,9 @@
         }
       }
 
+      // CRM PlanOps (keepalive : survit à la redirection)
+      if (window.sendToPlanOps) sendToPlanOps(data);
+
       try {
         // Envoi parallèle — n8n + Formspree
         const [n8nResult, formspreeResult] = await Promise.allSettled([
@@ -1894,5 +1898,6 @@
 })();
 </script>
 
+<script src="planops.js"></script>
 </body>
 </html>

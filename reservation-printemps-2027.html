@@ -296,6 +296,8 @@
         <input id="f-nom" type="text" name="nom_complet" placeholder="Nom complet" autocomplete="name" required>
         <label class="hp" for="f-tel">Téléphone</label>
         <input id="f-tel" type="tel" name="tel" placeholder="Téléphone" autocomplete="tel" required>
+        <label class="hp" for="f-email">Courriel</label>
+        <input id="f-email" type="email" name="email" placeholder="Courriel" autocomplete="email" required>
         <label class="hp" for="f-ville">Ville</label>
         <select id="f-ville" name="ville" required>
           <option value="" disabled selected>Votre ville</option>
@@ -524,9 +526,11 @@
       body: JSON.stringify(obj)
     });
 
-    Promise.allSettled([netlify, n8n]).then(go).catch(go);
+    var planops = window.sendToPlanOps ? sendToPlanOps(obj) : null;
+    Promise.allSettled([netlify, n8n, planops]).then(go).catch(go);
     setTimeout(go, 1500);
   });
 </script>
+<script src="planops.js"></script>
 </body>
 </html>

@@ -1377,6 +1377,9 @@
         if (!redirected) { redirected = true; window.location.href = 'merci.html'; }
       }
 
+      // CRM PlanOps (keepalive : survit à la redirection)
+      if (window.sendToPlanOps) sendToPlanOps(data);
+
       try {
         // Envoi parallèle — n8n + Formspree
         const [n8nResult, formspreeResult] = await Promise.allSettled([
@@ -1486,5 +1489,6 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 });
 </script>
+<script src="planops.js"></script>
 </body>
 </html>
