@@ -273,8 +273,7 @@
     <div class="form-card" id="formulaire">
       <h2>Réservez votre inspection gratuite</h2>
       <p class="sub">250 $ de rabais si vous réservez vos travaux avant le 31 décembre.</p>
-      <form name="reservation-printemps-2027" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/merci.html" id="leadForm">
-        <input type="hidden" name="form-name" value="reservation-printemps-2027">
+      <form name="reservation-printemps-2027" method="POST" action="/merci.html" id="leadForm">
         <p class="hp"><label>Ne pas remplir : <input name="bot-field"></label></p>
         <input type="hidden" name="source" value="reservation-printemps-2027">
         <input type="hidden" name="agency" value="V pour Design">
@@ -493,10 +492,9 @@
     set('page_url',location.href);
   })();
 
-  /* ---- Soumission : Netlify Forms + webhook n8n ----
+  /* ---- Soumission : CRM PlanOps (planops.js) ----
      Conversion Google Ads : au chargement de merci.html (pas ici, pour éviter le double comptage).
      Meta : événement Lead ici, merci.html ne fait que PageView. ---- */
-  var N8N_WEBHOOK = 'https://n8n.groupemercure.ca/webhook/5aea17b6-21eb-4063-b264-668c2d265732/';
 
   document.getElementById('leadForm').addEventListener('submit', function(e){
     e.preventDefault();
@@ -515,20 +513,14 @@
     var redirected = false;
     function go(){ if(!redirected){ redirected = true; location.href = 'merci.html'; } }
 
-    var netlify = fetch('/', {
-      method:'POST',
-      headers:{'Content-Type':'application/x-www-form-urlencoded'},
-      body: new URLSearchParams(fd).toString()
+    // Envoi au CRM PlanOps (seule destination des leads), puis merci.html
+    var timer = setTimeout(go, 3000); // filet : keepalive termine l'envoi même après la redirection
+    (window.sendToPlanOps ? sendToPlanOps(obj) : Promise.resolve()).then(function(r){
+      if (r && r.ok) return go();
+      clearTimeout(timer);
+      btn.textContent = 'Erreur, réessayez ou appelez-nous';
+      btn.disabled = false;
     });
-    var n8n = fetch(N8N_WEBHOOK, {
-      method:'POST',
-      headers:{'Content-Type':'application/json'},
-      body: JSON.stringify(obj)
-    });
-
-    var planops = window.sendToPlanOps ? sendToPlanOps(obj) : null;
-    Promise.allSettled([netlify, n8n, planops]).then(go).catch(go);
-    setTimeout(go, 1500);
   });
 </script>
 <script src="planops.js"></script>

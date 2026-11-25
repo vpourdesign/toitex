@@ -222,8 +222,7 @@
     <div class="form-card">
       <h2>Soumission gratuite en 24 h</h2>
       <p class="sub">Sans engagement. Réponse rapide d'un vrai couvreur.</p>
-      <form name="bardeaux-rive-nord" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/merci.html" id="leadForm">
-        <input type="hidden" name="form-name" value="bardeaux-rive-nord">
+      <form name="bardeaux-rive-nord" method="POST" action="/merci.html" id="leadForm">
         <p class="hp"><label>Ne pas remplir : <input name="bot-field"></label></p>
         <input type="hidden" name="source" value="toiture-bardeaux-rive-nord">
         <input type="hidden" name="ville" value="Rive-Nord">
@@ -407,9 +406,8 @@
     set('page_url',location.href);
   })();
 
-  /* ---- Soumission : Netlify Forms + webhook n8n ----
+  /* ---- Soumission : CRM PlanOps (planops.js) ----
      La CONVERSION Google Ads se déclenche au CHARGEMENT de merci.html. ---- */
-  var N8N_WEBHOOK = 'https://n8n.groupemercure.ca/webhook/5aea17b6-21eb-4063-b264-668c2d265732/';
 
   document.getElementById('leadForm').addEventListener('submit', function(e){
     e.preventDefault();
@@ -428,20 +426,14 @@
     var redirected = false;
     function go(){ if(!redirected){ redirected = true; location.href = 'merci.html'; } }
 
-    var netlify = fetch('/', {
-      method:'POST',
-      headers:{'Content-Type':'application/x-www-form-urlencoded'},
-      body: new URLSearchParams(fd).toString()
+    // Envoi au CRM PlanOps (seule destination des leads), puis merci.html
+    var timer = setTimeout(go, 3000); // filet : keepalive termine l'envoi même après la redirection
+    (window.sendToPlanOps ? sendToPlanOps(obj) : Promise.resolve()).then(function(r){
+      if (r && r.ok) return go();
+      clearTimeout(timer);
+      btn.textContent = 'Erreur, réessayez ou appelez-nous';
+      btn.disabled = false;
     });
-    var n8n = fetch(N8N_WEBHOOK, {
-      method:'POST',
-      headers:{'Content-Type':'application/json'},
-      body: JSON.stringify(obj)
-    });
-
-    var planops = window.sendToPlanOps ? sendToPlanOps(obj) : null;
-    Promise.allSettled([netlify, n8n, planops]).then(go).catch(go);
-    setTimeout(go, 1500);
   });
 </script>
 <script src="planops.js"></script>

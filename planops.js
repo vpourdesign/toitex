@@ -10,6 +10,10 @@
   window.sendToPlanOps = function (data) {
     try {
       data = data || {};
+      // Pot de miel anti-spam : un robot remplit le champ caché, on n'envoie rien
+      if (data['bot-field'] && String(data['bot-field']).trim()) {
+        return Promise.resolve({ ok: true, status: 200 });
+      }
       var payload = {
         name: (data.nom_complet || data.name || '').trim(),
         email: (data.email || '').trim(),

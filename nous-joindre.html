@@ -1418,7 +1418,7 @@
     document.querySelectorAll(".reveal").forEach(el => revealObserver.observe(el));
     setTimeout(() => { document.querySelectorAll(".reveal:not(.is-visible)").forEach(el => el.classList.add("is-visible")); }, 1500);
 
-    // Form submission → n8n webhook
+    // Form submission → CRM PlanOps
     document.getElementById('contactForm').addEventListener('submit', async function(e) {
       e.preventDefault();
       const btn = this.querySelector('.submit-btn-dark');
@@ -1435,28 +1435,12 @@
         if (!redirected) { redirected = true; window.location.href = 'merci.html'; }
       }
 
-      // CRM PlanOps (keepalive : survit à la redirection)
-      if (window.sendToPlanOps) sendToPlanOps(data);
-
       try {
-        // Envoi parallèle — n8n + Formspree
-        const [n8nResult, formspreeResult] = await Promise.allSettled([
-          fetch('https://n8n.groupemercure.ca/webhook/5aea17b6-21eb-4063-b264-668c2d265732/', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify(data)
-          }),
-          fetch('https://formspree.io/f/mnjbpkpo', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-            body: JSON.stringify(data)
-          })
-        ]);
+        // Envoi au CRM PlanOps (seule destination des leads)
+        const planopsRes = await sendToPlanOps(data);
+        console.log('planops:', planopsRes && planopsRes.status);
 
-        console.log('n8n:', n8nResult.status);
-        console.log('formspree:', formspreeResult.status);
-
-        if (n8nResult.status === 'fulfilled') {
+        if (planopsRes && planopsRes.ok) {
           if (typeof gtag !== 'undefined') {
             // Enhanced Conversions — user_data (Google auto-hashes in-browser)
             var nameParts = (data.nom_complet || '').trim().split(/\s+/);
@@ -1480,7 +1464,8 @@
 
           setTimeout(doRedirect, 1000);
         } else {
-          doRedirect();
+          // Échec PlanOps : on affiche l'erreur pour que le visiteur réessaie
+          throw new Error('PlanOps');
         }
 
       } catch (err) {
